@@ -362,17 +362,7 @@ export default function Details() {
               </a>
             </div>
           </DetailCard>
-        </Section>
-
-        {/* FAQ */}
-        <Section delay={0.1}>
-          <SectionHeading eyebrow="Questions" title="Frequently Asked" />
-          <DetailCard>
-            {faqs.map((faq, i) => (
-              <FAQItem key={i} question={faq.question} answer={faq.answer} />
-            ))}
-          </DetailCard>
-        </Section>
+        </Section> 
 
         {/* CONTACT */}
         <Section delay={0.1}>
