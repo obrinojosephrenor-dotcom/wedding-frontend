@@ -9,47 +9,44 @@ import { WEDDING } from "../weddingConfig";
 
 // ─── Update all names here ─────────────────────────────────────────
 const BRIDE_PARENTS = [
-  { role: "Father of the Bride", name: "Juan dela Cruz" },
-  { role: "Mother of the Bride", name: "Maria dela Cruz" },
+  { role: "Father of the Bride", name: "Mr. Jeanelito D. Singzon" },
+  { role: "Mother of the Bride", name: "Mrs. Dolores D. Singzon" },
 ];
 
 const GROOM_PARENTS = [
-  { role: "Father of the Groom", name: "Pedro Santos" },
-  { role: "Mother of the Groom", name: "Rosa Santos" },
+  { role: "Father of the Groom", name: "Mr. Noel E. Jackson" },
+  { role: "Mother of the Groom", name: "Ms. Rowena D. Obrino" },
 ];
 
 const PRINCIPAL_SPONSORS = [
-  { role: "Principal Sponsor", name: "Mr. & Mrs. Alfonso Reyes" },
-  { role: "Principal Sponsor", name: "Mr. & Mrs. Benjamin Cruz" },
-  { role: "Principal Sponsor", name: "Mr. & Mrs. Carlos Lim" },
-  { role: "Principal Sponsor", name: "Mr. & Mrs. David Tan" },
-  { role: "Principal Sponsor", name: "Mr. & Mrs. Eduardo Santos" },
-  { role: "Principal Sponsor", name: "Mr. & Mrs. Francisco Garcia" },
+  { role: "Principal Sponsor", name: "Dr. Gil Leovigildo A. Ancheta, CPA" },
+  { role: "Principal Sponsor", name: "Mrs. Thelma N. Mawo" },
+  { role: "Principal Sponsor", name: "Atty. Joseph G. Dinoy" },
+  { role: "Principal Sponsor", name: "Mrs. Adela L. Conejos" },
+  { role: "Principal Sponsor", name: "Mr. Renato A. Loberiano" },
+  { role: "Principal Sponsor", name: "Mrs. Ma. Merlie J. Loberanio" },
+  { role: "Principal Sponsor", name: "Atty. Calick D. Arrieta"},
+  { role: "Principal Sponsor", name: "Mrs. Ellen C. Obrino"},
+  { role: "Principal Sponsor", name: "Mr. Ruel F. Jackson"},
+  { role: "Principal Sponsor", name: "Mrs. Lohea E. Jackson"},
+  { role: "Principal Sponsor", name: "Mr. Edgardo J. Mascarinas"},
+  { role: "Principal Sponsor", name: "Mrs. Rosita I. Mascarinas"},
 ];
 
 const HONOR_PARTY = [
-  { role: "Best Man",      name: "Miguel Santos" },
-  { role: "Maid of Honor", name: "Sofia Reyes" },
-];
-
-const GROOMSMEN = [
-  { role: "Groomsman", name: "Andrei Villanueva" },
-  { role: "Groomsman", name: "Rafael Gomez" },
-  { role: "Groomsman", name: "Marco Dela Torre" },
-];
-
-const BRIDESMAIDS = [
-  { role: "Bridesmaid", name: "Isabella Cruz" },
-  { role: "Bridesmaid", name: "Camille Reyes" },
-  { role: "Bridesmaid", name: "Angela Santos" },
+  { role: "Best Man",      name: "Claude P. Kirke" },
+  { role: "Maid of Honor", name: "Mary Nessa Red Lee" },
 ];
 
 const LITTLE_ONES = [
-  { role: "Ring Bearer",  name: "Liam Santos" },
-  { role: "Coin Bearer",  name: "Noah Reyes" },
-  { role: "Bible Bearer", name: "Ethan Cruz" },
-  { role: "Flower Girl",  name: "Mia Villanueva" },
-  { role: "Flower Girl",  name: "Ella Gomez" },
+  { role: "Candle",  name: "Kenneth L. Bote", name: "Jeanelou S. Agura"},
+  { role: "Cord",  name: "Joemar Gabriel A. Rallestan", name: "Cianne B. Allequir"},
+  { role: "Veil",  name: "Jherome Rosales", name: "April O. Allequir"},
+  { role: "Coin Bearer",  name: "Franco Emannuel Toquero"},
+  { role: "Ring Bearer",  name: "Avery Allison S. Obrino"},
+  { role: "Bible Bearer",  name: "Sam Thomas Aliman"},
+  { role: "Flower Girl",  name: "Alessia Vrielle O. Jabonite"},
+
 ];
 
 // ─── Reusable components ───────────────────────────────────────────
