@@ -9,30 +9,23 @@ import { WEDDING } from "../../weddingConfig";
 
 // ─── Social link button ────────────────────────────────────────────
 function SocialLink({ href, label, icon }) {
-  return (
-    
-      href={href}
-      target="_blank"
-      rel="noreferrer"
-      aria-label={label}
-      className="w-9 h-9 rounded-full flex items-center justify-center font-sans text-sm transition-all duration-200"
-      style={{
-        background: "rgba(200,169,110,0.1)",
-        border:     "1px solid rgba(200,169,110,0.25)",
-        color:      "#C8A96E",
-      }}
-      onMouseEnter={(e) => {
-        e.currentTarget.style.background = "rgba(200,169,110,0.22)";
-        e.currentTarget.style.transform  = "translateY(-2px)";
-      }}
-      onMouseLeave={(e) => {
-        e.currentTarget.style.background = "rgba(200,169,110,0.1)";
-        e.currentTarget.style.transform  = "translateY(0)";
-      }}
-    >
-      {icon}
-    </a>
-  );
+return (
+  <a
+    href={href}
+    target="_blank"
+    rel="noreferrer"
+    aria-label={label}
+    className="w-9 h-9 rounded-full flex items-center justify-center font-sans text-sm transition-all duration-200"
+    style={{
+      background: "rgba(200,169,110,0.1)",
+      border: "1px solid rgba(200,169,110,0.25)",
+      color: "#C8A96E",
+      textDecoration: "none",
+    }}
+  >
+    {icon}
+  </a>
+);
 }
 
 // ─── Footer nav link ───────────────────────────────────────────────
@@ -218,21 +211,25 @@ export default function Footer() {
           <p className="font-sans text-ivory/25 text-xs tracking-widest uppercase mb-3">
             Get in Touch
           </p>
-          <div className="flex justify-center gap-4 flex-wrap">
-            
-              href={`mailto:${WEDDING.contact.email}`}
-              className="font-sans text-ivory/40 text-xs hover:text-champagne transition-colors tracking-wide"
-            >
-              ✉ {WEDDING.contact.email}
-            </a>
-            <span className="text-ivory/20 text-xs">·</span>
-            
-              href={`tel:${WEDDING.contact.phone}`}
-              className="font-sans text-ivory/40 text-xs hover:text-champagne transition-colors tracking-wide"
-            >
-              ☎ {WEDDING.contact.phone}
-            </a>
-          </div>
+<div className="flex justify-center gap-4 flex-wrap">
+
+  <a
+    href={`mailto:${WEDDING.contact.email}`}
+    className="font-sans text-ivory/40 text-xs hover:text-champagne transition-colors tracking-wide"
+  >
+    ✉ {WEDDING.contact.email}
+  </a>
+
+  <span className="text-ivory/20 text-xs">·</span>
+
+  <a
+    href={`tel:${WEDDING.contact.phone}`}
+    className="font-sans text-ivory/40 text-xs hover:text-champagne transition-colors tracking-wide"
+  >
+    ☎ {WEDDING.contact.phone}
+  </a>
+
+</div>
         </motion.div>
 
         {/* ── Social links ──────────────────────────────────── */}

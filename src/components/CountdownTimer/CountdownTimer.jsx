@@ -1,383 +1,232 @@
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { useNavigate } from "react-router-dom";
-import {
-  FloralCornerTL, FloralCornerTR,
-  FloralCornerBL, FloralCornerBR,
-  FloralDivider, WaxSeal,
-} from "../components/FloralAccents/FloralSvg";
-import FloralAccents from "../components/FloralAccents/FloralAccents";
-import { WEDDING }   from "../weddingConfig";
+import { useState, useEffect } from "react";
+import { motion } from "framer-motion";
+import { WEDDING } from "../../weddingConfig";
+import { FloralDivider } from "../FloralAccents/FloralSvg";
 
-const API = import.meta.env.VITE_API_BASE_URL;
+function TimeBlock({ value, label }) {
+  String(item.value).padStart(2, "0")
 
-// ─── Reusable field wrapper ────────────────────────────────────────
-function Field({ label, error, children }) {
   return (
-    <div className="flex flex-col gap-1">
-      <label className="font-sans text-espresso/50 text-xs tracking-widest uppercase">
+    <motion.div
+      className="flex flex-col items-center"
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+    >
+      {/* Number box */}
+      <div
+        className="relative flex items-center justify-center rounded-lg mb-2"
+        style={{
+          width:      "72px",
+          height:     "80px",
+          background: "rgba(200,169,110,0.08)",
+          border:     "1px solid rgba(200,169,110,0.25)",
+          boxShadow:  "0 4px 20px rgba(200,169,110,0.1), inset 0 1px 0 rgba(255,255,255,0.6)",
+        }}
+      >
+        {/* Flip line */}
+        <div
+          className="absolute w-full pointer-events-none"
+          style={{
+            top:        "50%",
+            height:     "1px",
+            background: "rgba(200,169,110,0.2)",
+          }}
+        />
+
+        <AnimatedNumber value={display} />
+      </div>
+
+      {/* Label */}
+      <p
+        className="font-sans text-espresso/50 tracking-[0.3em] uppercase"
+        style={{ fontSize: "10px" }}
+      >
         {label}
-      </label>
-      {children}
-      {error && (
-        <p className="font-sans text-red-400 text-xs mt-0.5">{error}</p>
-      )}
-    </div>
+      </p>
+    </motion.div>
   );
 }
 
-// ─── Shared input style ───────────────────────────────────────────
-const inputClass = `
-  w-full bg-transparent border-b border-champagne/40
-  font-sans text-espresso text-sm py-2 px-0
-  focus:outline-none focus:border-champagne
-  placeholder:text-espresso/25
-  transition-colors duration-200
-`.trim();
+function AnimatedNumber({ value }) {
+  const [displayed, setDisplayed]   = useState(value);
 
-const selectClass = `
-  w-full bg-ivory border border-champagne/30 rounded
-  font-sans text-espresso text-sm py-2 px-3
-  focus:outline-none focus:border-champagne
-  transition-colors duration-200
-`.trim();
+useEffect(() => {
+  if (value !== displayed) {
+    setTimeout(() => {
+      setDisplayed(value);
+    }, 300);
+  }
+}, [value, displayed]);
 
-export default function RSVP() {
-  const navigate = useNavigate();
+  return (
+    <motion.span
+      key={displayed}
+      initial={{ opacity: 0, y: -8 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{    opacity: 0, y:  8 }}
+      transition={{ duration: 0.3 }}
+      className="font-script text-champagne"
+      style={{ fontSize: "2.2rem", fontWeight: 400, lineHeight: 1 }}
+    >
+      {displayed}
+    </motion.span>
+  );
+}
 
-  const [form, setForm] = useState({
-    guestName:  "",
-    email:      "",
-    mobile:     "",
-    attending:  "yes",
-    guestCount: 1,
-    dietary:    "",
-    message:    "",
-  });
+function Separator() {
+  return (
+    <motion.span
+      animate={{ opacity: [1, 0.2, 1] }}
+      transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+      className="font-script text-champagne/50 text-3xl self-start mt-3"
+    >
+      :
+    </motion.span>
+  );
+}
 
-  const [errors,    setErrors]    = useState({});
-  const [loading,   setLoading]   = useState(false);
-  const [submitted, setSubmitted] = useState(false);
-  const [apiError,  setApiError]  = useState("");
+function getTimeLeft(targetDate) {
+  const now        = new Date().getTime();
+  const target     = new Date(targetDate).getTime();
+  const difference = target - now;
 
-  const set = (key) => (e) =>
-    setForm((p) => ({ ...p, [key]: e.target.value }));
-
-  // ─── Validation ──────────────────────────────────────────────
-  function validate() {
-    const e = {};
-    if (!form.guestName.trim())
-      e.guestName = "Please enter your name";
-    if (form.email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email))
-      e.email = "Please enter a valid email";
-    if (form.mobile && !/^[0-9+\s\-()]{7,15}$/.test(form.mobile))
-      e.mobile = "Please enter a valid mobile number";
-    if (form.guestCount < 1 || form.guestCount > 10)
-      e.guestCount = "Between 1 and 10 guests";
-    return e;
+  if (difference <= 0) {
+    return { days: 0, hours: 0, minutes: 0, seconds: 0, expired: true };
   }
 
-  // ─── Submit ───────────────────────────────────────────────────
-  async function handleSubmit(e) {
-    e.preventDefault();
-    const errs = validate();
-    if (Object.keys(errs).length) { setErrors(errs); return; }
+  return {
+    days:    Math.floor(difference / (1000 * 60 * 60 * 24)),
+    hours:   Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
+    minutes: Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60)),
+    seconds: Math.floor((difference % (1000 * 60)) / 1000),
+    expired: false,
+  };
+}
 
-    setLoading(true);
-    setApiError("");
+export default function CountdownTimer({ variant = "full" }) {
+  const [timeLeft, setTimeLeft] = useState(getTimeLeft(WEDDING.date));
 
-    try {
-      const res = await fetch(`${API}/api/rsvp`, {
-        method:  "POST",
-        headers: { "Content-Type": "application/json" },
-        body:    JSON.stringify(form),
-      });
-      const data = await res.json();
-      if (!res.ok) throw new Error(data.error || "Something went wrong");
-      setSubmitted(true);
-    } catch (err) {
-      setApiError(err.message);
-    } finally {
-      setLoading(false);
-    }
-  }
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setTimeLeft(getTimeLeft(WEDDING.date));
+    }, 1000);
+    return () => clearInterval(timer);
+  }, []);
 
-  // ─── Thank You screen ─────────────────────────────────────────
-  if (submitted) {
+  // Compact variant — used in footer
+  if (variant === "compact") {
     return (
-      <div className="min-h-screen bg-cream flex items-center justify-center px-4">
-        <FloralAccents active count={10} />
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9, y: 30 }}
-          animate={{ opacity: 1, scale: 1,   y: 0  }}
-          transition={{ duration: 0.8 }}
-          className="relative text-center max-w-sm mx-auto px-8 py-12 bg-ivory rounded-lg"
-          style={{
-            boxShadow: "0 20px 60px rgba(60,42,30,0.12)",
-            border:    "1px solid rgba(200,169,110,0.25)",
-          }}
-        >
-          <FloralCornerTL className="absolute top-0 left-0"     size={70} />
-          <FloralCornerTR className="absolute top-0 right-0"    size={70} />
-          <FloralCornerBL className="absolute bottom-0 left-0"  size={70} />
-          <FloralCornerBR className="absolute bottom-0 right-0" size={70} />
-
-          <div className="flex justify-center mb-5">
-            <WaxSeal size={56} />
+      <div className="flex items-center gap-3 justify-center flex-wrap">
+        {[
+          { value: timeLeft.days,    label: "Days"    },
+          { value: timeLeft.hours,   label: "Hours"   },
+          { value: timeLeft.minutes, label: "Min"     },
+          { value: timeLeft.seconds, label: "Sec"     },
+        ].map((item, i) => (
+          <div key={i} className="flex items-center gap-3">
+            <div className="text-center">
+              <p
+                className="font-script text-champagne"
+                style={{ fontSize: "1.8rem", lineHeight: 1 }}
+              >
+                {String(item.value).padStart(2, "0")}
+              </p>
+              <p
+                className="font-sans text-ivory/50 tracking-widest uppercase"
+                style={{ fontSize: "9px" }}
+              >
+                {item.label}
+              </p>
+            </div>
+            {i < 3 && (
+              <motion.span
+                animate={{ opacity: [1, 0.2, 1] }}
+                transition={{ duration: 1.5, repeat: Infinity }}
+                className="font-script text-champagne/40 text-xl self-start mt-1"
+              >
+                :
+              </motion.span>
+            )}
           </div>
-
-          <p
-            className="font-script italic text-champagne mb-3"
-            style={{ fontSize: "clamp(1.8rem, 5vw, 2.4rem)", fontWeight: 300 }}
-          >
-            With Gratitude
-          </p>
-
-          <div className="flex justify-center mb-4">
-            <FloralDivider />
-          </div>
-
-          <p className="font-sans text-espresso/60 text-sm leading-relaxed mb-2">
-            Thank you, <span className="font-serif text-champagne">{form.guestName}</span>!
-          </p>
-          <p className="font-sans text-espresso/45 text-xs leading-relaxed mb-6">
-            {form.attending === "yes"
-              ? "We are so excited to celebrate with you. See you on our special day! ✦"
-              : "We will miss you dearly. Thank you for letting us know. ✦"}
-          </p>
-
-          <motion.button
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.97 }}
-            onClick={() => navigate("/")}
-            className="font-sans text-xs tracking-[0.3em] uppercase px-7 py-3 rounded transition-all"
-            style={{
-              background: "linear-gradient(135deg, #C8A96E, #D4B87A)",
-              color:      "#FAF6F0",
-              boxShadow:  "0 4px 16px rgba(200,169,110,0.3)",
-            }}
-          >
-            Back to Invitation
-          </motion.button>
-        </motion.div>
+        ))}
       </div>
     );
   }
 
-  // ─── RSVP Form ────────────────────────────────────────────────
-  return (
-    <div className="min-h-screen bg-cream py-14 px-4">
-
-      {/* Back button */}
-      <motion.button
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        onClick={() => navigate("/")}
-        className="fixed top-5 left-5 z-50 flex items-center gap-2 font-sans text-xs text-champagne/70 tracking-widest hover:text-champagne transition-colors"
-      >
-        ← Back
-      </motion.button>
-
+  // Wedding day message
+  if (timeLeft.expired) {
+    return (
       <motion.div
-        initial={{ opacity: 0, y: 40 }}
-        animate={{ opacity: 1, y:  0 }}
-        transition={{ duration: 0.8 }}
-        className="relative max-w-md mx-auto bg-ivory rounded-lg px-8 py-10"
-        style={{
-          boxShadow: "0 20px 60px rgba(60,42,30,0.1)",
-          border:    "1px solid rgba(200,169,110,0.2)",
-        }}
+        initial={{ opacity: 0, scale: 0.9 }}
+        animate={{ opacity: 1, scale: 1 }}
+        className="text-center py-12"
       >
-        {/* Corners */}
-        <FloralCornerTL className="absolute top-0 left-0"     size={80} />
-        <FloralCornerTR className="absolute top-0 right-0"    size={80} />
-        <FloralCornerBL className="absolute bottom-0 left-0"  size={80} />
-        <FloralCornerBR className="absolute bottom-0 right-0" size={80} />
-
-        {/* Header */}
-        <div className="text-center mb-8 relative z-10">
-          <p className="font-sans text-champagne tracking-[0.5em] text-xs uppercase mb-3">
-            R · S · V · P
-          </p>
-          <h1
-            className="font-script italic text-espresso"
-            style={{ fontSize: "clamp(2rem, 6vw, 2.8rem)", fontWeight: 300 }}
-          >
-            Join Our Celebration
-          </h1>
-          <div className="flex justify-center mt-4">
-            <FloralDivider />
-          </div>
-          <p className="font-sans text-espresso/40 text-xs mt-3 tracking-wider">
-            {WEDDING.bride} & {WEDDING.groom} · {new Date(WEDDING.date).toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" })}
-          </p>
-        </div>
-
-        {/* Form */}
-        <form onSubmit={handleSubmit} className="space-y-6 relative z-10">
-
-          {/* Guest Name */}
-          <Field label="Full Name *" error={errors.guestName}>
-            <input
-              type="text"
-              placeholder="Your full name"
-              value={form.guestName}
-              onChange={set("guestName")}
-              className={inputClass}
-            />
-          </Field>
-
-          {/* Email */}
-          <Field label="Email Address" error={errors.email}>
-            <input
-              type="email"
-              placeholder="your@email.com"
-              value={form.email}
-              onChange={set("email")}
-              className={inputClass}
-            />
-          </Field>
-
-          {/* Mobile */}
-          <Field label="Mobile Number" error={errors.mobile}>
-            <input
-              type="tel"
-              placeholder="+63 912 345 6789"
-              value={form.mobile}
-              onChange={set("mobile")}
-              className={inputClass}
-            />
-          </Field>
-
-          {/* Attendance */}
-          <Field label="Will You Attend? *" error={errors.attending}>
-            <div className="flex gap-4 mt-1">
-              {[
-                { value: "yes", label: "Joyfully Accepts ✦" },
-                { value: "no",  label: "Regretfully Declines" },
-              ].map((opt) => (
-                <button
-                  key={opt.value}
-                  type="button"
-                  onClick={() => setForm((p) => ({ ...p, attending: opt.value }))}
-                  className="flex-1 py-2.5 rounded font-sans text-xs tracking-wide transition-all duration-200"
-                  style={{
-                    border:     `1px solid ${form.attending === opt.value ? "#C8A96E" : "rgba(200,169,110,0.25)"}`,
-                    background: form.attending === opt.value
-                      ? "linear-gradient(135deg, #C8A96E, #D4B87A)"
-                      : "transparent",
-                    color: form.attending === opt.value ? "#FAF6F0" : "#3C2A1E99",
-                  }}
-                >
-                  {opt.label}
-                </button>
-              ))}
-            </div>
-          </Field>
-
-          {/* Guest count — only if attending */}
-          <AnimatePresence>
-            {form.attending === "yes" && (
-              <motion.div
-                initial={{ opacity: 0, height: 0 }}
-                animate={{ opacity: 1, height: "auto" }}
-                exit={{    opacity: 0, height: 0 }}
-                transition={{ duration: 0.3 }}
-              >
-                <Field label="Number of Guests" error={errors.guestCount}>
-                  <div className="flex items-center gap-4 mt-1">
-                    <button
-                      type="button"
-                      onClick={() => setForm((p) => ({ ...p, guestCount: Math.max(1, p.guestCount - 1) }))}
-                      className="w-8 h-8 rounded-full flex items-center justify-center font-sans text-champagne transition-all"
-                      style={{ border: "1px solid rgba(200,169,110,0.4)" }}
-                    >
-                      −
-                    </button>
-                    <span className="font-script text-champagne text-2xl w-8 text-center">
-                      {form.guestCount}
-                    </span>
-                    <button
-                      type="button"
-                      onClick={() => setForm((p) => ({ ...p, guestCount: Math.min(10, p.guestCount + 1) }))}
-                      className="w-8 h-8 rounded-full flex items-center justify-center font-sans text-champagne transition-all"
-                      style={{ border: "1px solid rgba(200,169,110,0.4)" }}
-                    >
-                      +
-                    </button>
-                    <span className="font-sans text-espresso/35 text-xs">
-                      {form.guestCount === 1 ? "guest" : "guests"} attending
-                    </span>
-                  </div>
-                </Field>
-              </motion.div>
-            )}
-          </AnimatePresence>
-
-          {/* Dietary */}
-          <Field label="Dietary Restrictions" error={errors.dietary}>
-            <select
-              value={form.dietary}
-              onChange={set("dietary")}
-              className={selectClass}
-            >
-              <option value="">No restrictions</option>
-              <option value="vegetarian">Vegetarian</option>
-              <option value="vegan">Vegan</option>
-              <option value="gluten-free">Gluten Free</option>
-              <option value="halal">Halal</option>
-              <option value="kosher">Kosher</option>
-              <option value="nut-allergy">Nut Allergy</option>
-              <option value="other">Other (mention in message)</option>
-            </select>
-          </Field>
-
-          {/* Message */}
-          <Field label="Personal Message" error={errors.message}>
-            <textarea
-              placeholder="Leave the couple a heartfelt message..."
-              value={form.message}
-              onChange={set("message")}
-              rows={4}
-              className={`${inputClass} resize-none border-b-0 border rounded p-3`}
-              style={{ border: "1px solid rgba(200,169,110,0.3)" }}
-            />
-          </Field>
-
-          {/* API error */}
-          {apiError && (
-            <motion.p
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              className="font-sans text-red-400 text-xs text-center bg-red-50 py-2 px-4 rounded"
-            >
-              {apiError}
-            </motion.p>
-          )}
-
-          {/* Submit */}
-          <motion.button
-            whileHover={{ scale: 1.02, boxShadow: "0 8px 30px rgba(200,169,110,0.35)" }}
-            whileTap={{ scale: 0.97 }}
-            type="submit"
-            disabled={loading}
-            className="w-full py-4 rounded font-sans text-xs tracking-[0.4em] uppercase transition-all"
-            style={{
-              background: loading
-                ? "rgba(200,169,110,0.4)"
-                : "linear-gradient(135deg, #C8A96E, #D4B87A)",
-              color:     "#FAF6F0",
-              boxShadow: "0 4px 20px rgba(200,169,110,0.25)",
-            }}
-          >
-            {loading ? "Sending..." : "Send My RSVP ✦"}
-          </motion.button>
-
-          <p className="text-center font-sans text-espresso/30 text-xs">
-            {WEDDING.bride} & {WEDDING.groom} · {WEDDING.date}
-          </p>
-        </form>
+        <p
+          className="font-script italic text-champagne"
+          style={{ fontSize: "clamp(2rem, 6vw, 3.5rem)", fontWeight: 300 }}
+        >
+          Today is the Day ✦
+        </p>
+        <p className="font-sans text-espresso/50 tracking-widest text-sm mt-3">
+          {WEDDING.bride} & {WEDDING.groom}
+        </p>
       </motion.div>
-    </div>
+    );
+  }
+
+  // Full variant — used on Home / Details pages
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8 }}
+      className="text-center py-10 px-6"
+    >
+      {/* Title */}
+      <p
+        className="font-sans text-espresso/40 tracking-[0.4em] uppercase text-xs mb-2"
+      >
+        Counting Down To
+      </p>
+      <p
+        className="font-script italic text-espresso/70 mb-6"
+        style={{ fontSize: "clamp(1.4rem, 4vw, 2rem)", fontWeight: 300 }}
+      >
+        {WEDDING.bride} & {WEDDING.groom}
+      </p>
+
+      <div className="flex justify-center mb-5">
+        <FloralDivider />
+      </div>
+
+      {/* Timer blocks */}
+      <div className="flex items-start justify-center gap-2 mb-6">
+        <TimeBlock value={timeLeft.days}    label="Days"    />
+        <Separator />
+        <TimeBlock value={timeLeft.hours}   label="Hours"   />
+        <Separator />
+        <TimeBlock value={timeLeft.minutes} label="Minutes" />
+        <Separator />
+        <TimeBlock value={timeLeft.seconds} label="Seconds" />
+      </div>
+
+      <div className="flex justify-center mb-5">
+        <FloralDivider />
+      </div>
+
+      {/* Wedding date */}
+      <p className="font-serif text-espresso/60 text-sm tracking-wide">
+        {new Date(WEDDING.date).toLocaleDateString("en-US", {
+          weekday: "long",
+          year:    "numeric",
+          month:   "long",
+          day:     "numeric",
+        })}
+      </p>
+      <p className="font-sans text-champagne/60 text-xs tracking-widest mt-1">
+        {WEDDING.time} · {WEDDING.ceremony.venue}
+      </p>
+    </motion.div>
   );
 }
