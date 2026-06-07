@@ -4,13 +4,17 @@ export default {
   theme: {
     extend: {
       colors: {
-        cream:     "#F9F4EE",
-        ivory:     "#FAF6F0",
-        sage:      "#9CAF88",
-        dusty:     "#C9A9A6",
-        champagne: "#C8A96E",
-        parchment: "#E8DCC8",
-        espresso:  "#3C2A1E",
+        cream:     "#eceee3",
+        ivory:     "#f4f6ee",
+        sage:      "#7d936c",
+        dusty:     "#aab992",
+        champagne: "#445c3f",
+        parchment: "#ccd5b5",
+        espresso:  "#2c3b28",
+        light:     "#ccd5b5",
+        mid:       "#aab992",
+        deep:      "#445c3f",
+        forest:    "#2d3d29",
       },
       fontFamily: {
         script: ["'Cormorant Garamond'", "serif"],

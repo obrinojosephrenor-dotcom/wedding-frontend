@@ -1,4 +1,4 @@
-import { useState } from "react";
+﻿import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import {
@@ -15,8 +15,8 @@ function CardShell({ children, className = "", style = {}, onClick }) {
       onClick={onClick}
       className={`relative bg-ivory rounded-lg overflow-hidden select-none ${className}`}
       style={{
-        boxShadow: "0 8px 40px rgba(60,42,30,0.13), 0 2px 8px rgba(200,169,110,0.1)",
-        border: "1px solid rgba(200,169,110,0.25)",
+        boxShadow: "0 8px 40px rgba(44,59,40,0.13), 0 2px 8px rgba(68,92,63,0.1)",
+        border: "1px solid rgba(68,92,63,0.25)",
         ...style,
       }}
     >
@@ -88,7 +88,7 @@ function MainCard() {
       {/* Date block */}
       <div
         className="mx-auto text-center px-6 py-4 mb-4 rounded"
-        style={{ background: "rgba(200,169,110,0.07)", border: "1px solid rgba(200,169,110,0.2)" }}
+        style={{ background: "rgba(68,92,63,0.07)", border: "1px solid rgba(68,92,63,0.2)" }}
       >
         <p className="font-script italic text-champagne text-lg mb-1">{formattedDate}</p>
         <p className="font-sans text-xs text-espresso/50 tracking-widest">
@@ -120,7 +120,7 @@ function RSVPCard({ onClick }) {
     <CardShell
       onClick={onClick}
       className="w-full max-w-sm mx-auto px-8 py-8 cursor-pointer group"
-      style={{ background: "#FAF0E8" }}
+      style={{ background: "#eceee3" }}
     >
       <FloralCornerTL className="absolute top-0 left-0"  size={60} />
       <FloralCornerBR className="absolute bottom-0 right-0" size={60} />
@@ -157,9 +157,9 @@ function RSVPCard({ onClick }) {
           whileTap={{ scale: 0.97 }}
           className="inline-block px-8 py-3 rounded font-sans text-xs tracking-[0.3em] uppercase"
           style={{
-            background: "linear-gradient(135deg, #C8A96E, #D4B87A)",
-            color: "#FAF6F0",
-            boxShadow: "0 4px 16px rgba(200,169,110,0.3)",
+            background: "linear-gradient(135deg, #445c3f, #7d936c)",
+            color: "#f4f6ee",
+            boxShadow: "0 4px 16px rgba(68,92,63,0.3)",
           }}
         >
           Tap to RSVP
@@ -179,7 +179,7 @@ function DetailsCard({ onClick }) {
     <CardShell
       onClick={onClick}
       className="w-full max-w-sm mx-auto px-8 py-8 cursor-pointer group"
-      style={{ background: "#F4F7F0" }}
+      style={{ background: "#eceee3" }}
     >
       <FloralCornerTR className="absolute top-0 right-0" size={60} />
       <FloralCornerBL className="absolute bottom-0 left-0" size={60} />
@@ -218,9 +218,9 @@ function DetailsCard({ onClick }) {
           whileTap={{ scale: 0.97 }}
           className="inline-block px-8 py-3 rounded font-sans text-xs tracking-[0.3em] uppercase"
           style={{
-            background: "linear-gradient(135deg, #9CAF88, #B0C49A)",
-            color: "#FAF6F0",
-            boxShadow: "0 4px 16px rgba(156,175,136,0.3)",
+            background: "linear-gradient(135deg, #7d936c, #aab992)",
+            color: "#f4f6ee",
+            boxShadow: "0 4px 16px rgba(125,147,108,0.3)",
           }}
         >
           Tap for All Details
@@ -269,7 +269,7 @@ export default function InvitationCards() {
                 transform: `translateY(${offset * 6}px) scale(${1 - Math.abs(offset) * 0.03})`,
                 zIndex: cards.length - Math.abs(offset),
                 opacity: 1 - Math.abs(offset) * 0.3,
-                border: "1px solid rgba(200,169,110,0.2)",
+                border: "1px solid rgba(68,92,63,0.2)",
               }}
             />
           );
@@ -311,8 +311,8 @@ export default function InvitationCards() {
                 width:      i === activeCard ? "28px" : "8px",
                 height:     "8px",
                 background: i === activeCard
-                  ? "linear-gradient(135deg, #C8A96E, #D4B87A)"
-                  : "rgba(200,169,110,0.3)",
+                  ? "linear-gradient(135deg, #445c3f, #7d936c)"
+                  : "rgba(68,92,63,0.3)",
               }}
             />
           </button>
@@ -335,8 +335,8 @@ export default function InvitationCards() {
           disabled={activeCard === 0}
           className="w-10 h-10 rounded-full flex items-center justify-center font-sans text-champagne transition-all"
           style={{
-            border: "1px solid rgba(200,169,110,0.35)",
-            background: "rgba(200,169,110,0.06)",
+            border: "1px solid rgba(68,92,63,0.35)",
+            background: "rgba(68,92,63,0.06)",
             opacity: activeCard === 0 ? 0.3 : 1,
           }}
         >
@@ -349,8 +349,8 @@ export default function InvitationCards() {
           disabled={activeCard === cards.length - 1}
           className="w-10 h-10 rounded-full flex items-center justify-center font-sans text-champagne transition-all"
           style={{
-            border: "1px solid rgba(200,169,110,0.35)",
-            background: "rgba(200,169,110,0.06)",
+            border: "1px solid rgba(68,92,63,0.35)",
+            background: "rgba(68,92,63,0.06)",
             opacity: activeCard === cards.length - 1 ? 0.3 : 1,
           }}
         >

@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+﻿import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import { supabase } from "../supabase";
@@ -81,7 +81,7 @@ function Lightbox({ photo, onClose, onPrev, onNext, hasPrev, hasNext }) {
         <button
           onClick={onClose}
           className="absolute -top-4 -right-4 w-9 h-9 rounded-full flex items-center justify-center font-sans text-ivory/80 hover:text-ivory transition-colors"
-          style={{ background: "rgba(200,169,110,0.3)", border: "1px solid rgba(200,169,110,0.4)" }}
+          style={{ background: "rgba(68,92,63,0.3)", border: "1px solid rgba(68,92,63,0.4)" }}
         >
           ✕
         </button>
@@ -136,7 +136,7 @@ function PhotoTile({ photo, index, onClick, isNew }) {
             exit={{    scale: 0, opacity: 0 }}
             className="absolute -top-2 -left-2 z-10 px-2 py-0.5 rounded-full font-sans text-white"
             style={{
-              background:    "linear-gradient(135deg, #C8A96E, #D4B87A)",
+              background:    "linear-gradient(135deg, #445c3f, #7d936c)",
               fontSize:      "9px",
               letterSpacing: "0.05em",
             }}
@@ -150,7 +150,7 @@ function PhotoTile({ photo, index, onClick, isNew }) {
       <div
         className="bg-white p-2.5 pb-9"
         style={{
-          boxShadow: "0 6px 24px rgba(60,42,30,0.14), 0 2px 6px rgba(60,42,30,0.08)",
+          boxShadow: "0 6px 24px rgba(44,59,40,0.14), 0 2px 6px rgba(44,59,40,0.08)",
         }}
       >
         <div style={{ aspectRatio: "1/1", overflow: "hidden" }}>
@@ -212,10 +212,10 @@ function FilterBar({ tables, activeTable, onTableChange, totalCount }) {
         className="px-4 py-1.5 rounded-full font-sans text-xs tracking-widest transition-all"
         style={{
           background: activeTable === "all"
-            ? "linear-gradient(135deg, #C8A96E, #D4B87A)"
-            : "rgba(200,169,110,0.08)",
-          color:  activeTable === "all" ? "#FAF6F0" : "#C8A96E",
-          border: `1px solid rgba(200,169,110,${activeTable === "all" ? 0 : 0.3})`,
+            ? "linear-gradient(135deg, #445c3f, #7d936c)"
+            : "rgba(68,92,63,0.08)",
+          color:  activeTable === "all" ? "#f4f6ee" : "#445c3f",
+          border: `1px solid rgba(68,92,63,${activeTable === "all" ? 0 : 0.3})`,
         }}
       >
         All ({totalCount})
@@ -227,10 +227,10 @@ function FilterBar({ tables, activeTable, onTableChange, totalCount }) {
           className="px-4 py-1.5 rounded-full font-sans text-xs tracking-widest transition-all"
           style={{
             background: activeTable === t.number
-              ? "linear-gradient(135deg, #C8A96E, #D4B87A)"
-              : "rgba(200,169,110,0.08)",
-            color:  activeTable === t.number ? "#FAF6F0" : "#C8A96E",
-            border: `1px solid rgba(200,169,110,${activeTable === t.number ? 0 : 0.3})`,
+              ? "linear-gradient(135deg, #445c3f, #7d936c)"
+              : "rgba(68,92,63,0.08)",
+            color:  activeTable === t.number ? "#f4f6ee" : "#445c3f",
+            border: `1px solid rgba(68,92,63,${activeTable === t.number ? 0 : 0.3})`,
           }}
         >
           Table {t.number} ({t.count})
@@ -332,7 +332,7 @@ export default function Gallery() {
         animate={{ opacity: 1 }}
         onClick={() => navigate("/")}
         className="fixed top-5 left-5 z-50 flex items-center gap-2 font-sans text-xs text-champagne/70 tracking-widest hover:text-champagne transition-colors bg-ivory/80 backdrop-blur-sm px-4 py-2 rounded-full"
-        style={{ border: "1px solid rgba(200,169,110,0.3)" }}
+        style={{ border: "1px solid rgba(68,92,63,0.3)" }}
       >
         ← Back
       </motion.button>
@@ -341,8 +341,8 @@ export default function Gallery() {
       <div
         className="relative text-center py-16 px-6 overflow-hidden"
         style={{
-          background:   "linear-gradient(180deg, #F0E8DC 0%, #F9F4EE 100%)",
-          borderBottom: "1px solid rgba(200,169,110,0.15)",
+          background:   "linear-gradient(180deg, #d6dfc6 0%, #eceee3 100%)",
+          borderBottom: "1px solid rgba(68,92,63,0.15)",
         }}
       >
         <FloralCornerTL className="absolute top-0 left-0"  size={100} />
@@ -378,8 +378,8 @@ export default function Gallery() {
           transition={{ delay: 0.4 }}
           className="inline-flex items-center gap-3 mt-6 px-6 py-3 rounded-full"
           style={{
-            background: "rgba(200,169,110,0.08)",
-            border:     "1px solid rgba(200,169,110,0.25)",
+            background: "rgba(68,92,63,0.08)",
+            border:     "1px solid rgba(68,92,63,0.25)",
           }}
         >
           {/* Live dot */}
@@ -387,7 +387,7 @@ export default function Gallery() {
             animate={{ scale: [1, 1.4, 1], opacity: [1, 0.5, 1] }}
             transition={{ duration: 2, repeat: Infinity }}
             className="w-2 h-2 rounded-full"
-            style={{ background: "#9CAF88" }}
+            style={{ background: "#7d936c" }}
           />
           <p className="font-sans text-champagne text-xs tracking-widest">
             <span className="font-script text-lg" style={{ fontWeight: 400 }}>
@@ -400,7 +400,7 @@ export default function Gallery() {
 
       {/* ── FILTER BAR ───────────────────────────────────────── */}
       {tables.length > 0 && (
-        <div style={{ borderBottom: "1px solid rgba(200,169,110,0.1)" }}>
+        <div style={{ borderBottom: "1px solid rgba(68,92,63,0.1)" }}>
           <FilterBar
             tables={tables}
             activeTable={activeTable}
@@ -485,9 +485,9 @@ export default function Gallery() {
             onClick={() => navigate("/upload")}
             className="px-8 py-3 rounded font-sans text-xs tracking-[0.35em] uppercase"
             style={{
-              background: "linear-gradient(135deg, #C8A96E, #D4B87A)",
-              color:      "#FAF6F0",
-              boxShadow:  "0 4px 16px rgba(200,169,110,0.25)",
+              background: "linear-gradient(135deg, #445c3f, #7d936c)",
+              color:      "#f4f6ee",
+              boxShadow:  "0 4px 16px rgba(68,92,63,0.25)",
             }}
           >
             Upload a Photo ✦

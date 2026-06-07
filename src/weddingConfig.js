@@ -1,7 +1,7 @@
-export const WEDDING = {
+﻿export const WEDDING = {
   bride:    "Nikki",
   groom:    "Michael",
-  date:     "2026-21-06",          // ← your real date
+  date:     "2026-06-21",          // ← your real date
   time:     "3:00 PM",
   hashtag:  "#YourHashtag",
   ceremony: {

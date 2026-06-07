@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+﻿import { useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import {
@@ -18,8 +18,8 @@ const CHAPTERS = [
     eyebrow:  "Chapter One",
     title:    "First Meeting",
     subtitle: "Where it all began",
-    color:    "#FAF0E8",
-    accent:   "#C9A9A6",
+    color:    "#eceee3",
+    accent:   "#aab992",
     narrative: `Every love story has a beginning — a single moment where two worlds
       collide and nothing is ever quite the same again. For ${WEDDING.bride}
       and ${WEDDING.groom}, that moment arrived quietly, unexpectedly, and
@@ -55,8 +55,8 @@ const CHAPTERS = [
     eyebrow:  "Chapter Two",
     title:    "Falling in Love",
     subtitle: "When friendship became forever",
-    color:    "#F4F7F0",
-    accent:   "#9CAF88",
+    color:    "#eceee3",
+    accent:   "#7d936c",
     narrative: `What began as friendship slowly, beautifully transformed into
       something deeper. Late night conversations turned into shared dreams.
       Laughter turned into comfort. And somewhere between all the small
@@ -91,8 +91,8 @@ const CHAPTERS = [
     eyebrow:  "Chapter Three",
     title:    "Adventures Together",
     subtitle: "Every road led back to each other",
-    color:    "#FAF6F0",
-    accent:   "#C8A96E",
+    color:    "#f4f6ee",
+    accent:   "#445c3f",
     narrative: `They built a life made of moments — sunrise hikes, lazy Sundays,
       road trips with no destination, and every ordinary Tuesday in between.
       They discovered that adventure is not a place you go but a person
@@ -127,8 +127,8 @@ const CHAPTERS = [
     eyebrow:  "Chapter Four",
     title:    "The Proposal",
     subtitle: "Will you?",
-    color:    "#FDF0F5",
-    accent:   "#C9A9A6",
+    color:    "#eceee3",
+    accent:   "#aab992",
     narrative: `He had been planning it for months. She had no idea.
       On a quiet evening surrounded by everything she loved —
       candles, flowers, and their favourite song playing softly
@@ -165,8 +165,8 @@ const CHAPTERS = [
     eyebrow:  "Chapter Five",
     title:    "Forever Begins",
     subtitle: "And so the greatest adventure starts",
-    color:    "#F0EDF8",
-    accent:   "#9CAF88",
+    color:    "#eceee3",
+    accent:   "#7d936c",
     narrative: `Now they stand at the edge of forever, hand in hand,
       hearts full of gratitude for every moment that brought them here.
       The story that began with a single meeting is becoming
@@ -220,7 +220,7 @@ function PhotoCard({ photo, index, onPhotoClick, accent }) {
       <div
         className="bg-white p-3 pb-10 shadow-lg"
         style={{
-          boxShadow: "0 8px 32px rgba(60,42,30,0.15), 0 2px 8px rgba(60,42,30,0.08)",
+          boxShadow: "0 8px 32px rgba(44,59,40,0.15), 0 2px 8px rgba(44,59,40,0.08)",
         }}
       >
         {/* Photo */}
@@ -269,7 +269,7 @@ function PhotoLightbox({ photo, onClose, onPrev, onNext, hasPrev, hasNext }) {
       animate={{ opacity: 1 }}
       exit={{    opacity: 0 }}
       className="fixed inset-0 z-50 flex items-center justify-center p-4"
-      style={{ background: "rgba(30,20,12,0.92)", backdropFilter: "blur(8px)" }}
+      style={{ background: "rgba(20,35,18,0.92)", backdropFilter: "blur(8px)" }}
       onClick={onClose}
     >
       <motion.div
@@ -498,8 +498,8 @@ function ChapterNav({ chapters, activeChapter, onChapterClick }) {
       style={{
         background:   "rgba(249,244,238,0.92)",
         backdropFilter: "blur(12px)",
-        boxShadow:    "0 8px 32px rgba(60,42,30,0.15)",
-        border:       "1px solid rgba(200,169,110,0.3)",
+        boxShadow:    "0 8px 32px rgba(44,59,40,0.15)",
+        border:       "1px solid rgba(68,92,63,0.3)",
       }}
     >
       {chapters.map((ch) => (
@@ -513,13 +513,13 @@ function ChapterNav({ chapters, activeChapter, onChapterClick }) {
             height:     activeChapter === ch.id ? "36px" : "28px",
             borderRadius: "50%",
             background: activeChapter === ch.id
-              ? "linear-gradient(135deg, #C8A96E, #D4B87A)"
+              ? "linear-gradient(135deg, #445c3f, #7d936c)"
               : "transparent",
-            color:      activeChapter === ch.id ? "#FAF6F0" : "#C8A96E",
+            color:      activeChapter === ch.id ? "#f4f6ee" : "#445c3f",
             fontSize:   activeChapter === ch.id ? "0.85rem" : "0.75rem",
             border:     activeChapter === ch.id
               ? "none"
-              : "1px solid rgba(200,169,110,0.3)",
+              : "1px solid rgba(68,92,63,0.3)",
           }}
         >
           {ch.number}
@@ -550,7 +550,7 @@ export default function LoveStory() {
         animate={{ opacity: 1 }}
         onClick={() => navigate("/")}
         className="fixed top-5 left-5 z-50 flex items-center gap-2 font-sans text-xs text-champagne/70 tracking-widest hover:text-champagne transition-colors bg-ivory/80 backdrop-blur-sm px-4 py-2 rounded-full"
-        style={{ border: "1px solid rgba(200,169,110,0.3)" }}
+        style={{ border: "1px solid rgba(68,92,63,0.3)" }}
       >
         ← Back
       </motion.button>
@@ -559,8 +559,8 @@ export default function LoveStory() {
       <div
         className="relative min-h-[55vh] flex flex-col items-center justify-center text-center px-6 py-20 overflow-hidden"
         style={{
-          background: "linear-gradient(180deg, #F0E4D4 0%, #F9F4EE 100%)",
-          borderBottom: "1px solid rgba(200,169,110,0.15)",
+          background: "linear-gradient(180deg, #d6dfc6 0%, #eceee3 100%)",
+          borderBottom: "1px solid rgba(68,92,63,0.15)",
         }}
       >
         <FloralCornerTL className="absolute top-0 left-0"   size={120} />
@@ -625,7 +625,7 @@ export default function LoveStory() {
       {/* ── CHAPTER INDEX ─────────────────────────────────────── */}
       <div
         className="py-10 px-4 text-center"
-        style={{ borderBottom: "1px solid rgba(200,169,110,0.12)" }}
+        style={{ borderBottom: "1px solid rgba(68,92,63,0.12)" }}
       >
         <p className="font-sans text-champagne tracking-[0.4em] text-xs uppercase mb-6">
           Chapters
@@ -640,10 +640,10 @@ export default function LoveStory() {
               className="px-5 py-2.5 rounded font-sans text-xs tracking-widest transition-all"
               style={{
                 background: activeChapter === ch.id
-                  ? "linear-gradient(135deg, #C8A96E, #D4B87A)"
+                  ? "linear-gradient(135deg, #445c3f, #7d936c)"
                   : "transparent",
-                color:  activeChapter === ch.id ? "#FAF6F0" : "#C8A96E",
-                border: `1px solid rgba(200,169,110,${activeChapter === ch.id ? 0 : 0.35})`,
+                color:  activeChapter === ch.id ? "#f4f6ee" : "#445c3f",
+                border: `1px solid rgba(68,92,63,${activeChapter === ch.id ? 0 : 0.35})`,
               }}
             >
               {ch.eyebrow}
@@ -669,8 +669,8 @@ export default function LoveStory() {
       <section
         className="relative py-20 px-6 text-center overflow-hidden"
         style={{
-          background: "linear-gradient(180deg, #F9F4EE 0%, #F0E4D4 100%)",
-          borderTop:  "1px solid rgba(200,169,110,0.15)",
+          background: "linear-gradient(180deg, #eceee3 0%, #d6dfc6 100%)",
+          borderTop:  "1px solid rgba(68,92,63,0.15)",
         }}
       >
         <FloralCornerBL className="absolute bottom-0 left-0"  size={110} />
@@ -718,9 +718,9 @@ export default function LoveStory() {
               onClick={() => navigate("/rsvp")}
               className="px-8 py-3.5 rounded font-sans text-xs tracking-[0.35em] uppercase"
               style={{
-                background: "linear-gradient(135deg, #C8A96E, #D4B87A)",
-                color:      "#FAF6F0",
-                boxShadow:  "0 4px 20px rgba(200,169,110,0.3)",
+                background: "linear-gradient(135deg, #445c3f, #7d936c)",
+                color:      "#f4f6ee",
+                boxShadow:  "0 4px 20px rgba(68,92,63,0.3)",
               }}
             >
               RSVP Now ✦
@@ -731,8 +731,8 @@ export default function LoveStory() {
               onClick={() => navigate("/details")}
               className="px-8 py-3.5 rounded font-sans text-xs tracking-[0.35em] uppercase"
               style={{
-                border: "1px solid rgba(200,169,110,0.4)",
-                color:  "#C8A96E",
+                border: "1px solid rgba(68,92,63,0.4)",
+                color:  "#445c3f",
               }}
             >
               View Details

@@ -1,10 +1,10 @@
-import { useState, useEffect } from "react";
+﻿import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { WEDDING } from "../../weddingConfig";
 import { FloralDivider } from "../FloralAccents/FloralSvg";
 
 function TimeBlock({ value, label }) {
-  String(item.value).padStart(2, "0")
+    const display = String(value).padStart(2, "0");
 
   return (
     <motion.div
@@ -19,9 +19,9 @@ function TimeBlock({ value, label }) {
         style={{
           width:      "72px",
           height:     "80px",
-          background: "rgba(200,169,110,0.08)",
-          border:     "1px solid rgba(200,169,110,0.25)",
-          boxShadow:  "0 4px 20px rgba(200,169,110,0.1), inset 0 1px 0 rgba(255,255,255,0.6)",
+          background: "rgba(68,92,63,0.08)",
+          border:     "1px solid rgba(68,92,63,0.25)",
+          boxShadow:  "0 4px 20px rgba(68,92,63,0.1), inset 0 1px 0 rgba(255,255,255,0.6)",
         }}
       >
         {/* Flip line */}
@@ -30,7 +30,7 @@ function TimeBlock({ value, label }) {
           style={{
             top:        "50%",
             height:     "1px",
-            background: "rgba(200,169,110,0.2)",
+            background: "rgba(68,92,63,0.2)",
           }}
         />
 

@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   WaxSeal,
@@ -9,7 +9,6 @@ import {
 } from "../FloralAccents/FloralSvg";
 import { WEDDING } from "../../weddingConfig";
 
-// Petal particle
 function Petal({ x, y, rotate, emoji, delay }) {
   return (
     <motion.div
@@ -25,7 +24,6 @@ function Petal({ x, y, rotate, emoji, delay }) {
 }
 
 export default function Envelope({ onOpen }) {
-  // stages: idle → flap → card → done
   const [stage, setStage] = useState("idle");
   const [showPetals, setShowPetals] = useState(false);
 
@@ -35,44 +33,31 @@ export default function Envelope({ onOpen }) {
     y: -(Math.random() * 280 + 60),
     rotate: Math.random() * 720 - 360,
     delay: Math.random() * 0.4,
-    emoji: ["🌸", "✿", "❀", "🌿", "✾", "🌺"][i % 6],
+    emoji: ["🌿", "🍃", "🌱", "✿", "❀", "🌾"][i % 6],
   }));
 
   function handleClick() {
-  if (stage !== "idle") return;
+    if (stage !== "idle") return;
 
-  // Step 1 — open the flap
-  setStage("flap");
+    setStage("flap");
 
-  // Step 2 — show petals
-  setTimeout(() => setShowPetals(true), 500);
-
-  // Step 3 — slide envelope away
-  setTimeout(() => setStage("card"), 900);
-
-  // Step 4 — fire BOTH the prop callback AND a global window event
-  setTimeout(() => {
-    setStage("done");
-
-    // Fire global event — guaranteed to reach Home.jsx
-    window.dispatchEvent(new Event("envelope-opened"));
-
-    // Also fire prop callback as backup
-    if (typeof onOpen === "function") {
-      onOpen();
-    }
-  }, 1600);
-}
+    setTimeout(() => setShowPetals(true), 500);
+    setTimeout(() => setStage("card"), 900);
+    setTimeout(() => {
+      setStage("done");
+      window.dispatchEvent(new Event("envelope-opened"));
+      if (typeof onOpen === "function") onOpen();
+    }, 1600);
+  }
 
   return (
     <div
       className="min-h-screen flex flex-col items-center justify-center relative overflow-hidden"
       style={{
         background:
-          "radial-gradient(ellipse 80% 70% at 50% 50%, rgba(200,169,110,0.07) 0%, transparent 70%), #F9F4EE",
+          "radial-gradient(ellipse 80% 70% at 50% 50%, rgba(68,92,63,0.08) 0%, transparent 70%), #eceee3",
       }}
     >
-
       {/* Petals burst */}
       <AnimatePresence>
         {showPetals &&
@@ -88,7 +73,7 @@ export default function Envelope({ onOpen }) {
           ))}
       </AnimatePresence>
 
-      {/* Top label — Bodoni font */}
+      {/* Top label */}
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         animate={{
@@ -101,11 +86,12 @@ export default function Envelope({ onOpen }) {
       >
         <p
           style={{
-            fontFamily: "'Bodoni Moda', 'Didot', 'Bodoni MT', 'Playfair Display', serif",
+            fontFamily:
+              "'Bodoni Moda', 'Didot', 'Bodoni MT', 'Playfair Display', serif",
             fontSize: "clamp(1rem, 3vw, 1.3rem)",
             fontStyle: "italic",
             fontWeight: 400,
-            color: "#C8A96E",
+            color: "#445c3f",
             letterSpacing: "0.25em",
             marginBottom: "6px",
           }}
@@ -114,11 +100,12 @@ export default function Envelope({ onOpen }) {
         </p>
         <p
           style={{
-            fontFamily: "'Bodoni Moda', 'Didot', 'Bodoni MT', 'Playfair Display', serif",
+            fontFamily:
+              "'Bodoni Moda', 'Didot', 'Bodoni MT', 'Playfair Display', serif",
             fontSize: "clamp(0.75rem, 2vw, 0.9rem)",
             fontStyle: "italic",
             fontWeight: 300,
-            color: "rgba(60,42,30,0.4)",
+            color: "rgba(44,59,40,0.45)",
             letterSpacing: "0.3em",
           }}
         >
@@ -145,45 +132,85 @@ export default function Envelope({ onOpen }) {
       >
         {/* Card body */}
         <div
-          className="relative bg-parchment rounded-lg"
+          className="relative rounded-lg"
           style={{
             width: "clamp(280px, 76vw, 420px)",
             height: "clamp(185px, 47vw, 262px)",
+            background: "#ccd5b5",
             boxShadow:
-              "0 28px 70px rgba(60,42,30,0.15), 0 6px 20px rgba(200,169,110,0.13)",
-            border: "1px solid rgba(200,169,110,0.28)",
+              "0 28px 70px rgba(44,59,40,0.18), 0 6px 20px rgba(68,92,63,0.15)",
+            border: "1px solid rgba(68,92,63,0.3)",
           }}
         >
           {/* Floral corners */}
-          <FloralCornerTL className="absolute top-0 left-0 pointer-events-none" size={72} />
-          <FloralCornerTR className="absolute top-0 right-0 pointer-events-none" size={72} />
-          <FloralCornerBL className="absolute bottom-0 left-0 pointer-events-none" size={72} />
-          <FloralCornerBR className="absolute bottom-0 right-0 pointer-events-none" size={72} />
+          <FloralCornerTL
+            className="absolute top-0 left-0 pointer-events-none"
+            size={72}
+          />
+          <FloralCornerTR
+            className="absolute top-0 right-0 pointer-events-none"
+            size={72}
+          />
+          <FloralCornerBL
+            className="absolute bottom-0 left-0 pointer-events-none"
+            size={72}
+          />
+          <FloralCornerBR
+            className="absolute bottom-0 right-0 pointer-events-none"
+            size={72}
+          />
 
-          {/* Fold lines SVG */}
+          {/* Fold lines */}
           <svg
             className="absolute inset-0 w-full h-full pointer-events-none"
             viewBox="0 0 420 262"
             preserveAspectRatio="none"
           >
-            <path d="M0,262 L210,146 L420,262Z" fill="rgba(200,169,110,0.05)" stroke="rgba(200,169,110,0.15)" strokeWidth="0.8" />
-            <path d="M0,0 L210,146 L0,262Z"     fill="rgba(200,169,110,0.03)" stroke="rgba(200,169,110,0.09)" strokeWidth="0.8" />
-            <path d="M420,0 L210,146 L420,262Z" fill="rgba(200,169,110,0.03)" stroke="rgba(200,169,110,0.09)" strokeWidth="0.8" />
+            <path
+              d="M0,262 L210,146 L420,262Z"
+              fill="rgba(68,92,63,0.06)"
+              stroke="rgba(68,92,63,0.18)"
+              strokeWidth="0.8"
+            />
+            <path
+              d="M0,0 L210,146 L0,262Z"
+              fill="rgba(68,92,63,0.035)"
+              stroke="rgba(68,92,63,0.1)"
+              strokeWidth="0.8"
+            />
+            <path
+              d="M420,0 L210,146 L420,262Z"
+              fill="rgba(68,92,63,0.035)"
+              stroke="rgba(68,92,63,0.1)"
+              strokeWidth="0.8"
+            />
           </svg>
 
           {/* Center text */}
-          <div className="absolute inset-0 flex flex-col items-center justify-center gap-2 pointer-events-none" style={{ zIndex: 5 }}>
-            <p className="font-sans text-champagne tracking-[0.5em] text-xs uppercase">
+          <div
+            className="absolute inset-0 flex flex-col items-center justify-center gap-2 pointer-events-none"
+            style={{ zIndex: 5 }}
+          >
+            <p
+              className="font-sans tracking-[0.5em] text-xs uppercase"
+              style={{ color: "#445c3f" }}
+            >
               You're Invited
             </p>
             <div className="flex items-center gap-3">
-              <div className="h-px w-10 bg-champagne/30" />
-              <span className="text-dusty text-sm">✦</span>
-              <div className="h-px w-10 bg-champagne/30" />
+              <div
+                className="h-px w-10"
+                style={{ background: "rgba(68,92,63,0.35)" }}
+              />
+              <span style={{ color: "#7d936c" }}>✦</span>
+              <div
+                className="h-px w-10"
+                style={{ background: "rgba(68,92,63,0.35)" }}
+              />
             </div>
             <p
-              className="font-script italic text-espresso/50 text-base"
-              style={{ fontWeight: 300 }}
+              className="font-script italic text-base"
+              style={{ fontWeight: 300, color: "rgba(44,59,40,0.6)" }}
             >
               {WEDDING.bride} & {WEDDING.groom}
             </p>
@@ -192,15 +219,23 @@ export default function Envelope({ onOpen }) {
           {/* Animated flap */}
           <motion.div
             className="absolute top-0 left-0 w-full pointer-events-none overflow-hidden"
-            style={{ height: "131px", transformOrigin: "top center", zIndex: 20 }}
+            style={{
+              height: "131px",
+              transformOrigin: "top center",
+              zIndex: 20,
+            }}
             animate={{ rotateX: stage !== "idle" ? -178 : 0 }}
             transition={{ duration: 0.5, ease: "easeInOut" }}
           >
-            <svg viewBox="0 0 420 131" className="w-full h-full" preserveAspectRatio="none">
+            <svg
+              viewBox="0 0 420 131"
+              className="w-full h-full"
+              preserveAspectRatio="none"
+            >
               <path
                 d="M0,0 L420,0 L210,131Z"
-                fill="#E2D4BC"
-                stroke="rgba(200,169,110,0.2)"
+                fill="#aab992"
+                stroke="rgba(68,92,63,0.25)"
                 strokeWidth="0.8"
               />
             </svg>
@@ -239,20 +274,22 @@ export default function Envelope({ onOpen }) {
               ? { duration: 2.5, repeat: Infinity, ease: "easeInOut" }
               : { duration: 0.2 }
           }
-          className="text-center mt-5 font-sans text-champagne/60 text-xs tracking-[0.45em] uppercase pointer-events-none"
+          className="text-center mt-5 font-sans text-xs tracking-[0.45em] uppercase pointer-events-none"
+          style={{ color: "rgba(68,92,63,0.6)" }}
         >
           Tap to Open
         </motion.p>
       </motion.div>
 
-      {/* Opening text */}
+      {/* Opening hint */}
       <AnimatePresence>
         {stage === "flap" && (
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="absolute bottom-16 font-sans text-champagne/40 text-xs tracking-widest"
+            className="absolute bottom-16 font-sans text-xs tracking-widest"
+            style={{ color: "rgba(68,92,63,0.45)" }}
           >
             Opening your invitation...
           </motion.p>

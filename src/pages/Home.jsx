@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+﻿import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import Envelope from "../components/Envelope/Envelope";
@@ -29,9 +29,9 @@ function LoveStoryPreview() {
     <section
       className="py-16 px-4 relative overflow-hidden"
       style={{
-        background: "linear-gradient(180deg, #F9F4EE 0%, #F0E8DC 100%)",
-        borderTop: "1px solid rgba(200,169,110,0.12)",
-        borderBottom: "1px solid rgba(200,169,110,0.12)",
+        background: "linear-gradient(180deg, #eceee3 0%, #d6dfc6 100%)",
+        borderTop: "1px solid rgba(68,92,63,0.12)",
+        borderBottom: "1px solid rgba(68,92,63,0.12)",
       }}
     >
       <FloralCornerTL className="absolute top-0 left-0" size={90} />
@@ -70,7 +70,7 @@ function LoveStoryPreview() {
               className="bg-white p-2.5 pb-10 relative"
               style={{
                 transform: "rotate(" + [-1.5, 1, -0.8, 1.8, -1.2][i] + "deg)",
-                boxShadow: "0 6px 20px rgba(60,42,30,0.12)",
+                boxShadow: "0 6px 20px rgba(44,59,40,0.12)",
               }}
             >
               <div style={{ aspectRatio: "4/3", overflow: "hidden" }}>
@@ -102,9 +102,9 @@ function LoveStoryPreview() {
           onClick={() => navigate("/love-story")}
           className="px-8 py-3.5 rounded font-sans text-xs tracking-[0.35em] uppercase"
           style={{
-            background: "linear-gradient(135deg, #C8A96E, #D4B87A)",
-            color: "#FAF6F0",
-            boxShadow: "0 4px 20px rgba(200,169,110,0.3)",
+            background: "linear-gradient(135deg, #445c3f, #7d936c)",
+            color: "#f4f6ee",
+            boxShadow: "0 4px 20px rgba(68,92,63,0.3)",
           }}
         >
           Read Our Story
@@ -118,13 +118,13 @@ function GalleryPreview() {
   const navigate = useNavigate();
   const placeholders = Array.from({ length: 6 }, (_, i) => ({
     id: i,
-    color: ["#FAF0E8","#F4F7F0","#FAF6F0","#FDF0F5","#F0EDF8","#F0E8DC"][i],
+    color: ["#eceee3","#eceee3","#f4f6ee","#eceee3","#eceee3","#d6dfc6"][i],
   }));
 
   return (
     <section
       className="py-16 px-4 relative overflow-hidden"
-      style={{ background: "#F9F4EE" }}
+      style={{ background: "#eceee3" }}
     >
       <FloralCornerBL className="absolute bottom-0 left-0" size={90} />
       <FloralCornerBR className="absolute bottom-0 right-0" size={90} />
@@ -175,8 +175,8 @@ function GalleryPreview() {
           onClick={() => navigate("/gallery")}
           className="px-8 py-3.5 rounded font-sans text-xs tracking-[0.35em] uppercase"
           style={{
-            border: "1px solid rgba(200,169,110,0.4)",
-            color: "#C8A96E",
+            border: "1px solid rgba(68,92,63,0.4)",
+            color: "#445c3f",
           }}
         >
           View Gallery
@@ -194,40 +194,40 @@ function QuickLinks() {
       label: "RSVP",
       sub: "Confirm attendance",
       path: "/rsvp",
-      bg: "linear-gradient(135deg, #C8A96E, #D4B87A)",
-      color: "#FAF6F0",
+      bg: "linear-gradient(135deg, #445c3f, #7d936c)",
+      color: "#f4f6ee",
     },
     {
       icon: "📋",
       label: "Details",
       sub: "Venue and timeline",
       path: "/details",
-      bg: "rgba(200,169,110,0.08)",
-      color: "#3C2A1E",
-      border: "1px solid rgba(200,169,110,0.25)",
+      bg: "rgba(68,92,63,0.08)",
+      color: "#2c3b28",
+      border: "1px solid rgba(68,92,63,0.25)",
     },
     {
       icon: "📖",
       label: "Our Story",
       sub: "Five chapters of love",
       path: "/love-story",
-      bg: "rgba(156,175,136,0.12)",
-      color: "#3C2A1E",
-      border: "1px solid rgba(156,175,136,0.3)",
+      bg: "rgba(125,147,108,0.12)",
+      color: "#2c3b28",
+      border: "1px solid rgba(125,147,108,0.3)",
     },
     {
       icon: "📷",
       label: "Gallery",
       sub: "Share your memories",
       path: "/gallery",
-      bg: "rgba(201,169,166,0.12)",
-      color: "#3C2A1E",
-      border: "1px solid rgba(201,169,166,0.3)",
+      bg: "rgba(170,185,146,0.12)",
+      color: "#2c3b28",
+      border: "1px solid rgba(170,185,146,0.3)",
     },
   ];
 
   return (
-    <section className="py-12 px-4" style={{ background: "#FAF6F0" }}>
+    <section className="py-12 px-4" style={{ background: "#f4f6ee" }}>
       <p className="font-sans text-champagne tracking-[0.5em] text-xs uppercase text-center mb-8">
         Everything You Need
       </p>
@@ -241,7 +241,7 @@ function QuickLinks() {
               background: link.bg,
               border: link.border || "none",
               color: link.color,
-              boxShadow: "0 4px 16px rgba(60,42,30,0.06)",
+              boxShadow: "0 4px 16px rgba(44,59,40,0.06)",
             }}
           >
             <span className="text-2xl">{link.icon}</span>
@@ -273,9 +273,9 @@ function InvitationHome() {
         <section
           className="py-12 px-4"
           style={{
-            background: "linear-gradient(180deg, #F0E8DC 0%, #F9F4EE 100%)",
-            borderTop: "1px solid rgba(200,169,110,0.12)",
-            borderBottom: "1px solid rgba(200,169,110,0.12)",
+            background: "linear-gradient(180deg, #d6dfc6 0%, #eceee3 100%)",
+            borderTop: "1px solid rgba(68,92,63,0.12)",
+            borderBottom: "1px solid rgba(68,92,63,0.12)",
           }}
         >
           <CountdownTimer variant="full" />

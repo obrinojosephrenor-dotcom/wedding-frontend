@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+﻿import { useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   FloralCornerTL, FloralCornerTR,
@@ -128,8 +128,8 @@ export default function GuestUpload() {
           transition={{ duration: 0.7 }}
           className="relative text-center max-w-sm w-full bg-ivory rounded-lg px-8 py-12"
           style={{
-            boxShadow: "0 24px 64px rgba(60,42,30,0.12)",
-            border:    "1px solid rgba(200,169,110,0.25)",
+            boxShadow: "0 24px 64px rgba(44,59,40,0.12)",
+            border:    "1px solid rgba(68,92,63,0.25)",
           }}
         >
           <FloralCornerTL className="absolute top-0 left-0"     size={70} />
@@ -148,8 +148,8 @@ export default function GuestUpload() {
               <div
                 className="w-16 h-16 rounded-full flex items-center justify-center text-2xl"
                 style={{
-                  background: "linear-gradient(135deg, #C8A96E, #D4B87A)",
-                  boxShadow:  "0 8px 24px rgba(200,169,110,0.35)",
+                  background: "linear-gradient(135deg, #445c3f, #7d936c)",
+                  boxShadow:  "0 8px 24px rgba(68,92,63,0.35)",
                 }}
               >
                 ✦
@@ -206,9 +206,9 @@ export default function GuestUpload() {
                 onClick={handleReset}
                 className="w-full py-3 rounded font-sans text-xs tracking-[0.35em] uppercase"
                 style={{
-                  background: "linear-gradient(135deg, #C8A96E, #D4B87A)",
-                  color:      "#FAF6F0",
-                  boxShadow:  "0 4px 16px rgba(200,169,110,0.3)",
+                  background: "linear-gradient(135deg, #445c3f, #7d936c)",
+                  color:      "#f4f6ee",
+                  boxShadow:  "0 4px 16px rgba(68,92,63,0.3)",
                 }}
               >
                 Share Another Photo
@@ -235,8 +235,8 @@ export default function GuestUpload() {
         transition={{ duration: 0.8 }}
         className="relative w-full max-w-sm bg-ivory rounded-lg px-7 py-9"
         style={{
-          boxShadow: "0 20px 60px rgba(60,42,30,0.1)",
-          border:    "1px solid rgba(200,169,110,0.2)",
+          boxShadow: "0 20px 60px rgba(44,59,40,0.1)",
+          border:    "1px solid rgba(68,92,63,0.2)",
         }}
       >
         <FloralCornerTL className="absolute top-0 left-0"     size={75} />
@@ -266,9 +266,9 @@ export default function GuestUpload() {
             <div
               className="inline-block px-3 py-1 rounded-full font-sans text-xs"
               style={{
-                background: "rgba(200,169,110,0.1)",
-                color:      "#C8A96E",
-                border:     "1px solid rgba(200,169,110,0.25)",
+                background: "rgba(68,92,63,0.1)",
+                color:      "#445c3f",
+                border:     "1px solid rgba(68,92,63,0.25)",
               }}
             >
               📍 Table {tableNumber}
@@ -313,8 +313,8 @@ export default function GuestUpload() {
                 <div
                   className="flex flex-col items-center justify-center gap-3 py-10 rounded-lg transition-all"
                   style={{
-                    border:     "2px dashed rgba(200,169,110,0.35)",
-                    background: "rgba(200,169,110,0.03)",
+                    border:     "2px dashed rgba(68,92,63,0.35)",
+                    background: "rgba(68,92,63,0.03)",
                   }}
                 >
                   <motion.div
@@ -401,12 +401,12 @@ export default function GuestUpload() {
                 {/* Progress bar */}
                 <div
                   className="w-full h-1.5 rounded-full mb-3 overflow-hidden"
-                  style={{ background: "rgba(200,169,110,0.15)" }}
+                  style={{ background: "rgba(68,92,63,0.15)" }}
                 >
                   <motion.div
                     className="h-full rounded-full"
                     style={{
-                      background: "linear-gradient(135deg, #C8A96E, #D4B87A)",
+                      background: "linear-gradient(135deg, #445c3f, #7d936c)",
                       width:      `${progress}%`,
                     }}
                     transition={{ duration: 0.3 }}
@@ -431,14 +431,14 @@ export default function GuestUpload() {
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y:  0 }}
                 exit={{    opacity: 0, y: 10 }}
-                whileHover={{ scale: 1.02, boxShadow: "0 8px 28px rgba(200,169,110,0.35)" }}
+                whileHover={{ scale: 1.02, boxShadow: "0 8px 28px rgba(68,92,63,0.35)" }}
                 whileTap={{ scale: 0.97 }}
                 onClick={handleUpload}
                 className="w-full py-4 rounded font-sans text-xs tracking-[0.4em] uppercase"
                 style={{
-                  background: "linear-gradient(135deg, #C8A96E, #D4B87A)",
-                  color:      "#FAF6F0",
-                  boxShadow:  "0 4px 20px rgba(200,169,110,0.25)",
+                  background: "linear-gradient(135deg, #445c3f, #7d936c)",
+                  color:      "#f4f6ee",
+                  boxShadow:  "0 4px 20px rgba(68,92,63,0.25)",
                 }}
               >
                 Share This Photo ✦

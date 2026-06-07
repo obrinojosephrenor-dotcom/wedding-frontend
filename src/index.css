@@ -13,18 +13,16 @@ html {
 }
 
 body {
-  background-color: #F9F4EE;
-  color: #3C2A1E;
+  background-color: #eceee3;
+  color: #2c3b28;
   font-family: 'Lato', sans-serif;
   overflow-x: hidden;
 }
 
-/* Scrollbar */
 ::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: #F9F4EE; }
-::-webkit-scrollbar-thumb { background: #C8A96E; border-radius: 3px; }
+::-webkit-scrollbar-track { background: #eceee3; }
+::-webkit-scrollbar-thumb { background: #7d936c; border-radius: 3px; }
 
-/* Paper texture overlay */
 .paper-texture {
   position: relative;
 }
@@ -37,50 +35,17 @@ body {
   z-index: 0;
 }
 
-/* Deckled edge effect */
-.deckled-top {
-  clip-path: polygon(
-    0% 3%, 2% 0%, 4% 2%, 6% 0%, 8% 3%, 10% 1%,
-    12% 3%, 14% 0%, 16% 2%, 18% 0%, 20% 3%, 22% 1%,
-    24% 3%, 26% 0%, 28% 2%, 30% 0%, 32% 3%, 34% 1%,
-    36% 3%, 38% 0%, 40% 2%, 42% 0%, 44% 3%, 46% 1%,
-    48% 3%, 50% 0%, 52% 2%, 54% 0%, 56% 3%, 58% 1%,
-    60% 3%, 62% 0%, 64% 2%, 66% 0%, 68% 3%, 70% 1%,
-    72% 3%, 74% 0%, 76% 2%, 78% 0%, 80% 3%, 82% 1%,
-    84% 3%, 86% 0%, 88% 2%, 90% 0%, 92% 3%, 94% 1%,
-    96% 3%, 98% 0%, 100% 2%,
-    100% 100%, 0% 100%
-  );
-}
-
-/* Floral divider */
-.floral-divider {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  text-align: center;
-}
-.floral-divider::before,
-.floral-divider::after {
-  content: '';
-  flex: 1;
-  height: 1px;
-  background: linear-gradient(to right, transparent, #C8A96E, transparent);
-}
-
-/* Gold shimmer text */
 .gold-text {
-  background: linear-gradient(135deg, #C8A96E, #E8C88A, #C8A96E);
+  background: linear-gradient(135deg, #445c3f, #7d936c, #445c3f);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
-/* Card hover lift */
 .card-hover {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 .card-hover:hover {
   transform: translateY(-4px);
-  box-shadow: 0 20px 60px rgba(200, 169, 110, 0.2);
+  box-shadow: 0 20px 60px rgba(68,92,63,0.15);
 }

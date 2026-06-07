@@ -1,4 +1,4 @@
-import { useState } from "react";
+﻿import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import {
@@ -27,8 +27,8 @@ function DetailCard({ children, className = "", style = {} }) {
     <div
       className={`relative bg-ivory rounded-lg px-7 py-7 ${className}`}
       style={{
-        boxShadow: "0 8px 40px rgba(60,42,30,0.08)",
-        border: "1px solid rgba(200,169,110,0.2)",
+        boxShadow: "0 8px 40px rgba(44,59,40,0.08)",
+        border: "1px solid rgba(68,92,63,0.2)",
         ...style,
       }}
     >
@@ -61,7 +61,7 @@ function FAQItem({ question, answer }) {
   return (
     <div
       className="border-b last:border-b-0 cursor-pointer"
-      style={{ borderColor: "rgba(200,169,110,0.15)" }}
+      style={{ borderColor: "rgba(68,92,63,0.15)" }}
       onClick={() => setOpen((p) => !p)}
     >
       <div className="flex items-center justify-between py-4 gap-4">
@@ -99,13 +99,13 @@ function TimelineItem({ time, title, description, last = false }) {
       <div className="flex flex-col items-center flex-shrink-0">
         <div
           className="w-3 h-3 rounded-full mt-1 flex-shrink-0"
-          style={{ background: "linear-gradient(135deg, #C8A96E, #D4B87A)" }}
+          style={{ background: "linear-gradient(135deg, #445c3f, #7d936c)" }}
         />
         {!last && (
           <div
             className="w-px flex-1 mt-1"
             style={{
-              background: "rgba(200,169,110,0.25)",
+              background: "rgba(68,92,63,0.25)",
               minHeight: "40px",
             }}
           />
@@ -131,7 +131,7 @@ function ColorSwatch({ name, hex }) {
     <div className="flex flex-col items-center gap-2">
       <div
         className="w-12 h-12 rounded-full shadow-sm"
-        style={{ background: hex, border: "1px solid rgba(60,42,30,0.08)" }}
+        style={{ background: hex, border: "1px solid rgba(44,59,40,0.08)" }}
       />
       <p className="font-sans text-espresso/60 text-xs text-center leading-tight">
         {name}
@@ -211,7 +211,7 @@ export default function Details() {
         animate={{ opacity: 1 }}
         onClick={() => navigate("/")}
         className="fixed top-5 left-5 z-50 flex items-center gap-2 font-sans text-xs text-champagne/70 tracking-widest hover:text-champagne transition-colors bg-ivory/80 backdrop-blur-sm px-4 py-2 rounded-full"
-        style={{ border: "1px solid rgba(200,169,110,0.3)" }}
+        style={{ border: "1px solid rgba(68,92,63,0.3)" }}
       >
         Back
       </motion.button>
@@ -220,8 +220,8 @@ export default function Details() {
       <div
         className="relative text-center py-20 px-6 overflow-hidden"
         style={{
-          background: "linear-gradient(180deg, #F0E8DC 0%, #F9F4EE 100%)",
-          borderBottom: "1px solid rgba(200,169,110,0.15)",
+          background: "linear-gradient(180deg, #d6dfc6 0%, #eceee3 100%)",
+          borderBottom: "1px solid rgba(68,92,63,0.15)",
         }}
       >
         <FloralCornerTL className="absolute top-0 left-0" size={110} />
@@ -257,7 +257,7 @@ export default function Details() {
       {/* COUNTDOWN */}
       <div
         className="py-4 px-6"
-        style={{ borderBottom: "1px solid rgba(200,169,110,0.12)" }}
+        style={{ borderBottom: "1px solid rgba(68,92,63,0.12)" }}
       >
         <CountdownTimer variant="full" />
       </div>
@@ -296,7 +296,7 @@ export default function Details() {
             eyebrow="Where We Celebrate"
             title="The Reception"
           />
-          <DetailCard style={{ background: "#FAF0E8" }}>
+          <DetailCard style={{ background: "#eceee3" }}>
             <FloralCornerTR className="absolute top-0 right-0" size={60} />
             <FloralCornerBL className="absolute bottom-0 left-0" size={60} />
             <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -375,7 +375,7 @@ export default function Details() {
         {/* DRESS CODE */}
         <Section delay={0.1}>
           <SectionHeading eyebrow="What to Wear" title="Dress Code" />
-          <DetailCard style={{ background: "#F4F7F0" }}>
+          <DetailCard style={{ background: "#eceee3" }}>
             <div className="text-center mb-6">
               <p
                 className="font-script italic text-espresso/70 text-xl mb-2"
@@ -394,19 +394,19 @@ export default function Details() {
                 Suggested Color Palette
               </p>
               <div className="flex justify-center gap-5 flex-wrap">
-                <ColorSwatch name="Ivory" hex="#FAF6F0" />
-                <ColorSwatch name="Champagne" hex="#C8A96E" />
-                <ColorSwatch name="Dusty Rose" hex="#C9A9A6" />
-                <ColorSwatch name="Sage" hex="#9CAF88" />
-                <ColorSwatch name="Parchment" hex="#E8DCC8" />
-                <ColorSwatch name="Espresso" hex="#3C2A1E" />
+                <ColorSwatch name="Ivory" hex="#f4f6ee" />
+                <ColorSwatch name="Champagne" hex="#445c3f" />
+                <ColorSwatch name="Dusty Rose" hex="#aab992" />
+                <ColorSwatch name="Sage" hex="#7d936c" />
+                <ColorSwatch name="Parchment" hex="#ccd5b5" />
+                <ColorSwatch name="Espresso" hex="#2c3b28" />
               </div>
             </div>
             <div
               className="mt-6 p-4 rounded text-center"
               style={{
                 background: "rgba(201,169,110,0.08)",
-                border: "1px solid rgba(200,169,110,0.2)",
+                border: "1px solid rgba(68,92,63,0.2)",
               }}
             >
               <p className="font-sans text-espresso/50 text-xs">
@@ -454,13 +454,13 @@ export default function Details() {
                 <div
                   key={i}
                   className="flex gap-4 pb-5 last:pb-0 border-b last:border-b-0"
-                  style={{ borderColor: "rgba(200,169,110,0.12)" }}
+                  style={{ borderColor: "rgba(68,92,63,0.12)" }}
                 >
                   <div
                     className="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 font-sans text-xs font-bold"
                     style={{
-                      background: "rgba(200,169,110,0.15)",
-                      color: "#C8A96E",
+                      background: "rgba(68,92,63,0.15)",
+                      color: "#445c3f",
                     }}
                   >
                     {item.icon}
@@ -517,7 +517,7 @@ export default function Details() {
                 <DetailCard
                   className="h-full"
                   style={{
-                    background: i % 2 === 0 ? "#FAF6F0" : "#FAF0E8",
+                    background: i % 2 === 0 ? "#f4f6ee" : "#eceee3",
                   }}
                 >
                   <p className="font-sans text-champagne/70 text-xs mb-1">
@@ -532,9 +532,9 @@ export default function Details() {
                   <p
                     className="font-sans text-xs px-3 py-1.5 rounded inline-block"
                     style={{
-                      background: "rgba(200,169,110,0.1)",
-                      color: "#C8A96E",
-                      border: "1px solid rgba(200,169,110,0.2)",
+                      background: "rgba(68,92,63,0.1)",
+                      color: "#445c3f",
+                      border: "1px solid rgba(68,92,63,0.2)",
                     }}
                   >
                     {hotel.note}
@@ -567,8 +567,8 @@ export default function Details() {
     rel="noreferrer"
     className="flex-1 text-center py-2.5 rounded font-sans text-xs tracking-[0.3em] uppercase transition-all"
     style={{
-      background: "linear-gradient(135deg, #C8A96E, #D4B87A)",
-      color: "#FAF6F0",
+      background: "linear-gradient(135deg, #445c3f, #7d936c)",
+      color: "#f4f6ee",
       textDecoration: "none",
     }}
   >
@@ -581,8 +581,8 @@ export default function Details() {
     rel="noreferrer"
     className="flex-1 text-center py-2.5 rounded font-sans text-xs tracking-[0.3em] uppercase transition-all"
     style={{
-      border: "1px solid rgba(200,169,110,0.4)",
-      color: "#C8A96E",
+      border: "1px solid rgba(68,92,63,0.4)",
+      color: "#445c3f",
       textDecoration: "none",
     }}
   >
@@ -625,9 +625,9 @@ export default function Details() {
     href={"mailto:" + WEDDING.contact.email}
     className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded font-sans text-xs tracking-[0.3em] uppercase transition-all"
     style={{
-      background: "linear-gradient(135deg, #C8A96E, #D4B87A)",
-      color: "#FAF6F0",
-      boxShadow: "0 4px 16px rgba(200,169,110,0.25)",
+      background: "linear-gradient(135deg, #445c3f, #7d936c)",
+      color: "#f4f6ee",
+      boxShadow: "0 4px 16px rgba(68,92,63,0.25)",
       textDecoration: "none",
     }}
   >
@@ -638,8 +638,8 @@ export default function Details() {
     href={"tel:" + WEDDING.contact.phone}
     className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded font-sans text-xs tracking-[0.3em] uppercase transition-all"
     style={{
-      border: "1px solid rgba(200,169,110,0.4)",
-      color: "#C8A96E",
+      border: "1px solid rgba(68,92,63,0.4)",
+      color: "#445c3f",
       textDecoration: "none",
     }}
   >

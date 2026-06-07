@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+﻿import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import CountdownTimer from "../CountdownTimer/CountdownTimer";
 import {
@@ -17,9 +17,9 @@ return (
     aria-label={label}
     className="w-9 h-9 rounded-full flex items-center justify-center font-sans text-sm transition-all duration-200"
     style={{
-      background: "rgba(200,169,110,0.1)",
-      border: "1px solid rgba(200,169,110,0.25)",
-      color: "#C8A96E",
+      background: "rgba(68,92,63,0.1)",
+      border: "1px solid rgba(68,92,63,0.25)",
+      color: "#445c3f",
       textDecoration: "none",
     }}
   >
@@ -47,8 +47,8 @@ export default function Footer() {
     <footer
       className="relative overflow-hidden"
       style={{
-        background: "linear-gradient(180deg, #2A1F16 0%, #1C1410 100%)",
-        borderTop:  "1px solid rgba(200,169,110,0.15)",
+        background: "linear-gradient(180deg, #1e2d1a 0%, #131e10 100%)",
+        borderTop:  "1px solid rgba(68,92,63,0.15)",
       }}
     >
       {/* Floral corners */}
@@ -65,7 +65,7 @@ export default function Footer() {
       <div
         className="w-full h-px"
         style={{
-          background: "linear-gradient(to right, transparent, rgba(200,169,110,0.4), transparent)",
+          background: "linear-gradient(to right, transparent, rgba(68,92,63,0.4), transparent)",
         }}
       />
 
@@ -88,7 +88,7 @@ export default function Footer() {
             style={{
               fontSize:  "clamp(1.6rem, 5vw, 2.4rem)",
               fontWeight: 300,
-              background: "linear-gradient(135deg, #C8A96E, #E8C88A, #C8A96E)",
+              background: "linear-gradient(135deg, #445c3f, #aab992, #445c3f)",
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent",
               backgroundClip: "text",
@@ -106,27 +106,6 @@ export default function Footer() {
               year:  "numeric",
             })}
           </p>
-        </motion.div>
-
-        {/* ── Divider ───────────────────────────────────────── */}
-        <div className="flex justify-center mb-8">
-          <FloralDivider />
-        </div>
-
-        {/* ── Countdown ─────────────────────────────────────── */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.1 }}
-          className="mb-10"
-        >
-          <p
-            className="text-center font-sans text-ivory/30 tracking-[0.45em] text-xs uppercase mb-5"
-          >
-            Counting Down
-          </p>
-          <CountdownTimer variant="compact" />
         </motion.div>
 
         {/* ── Divider ───────────────────────────────────────── */}
@@ -175,7 +154,7 @@ export default function Footer() {
             style={{
               fontSize:  "clamp(1.3rem, 4vw, 1.8rem)",
               fontWeight: 300,
-              background: "linear-gradient(135deg, #C8A96E, #E8C88A)",
+              background: "linear-gradient(135deg, #445c3f, #aab992)",
               WebkitBackgroundClip: "text",
               WebkitTextFillColor:  "transparent",
               backgroundClip: "text",
@@ -261,7 +240,7 @@ export default function Footer() {
         <div
           className="w-full h-px mb-6"
           style={{
-            background: "linear-gradient(to right, transparent, rgba(200,169,110,0.2), transparent)",
+            background: "linear-gradient(to right, transparent, rgba(68,92,63,0.2), transparent)",
           }}
         />
 
@@ -289,7 +268,7 @@ export default function Footer() {
       <div
         className="absolute bottom-0 left-0 right-0 h-24 pointer-events-none"
         style={{
-          background: "radial-gradient(ellipse 60% 100% at 50% 100%, rgba(200,169,110,0.06) 0%, transparent 70%)",
+          background: "radial-gradient(ellipse 60% 100% at 50% 100%, rgba(68,92,63,0.06) 0%, transparent 70%)",
         }}
       />
     </footer>
