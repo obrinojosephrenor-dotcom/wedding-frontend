@@ -1,12 +1,6 @@
 ﻿import { useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useNavigate } from "react-router-dom";
-import {
-  FloralCornerTL, FloralCornerTR,
-  FloralCornerBL, FloralCornerBR,
-  FloralDivider, WaxSeal,
-} from "../components/FloralAccents/FloralSvg";
-import FloralAccents from "../components/FloralAccents/FloralAccents";
 import { WEDDING } from "../weddingConfig";
 
 // ─── Chapter data ──────────────────────────────────────────────────
