@@ -1,9 +1,12 @@
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import {
-  FloralCornerTL, FloralCornerTR,
-  FloralCornerBL, FloralCornerBR,
-  FloralDivider, WaxSeal,
+  FloralCornerTL,
+  FloralCornerTR,
+  FloralCornerBL,
+  FloralCornerBR,
+  FloralDivider,
+  WaxSeal,
 } from "../components/FloralAccents/FloralSvg";
 import { WEDDING } from "../weddingConfig";
 
