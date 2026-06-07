@@ -254,8 +254,6 @@ export default function Details() {
               {[
                 { label: "Venue",   value: WEDDING.reception.venue },
                 { label: "Address", value: WEDDING.reception.address },
-                { label: "Time",    value: WEDDING.reception.time },
-                { label: "Note",    value: "Dinner, dancing and celebration!" },
               ].map((item, i) => (
                 <div key={i}>
                   <p className="font-sans text-champagne text-xs tracking-widest uppercase mb-1">
