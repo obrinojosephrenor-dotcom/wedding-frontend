@@ -7,53 +7,52 @@ import {
 } from "../components/FloralAccents/FloralSvg";
 import { WEDDING } from "../weddingConfig";
 
-// ─── Update these with your real entourage names ───────────────────
-const ENTOURAGE = {
-  parents: {
-    bride: [
-      { role: "Father of the Bride", name: "Mr. Jeanelito D. Singzon" },
-      { role: "Mother of the Bride", name: "Dolores D. Singzon" },
-    ],
-    groom: [
-      { role: "Father of the Groom", name: "Mr. Noel F. Jackson" },
-      { role: "Mother of the Groom", name: "Ms. Rowena D. Obrino" },
-    ],
-  },
-  principal: {
-    sponsors: [
-      { role: "Principal Sponsor", name: "Dr. Gil Leovigildo A. Ancheta, CPA" },
-      { role: "Principal Sponsor", name: "Mrs. Thelma N. Mawo" },
-      { role: "Principal Sponsor", name: "Atty. Jospeh G. Dinoy" },
-      { role: "Principal Sponsor", name: "Mrs. Adela L. Conejos" },
-      { role: "Principal Sponsor", name: "Mr. Renato A. Loberiano" },
-      { role: "Principal Sponsor", name: "Mrs. Ma. Merlie J. Loberiano" },
-      { role: "Principal Sponsor", name: "Atty. Calick D. Arrieta" },
-      { role: "Principal Sponsor", name: "Mrs. Ellen C. Obrino" },
-      { role: "Principal Sponsor", name: "Mr. Ruel F. Jackson" },
-      { role: "Principal Sponsor", name: "Mrs. Lohea E. Jackson" },
-      { role: "Principal Sponsor", name: "Mr. Edgardo J. Mascarinas" },
-      { role: "Principal Sponsor", name: "Mrs. Rosita I. Mascarinas" },
-    ],
-  },
-  secondary: {
-    bearers: [
-      { role: "Best Man",        name: "Claude P. Kirke" },
-      { role: "Maid of Honor",   name: "Mary Bessa Red Lee" },
-    ],
+// ─── Update all names here ─────────────────────────────────────────
+const BRIDE_PARENTS = [
+  { role: "Father of the Bride", name: "Juan dela Cruz" },
+  { role: "Mother of the Bride", name: "Maria dela Cruz" },
+];
 
-    bearers2: [
-      { role: "CANDLE",     name: "Kenneth L. Bote", name: "Jeanelou S. Agura"},
-      { role: "CORD",    name: "Joemar Gabriel A. Rallestan", name: "Cianne B. Allequir"},
-      {role: "VEIL",    name: "Jherome Rosales", name: "April O. Allequir"},
-      {role: "COIN BEARER",     name: "Franco Emmanuel Toquero"},
-      {role: "RING BEARER",     name: "Avery Allison S. Obrino"},
-      {role: "BIBLE BEARER",    name: "Sam Thomas Aliman"},
-      {role: "FLOWER GIRL",     name: "Alessia Vrielle O. Jabonite"}
-    ],
-  },
-};
+const GROOM_PARENTS = [
+  { role: "Father of the Groom", name: "Pedro Santos" },
+  { role: "Mother of the Groom", name: "Rosa Santos" },
+];
 
-// ─── Single person card ────────────────────────────────────────────
+const PRINCIPAL_SPONSORS = [
+  { role: "Principal Sponsor", name: "Mr. & Mrs. Alfonso Reyes" },
+  { role: "Principal Sponsor", name: "Mr. & Mrs. Benjamin Cruz" },
+  { role: "Principal Sponsor", name: "Mr. & Mrs. Carlos Lim" },
+  { role: "Principal Sponsor", name: "Mr. & Mrs. David Tan" },
+  { role: "Principal Sponsor", name: "Mr. & Mrs. Eduardo Santos" },
+  { role: "Principal Sponsor", name: "Mr. & Mrs. Francisco Garcia" },
+];
+
+const HONOR_PARTY = [
+  { role: "Best Man",      name: "Miguel Santos" },
+  { role: "Maid of Honor", name: "Sofia Reyes" },
+];
+
+const GROOMSMEN = [
+  { role: "Groomsman", name: "Andrei Villanueva" },
+  { role: "Groomsman", name: "Rafael Gomez" },
+  { role: "Groomsman", name: "Marco Dela Torre" },
+];
+
+const BRIDESMAIDS = [
+  { role: "Bridesmaid", name: "Isabella Cruz" },
+  { role: "Bridesmaid", name: "Camille Reyes" },
+  { role: "Bridesmaid", name: "Angela Santos" },
+];
+
+const LITTLE_ONES = [
+  { role: "Ring Bearer",  name: "Liam Santos" },
+  { role: "Coin Bearer",  name: "Noah Reyes" },
+  { role: "Bible Bearer", name: "Ethan Cruz" },
+  { role: "Flower Girl",  name: "Mia Villanueva" },
+  { role: "Flower Girl",  name: "Ella Gomez" },
+];
+
+// ─── Reusable components ───────────────────────────────────────────
 function PersonCard({ role, name, delay = 0 }) {
   return (
     <motion.div
@@ -68,18 +67,14 @@ function PersonCard({ role, name, delay = 0 }) {
       }}
     >
       <p
-        className="font-sans text-xs tracking-widest uppercase mb-1"
-        style={{ color: "#7d936c" }}
+        className="font-sans tracking-widest uppercase mb-1"
+        style={{ color: "#7d936c", fontSize: "9px" }}
       >
         {role}
       </p>
       <p
         className="font-script italic"
-        style={{
-          fontSize: "1.05rem",
-          fontWeight: 300,
-          color: "#2c3b28",
-        }}
+        style={{ fontSize: "1.05rem", fontWeight: 300, color: "#2c3b28" }}
       >
         {name}
       </p>
@@ -87,22 +82,23 @@ function PersonCard({ role, name, delay = 0 }) {
   );
 }
 
-// ─── Section block ─────────────────────────────────────────────────
-function EntourageSection({ title, eyebrow, children, bg = "#f4f6ee" }) {
+function EntourageSection({ eyebrow, title, bg, children }) {
   return (
-    <motion.section
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.7 }}
+    <section
       className="py-12 px-4"
       style={{
-        background: bg,
+        background: bg || "#f4f6ee",
         borderBottom: "1px solid rgba(68,92,63,0.08)",
       }}
     >
       <div className="max-w-2xl mx-auto">
-        <div className="text-center mb-8">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
+          className="text-center mb-8"
+        >
           <p
             className="font-sans tracking-[0.45em] text-xs uppercase mb-2"
             style={{ color: "#445c3f" }}
@@ -122,10 +118,10 @@ function EntourageSection({ title, eyebrow, children, bg = "#f4f6ee" }) {
           <div className="flex justify-center mt-4">
             <FloralDivider />
           </div>
-        </div>
+        </motion.div>
         {children}
       </div>
-    </motion.section>
+    </section>
   );
 }
 
@@ -141,7 +137,7 @@ export default function Entourage() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         onClick={() => navigate("/")}
-        className="fixed top-5 left-5 z-50 flex items-center gap-2 font-sans text-xs tracking-widest hover:opacity-80 transition-opacity px-4 py-2 rounded-full"
+        className="fixed top-5 left-5 z-50 font-sans text-xs tracking-widest px-4 py-2 rounded-full transition-opacity hover:opacity-80"
         style={{
           color: "#445c3f",
           background: "rgba(244,246,238,0.85)",
@@ -152,7 +148,7 @@ export default function Entourage() {
         Back
       </motion.button>
 
-      {/* ── HERO ─────────────────────────────────────────────── */}
+      {/* HERO */}
       <div
         className="relative text-center py-20 px-6 overflow-hidden"
         style={{
@@ -162,7 +158,6 @@ export default function Entourage() {
       >
         <FloralCornerTL className="absolute top-0 left-0" size={110} />
         <FloralCornerTR className="absolute top-0 right-0" size={110} />
-
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -176,11 +171,7 @@ export default function Entourage() {
           </p>
           <h1
             className="font-script italic mb-3"
-            style={{
-              fontSize: "clamp(2.5rem, 8vw, 4rem)",
-              fontWeight: 300,
-              color: "#2c3b28",
-            }}
+            style={{ fontSize: "clamp(2.5rem, 8vw, 4rem)", fontWeight: 300, color: "#2c3b28" }}
           >
             {WEDDING.bride} & {WEDDING.groom}
           </h1>
@@ -192,23 +183,20 @@ export default function Entourage() {
             style={{ color: "rgba(44,59,40,0.6)" }}
           >
             {new Date(WEDDING.date).toLocaleDateString("en-US", {
-              weekday: "long",
-              year: "numeric",
-              month: "long",
-              day: "numeric",
+              weekday: "long", year: "numeric",
+              month: "long", day: "numeric",
             })}
           </p>
         </motion.div>
       </div>
 
-      {/* ── PARENTS ──────────────────────────────────────────── */}
+      {/* PARENTS */}
       <EntourageSection
         eyebrow="The Families"
         title="Parents of the Couple"
         bg="#f4f6ee"
       >
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {/* Bride's parents */}
           <div>
             <p
               className="font-sans text-xs tracking-[0.4em] uppercase text-center mb-4"
@@ -217,12 +205,11 @@ export default function Entourage() {
               Bride's Parents
             </p>
             <div className="space-y-3">
-              {ENTOURAGE.parents.bride.map((p, i) => (
+              {BRIDE_PARENTS.map((p, i) => (
                 <PersonCard key={i} role={p.role} name={p.name} delay={i * 0.1} />
               ))}
             </div>
           </div>
-          {/* Groom's parents */}
           <div>
             <p
               className="font-sans text-xs tracking-[0.4em] uppercase text-center mb-4"
@@ -231,7 +218,7 @@ export default function Entourage() {
               Groom's Parents
             </p>
             <div className="space-y-3">
-              {ENTOURAGE.parents.groom.map((p, i) => (
+              {GROOM_PARENTS.map((p, i) => (
                 <PersonCard key={i} role={p.role} name={p.name} delay={i * 0.1} />
               ))}
             </div>
@@ -239,40 +226,39 @@ export default function Entourage() {
         </div>
       </EntourageSection>
 
-      {/* ── PRINCIPAL SPONSORS ───────────────────────────────── */}
+      {/* PRINCIPAL SPONSORS */}
       <EntourageSection
         eyebrow="Principal Sponsors"
         title="Our Ninongs & Ninangs"
         bg="#eceee3"
       >
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-          {ENTOURAGE.principal.sponsors.map((p, i) => (
+          {PRINCIPAL_SPONSORS.map((p, i) => (
             <PersonCard key={i} role={p.role} name={p.name} delay={i * 0.08} />
           ))}
         </div>
       </EntourageSection>
 
-      {/* ── BEST MAN & MAID OF HONOR ─────────────────────────── */}
+      {/* BEST MAN & MAID OF HONOR */}
       <EntourageSection
         eyebrow="The Honor Party"
         title="Best Man & Maid of Honor"
         bg="#f4f6ee"
       >
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-md mx-auto">
-          {ENTOURAGE.secondary.bearers.map((p, i) => (
+          {HONOR_PARTY.map((p, i) => (
             <PersonCard key={i} role={p.role} name={p.name} delay={i * 0.1} />
           ))}
         </div>
       </EntourageSection>
 
-      {/* ── GROOMSMEN & BRIDESMAIDS ───────────────────────────── */}
+      {/* GROOMSMEN & BRIDESMAIDS */}
       <EntourageSection
         eyebrow="The Wedding Party"
         title="Groomsmen & Bridesmaids"
         bg="#eceee3"
       >
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {/* Groomsmen */}
           <div>
             <p
               className="font-sans text-xs tracking-[0.4em] uppercase text-center mb-4"
@@ -281,12 +267,11 @@ export default function Entourage() {
               Groomsmen
             </p>
             <div className="space-y-3">
-              {ENTOURAGE.secondary.groomsmen.map((p, i) => (
+              {GROOMSMEN.map((p, i) => (
                 <PersonCard key={i} role={p.role} name={p.name} delay={i * 0.08} />
               ))}
             </div>
           </div>
-          {/* Bridesmaids */}
           <div>
             <p
               className="font-sans text-xs tracking-[0.4em] uppercase text-center mb-4"
@@ -295,7 +280,7 @@ export default function Entourage() {
               Bridesmaids
             </p>
             <div className="space-y-3">
-              {ENTOURAGE.secondary.bridesmaids.map((p, i) => (
+              {BRIDESMAIDS.map((p, i) => (
                 <PersonCard key={i} role={p.role} name={p.name} delay={i * 0.08} />
               ))}
             </div>
@@ -303,20 +288,20 @@ export default function Entourage() {
         </div>
       </EntourageSection>
 
-      {/* ── BEARERS & FLOWER GIRLS ───────────────────────────── */}
+      {/* BEARERS & FLOWER GIRLS */}
       <EntourageSection
         eyebrow="The Little Ones"
         title="Bearers & Flower Girls"
         bg="#f4f6ee"
       >
         <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-          {ENTOURAGE.secondary.bearers2.map((p, i) => (
+          {LITTLE_ONES.map((p, i) => (
             <PersonCard key={i} role={p.role} name={p.name} delay={i * 0.08} />
           ))}
         </div>
       </EntourageSection>
 
-      {/* ── CLOSING ──────────────────────────────────────────── */}
+      {/* CLOSING */}
       <div
         className="relative text-center py-14 px-6 overflow-hidden"
         style={{
@@ -339,11 +324,7 @@ export default function Entourage() {
           </div>
           <p
             className="font-script italic mb-3"
-            style={{
-              fontSize: "clamp(1.4rem, 4vw, 2rem)",
-              fontWeight: 300,
-              color: "#445c3f",
-            }}
+            style={{ fontSize: "clamp(1.4rem, 4vw, 2rem)", fontWeight: 300, color: "#445c3f" }}
           >
             With Love & Gratitude
           </p>
@@ -351,13 +332,13 @@ export default function Entourage() {
             <FloralDivider />
           </div>
           <p
-            className="font-sans text-xs leading-relaxed max-w-sm mx-auto"
+            className="font-sans text-xs leading-relaxed max-w-sm mx-auto mb-8"
             style={{ color: "rgba(44,59,40,0.5)" }}
           >
             We are forever grateful to each and every one of you for being
             part of our most special day ✦
           </p>
-          <div className="flex justify-center gap-3 mt-6 flex-wrap">
+          <div className="flex justify-center gap-3 flex-wrap">
             <button
               onClick={() => navigate("/rsvp")}
               className="px-7 py-3 rounded font-sans text-xs tracking-[0.35em] uppercase"
