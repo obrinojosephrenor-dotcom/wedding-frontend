@@ -39,23 +39,30 @@ export default function Envelope({ onOpen }) {
   }));
 
   function handleClick() {
-    if (stage !== "idle") return;
+  if (stage !== "idle") return;
 
-    // Step 1 — open the flap
-    setStage("flap");
+  // Step 1 — open the flap
+  setStage("flap");
 
-    // Step 2 — show petals
-    setTimeout(() => setShowPetals(true), 500);
+  // Step 2 — show petals
+  setTimeout(() => setShowPetals(true), 500);
 
-    // Step 3 — slide envelope away
-    setTimeout(() => setStage("card"), 900);
+  // Step 3 — slide envelope away
+  setTimeout(() => setStage("card"), 900);
 
-    // Step 4 — tell Home we are done
-    setTimeout(() => {
-      setStage("done");
-      onOpen && onOpen();
-    }, 1600);
-  }
+  // Step 4 — fire BOTH the prop callback AND a global window event
+  setTimeout(() => {
+    setStage("done");
+
+    // Fire global event — guaranteed to reach Home.jsx
+    window.dispatchEvent(new Event("envelope-opened"));
+
+    // Also fire prop callback as backup
+    if (typeof onOpen === "function") {
+      onOpen();
+    }
+  }, 1600);
+}
 
   return (
     <div

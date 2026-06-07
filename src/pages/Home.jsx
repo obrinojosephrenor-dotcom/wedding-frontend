@@ -12,18 +12,17 @@ import {
   FloralCornerBL,
   FloralCornerBR,
   FloralDivider,
-  WaxSeal,
 } from "../components/FloralAccents/FloralSvg";
 import { WEDDING } from "../weddingConfig";
 
 function LoveStoryPreview() {
   const navigate = useNavigate();
   const previews = [
-    { label: "Chapter I",   title: "First Meeting",  url: "https://images.unsplash.com/photo-1529634597503-139d3726fed5?w=400" },
-    { label: "Chapter II",  title: "Falling in Love", url: "https://images.unsplash.com/photo-1494774157365-9e04c6720e47?w=400" },
-    { label: "Chapter III", title: "Adventures",      url: "https://images.unsplash.com/photo-1527515637462-cff94edd08fe?w=400" },
-    { label: "Chapter IV",  title: "The Proposal",    url: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=400" },
-    { label: "Chapter V",   title: "Forever",         url: "https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=400" },
+    { label: "Chapter I",   title: "First Meeting",   url: "https://images.unsplash.com/photo-1529634597503-139d3726fed5?w=400" },
+    { label: "Chapter II",  title: "Falling in Love",  url: "https://images.unsplash.com/photo-1494774157365-9e04c6720e47?w=400" },
+    { label: "Chapter III", title: "Adventures",       url: "https://images.unsplash.com/photo-1527515637462-cff94edd08fe?w=400" },
+    { label: "Chapter IV",  title: "The Proposal",     url: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=400" },
+    { label: "Chapter V",   title: "Forever",          url: "https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=400" },
   ];
 
   return (
@@ -51,10 +50,13 @@ function LoveStoryPreview() {
         <div className="flex justify-center mb-3">
           <FloralDivider />
         </div>
+        <p className="font-sans text-espresso/45 text-xs max-w-xs mx-auto leading-relaxed">
+          Five chapters of a love that grew into forever
+        </p>
       </div>
 
       <div
-        className="flex gap-4 overflow-x-auto pb-4 px-2 max-w-4xl mx-auto"
+        className="flex gap-5 overflow-x-auto pb-4 px-2 max-w-4xl mx-auto"
         style={{ scrollbarWidth: "none" }}
       >
         {previews.map((ch, i) => (
@@ -62,10 +64,10 @@ function LoveStoryPreview() {
             key={i}
             onClick={() => navigate("/love-story")}
             className="cursor-pointer flex-shrink-0"
-            style={{ width: "180px" }}
+            style={{ width: "170px" }}
           >
             <div
-              className="bg-white p-2.5 pb-10 shadow-md relative"
+              className="bg-white p-2.5 pb-10 relative"
               style={{
                 transform: "rotate(" + [-1.5, 1, -0.8, 1.8, -1.2][i] + "deg)",
                 boxShadow: "0 6px 20px rgba(60,42,30,0.12)",
@@ -120,7 +122,10 @@ function GalleryPreview() {
   }));
 
   return (
-    <section className="py-16 px-4 relative overflow-hidden" style={{ background: "#F9F4EE" }}>
+    <section
+      className="py-16 px-4 relative overflow-hidden"
+      style={{ background: "#F9F4EE" }}
+    >
       <FloralCornerBL className="absolute bottom-0 left-0" size={90} />
       <FloralCornerBR className="absolute bottom-0 right-0" size={90} />
 
@@ -147,7 +152,9 @@ function GalleryPreview() {
           <div key={i} className="break-inside-avoid mb-3">
             <div
               className="bg-white p-1.5 shadow-sm"
-              style={{ transform: "rotate(" + [-1, 1.5, -0.8, 1.2, -1.5, 0.7][i] + "deg)" }}
+              style={{
+                transform: "rotate(" + [-1, 1.5, -0.8, 1.2, -1.5, 0.7][i] + "deg)",
+              }}
             >
               <div
                 className="flex items-center justify-center"
@@ -167,7 +174,10 @@ function GalleryPreview() {
         <button
           onClick={() => navigate("/gallery")}
           className="px-8 py-3.5 rounded font-sans text-xs tracking-[0.35em] uppercase"
-          style={{ border: "1px solid rgba(200,169,110,0.4)", color: "#C8A96E" }}
+          style={{
+            border: "1px solid rgba(200,169,110,0.4)",
+            color: "#C8A96E",
+          }}
         >
           View Gallery
         </button>
@@ -179,10 +189,41 @@ function GalleryPreview() {
 function QuickLinks() {
   const navigate = useNavigate();
   const links = [
-    {label: "RSVP",      sub: "Confirm attendance",    path: "/rsvp",        bg: "linear-gradient(135deg, #C8A96E, #D4B87A)", color: "#FAF6F0" },
-    {label: "Details",   sub: "Venue and timeline",    path: "/details",     bg: "rgba(200,169,110,0.08)", color: "#3C2A1E", border: "1px solid rgba(200,169,110,0.25)" },
-    {label: "Our Story", sub: "Five chapters of love", path: "/love-story",  bg: "rgba(156,175,136,0.12)", color: "#3C2A1E", border: "1px solid rgba(156,175,136,0.3)" },
-    {label: "Gallery",   sub: "Share your memories",   path: "/gallery",     bg: "rgba(201,169,166,0.12)", color: "#3C2A1E", border: "1px solid rgba(201,169,166,0.3)" },
+    {
+      icon: "✉",
+      label: "RSVP",
+      sub: "Confirm attendance",
+      path: "/rsvp",
+      bg: "linear-gradient(135deg, #C8A96E, #D4B87A)",
+      color: "#FAF6F0",
+    },
+    {
+      icon: "📋",
+      label: "Details",
+      sub: "Venue and timeline",
+      path: "/details",
+      bg: "rgba(200,169,110,0.08)",
+      color: "#3C2A1E",
+      border: "1px solid rgba(200,169,110,0.25)",
+    },
+    {
+      icon: "📖",
+      label: "Our Story",
+      sub: "Five chapters of love",
+      path: "/love-story",
+      bg: "rgba(156,175,136,0.12)",
+      color: "#3C2A1E",
+      border: "1px solid rgba(156,175,136,0.3)",
+    },
+    {
+      icon: "📷",
+      label: "Gallery",
+      sub: "Share your memories",
+      path: "/gallery",
+      bg: "rgba(201,169,166,0.12)",
+      color: "#3C2A1E",
+      border: "1px solid rgba(201,169,166,0.3)",
+    },
   ];
 
   return (
@@ -205,7 +246,9 @@ function QuickLinks() {
           >
             <span className="text-2xl">{link.icon}</span>
             <p className="font-serif text-sm">{link.label}</p>
-            <p className="font-sans text-xs opacity-60 text-center leading-tight">{link.sub}</p>
+            <p className="font-sans text-xs opacity-60 text-center leading-tight">
+              {link.sub}
+            </p>
           </button>
         ))}
       </div>
@@ -213,34 +256,20 @@ function QuickLinks() {
   );
 }
 
-export default function Home() {
-  const [opened, setOpened] = useState(false);
+// ─── This is the key fix ───────────────────────────────────────────
+// We use a global window event instead of prop callback
+// so nothing can intercept or drop the signal between components
 
-  useEffect(() => {
-    const wasOpened = sessionStorage.getItem("env-open");
-    if (wasOpened === "yes") setOpened(true);
-  }, []);
-
-  function handleOpen() {
-    sessionStorage.setItem("env-open", "yes");
-    setOpened(true);
-  }
-
-  if (!opened) {
-    return <Envelope onOpen={handleOpen} />;
-  }
-
+function InvitationHome() {
   return (
     <div className="bg-cream min-h-screen">
       <FloralAccents active count={12} />
-
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7 }}
       >
         <InvitationCards />
-
         <section
           className="py-12 px-4"
           style={{
@@ -251,12 +280,53 @@ export default function Home() {
         >
           <CountdownTimer variant="full" />
         </section>
-
         <QuickLinks />
         <LoveStoryPreview />
         <GalleryPreview />
         <Footer />
       </motion.div>
     </div>
+  );
+}
+
+export default function Home() {
+  const [opened, setOpened] = useState(false);
+
+  // Check session on mount
+  useEffect(() => {
+    try {
+      if (sessionStorage.getItem("env-open") === "yes") {
+        setOpened(true);
+      }
+    } catch (e) {
+      // sessionStorage blocked — just show envelope
+    }
+  }, []);
+
+  // Listen for global event from Envelope
+  useEffect(() => {
+    function handleEnvelopeOpen() {
+      try {
+        sessionStorage.setItem("env-open", "yes");
+      } catch (e) {}
+      setOpened(true);
+    }
+    window.addEventListener("envelope-opened", handleEnvelopeOpen);
+    return () => window.removeEventListener("envelope-opened", handleEnvelopeOpen);
+  }, []);
+
+  if (opened) {
+    return <InvitationHome />;
+  }
+
+  return (
+    <Envelope
+      onOpen={() => {
+        try {
+          sessionStorage.setItem("env-open", "yes");
+        } catch (e) {}
+        setOpened(true);
+      }}
+    />
   );
 }
