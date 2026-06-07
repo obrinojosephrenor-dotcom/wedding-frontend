@@ -39,9 +39,9 @@ const HONOR_PARTY = [
 ];
 
 const LITTLE_ONES = [
-  { role: "Candle",  name: "Kenneth L. Bote", name: "Jeanelou S. Agura"},
-  { role: "Cord",  name: "Joemar Gabriel A. Rallestan", name: "Cianne B. Allequir"},
-  { role: "Veil",  name: "Jherome Rosales", name: "April O. Allequir"},
+  { role: "Candle",  name: "Kenneth L. Bote & Jeanelou S. Agura"},
+  { role: "Cord",  name: "Joemar Gabriel A. Rallestan & Cianne B. Allequir"},
+  { role: "Veil",  name: "Jherome Rosales & April O. Allequir"},
   { role: "Coin Bearer",  name: "Franco Emannuel Toquero"},
   { role: "Ring Bearer",  name: "Avery Allison S. Obrino"},
   { role: "Bible Bearer",  name: "Sam Thomas Aliman"},
