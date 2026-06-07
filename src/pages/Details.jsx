@@ -71,7 +71,7 @@ function FAQItem({ question, answer }) {
           transition={{ duration: 0.3 }}
           className="text-champagne text-sm flex-shrink-0"
         >
-          down
+          ↓
         </motion.span>
       </div>
       <AnimatePresence>
@@ -89,39 +89,6 @@ function FAQItem({ question, answer }) {
           </motion.div>
         )}
       </AnimatePresence>
-    </div>
-  );
-}
-
-function TimelineItem({ time, title, description, last = false }) {
-  return (
-    <div className="flex gap-5">
-      <div className="flex flex-col items-center flex-shrink-0">
-        <div
-          className="w-3 h-3 rounded-full mt-1 flex-shrink-0"
-          style={{ background: "linear-gradient(135deg, #445c3f, #7d936c)" }}
-        />
-        {!last && (
-          <div
-            className="w-px flex-1 mt-1"
-            style={{
-              background: "rgba(68,92,63,0.25)",
-              minHeight: "40px",
-            }}
-          />
-        )}
-      </div>
-      <div className="pb-6">
-        <p className="font-sans text-champagne text-xs tracking-widest mb-1">
-          {time}
-        </p>
-        <p className="font-serif text-espresso/85 text-sm mb-1">{title}</p>
-        {description && (
-          <p className="font-sans text-espresso/45 text-xs leading-relaxed">
-            {description}
-          </p>
-        )}
-      </div>
     </div>
   );
 }
@@ -146,57 +113,43 @@ export default function Details() {
   const faqs = [
     {
       question: "Is there parking available at the venue?",
-      answer:
-        "Yes, complimentary parking is available at both the ceremony and reception venues. Valet service will also be provided at the reception.",
+      answer: "Yes, complimentary parking is available at both the ceremony and reception venues. Valet service will also be provided at the reception.",
     },
     {
       question: "Are children welcome at the wedding?",
-      answer:
-        "We love your little ones! Children are welcome at both the ceremony and reception. A kids corner with activities will be set up at the reception.",
+      answer: "We love your little ones! Children are welcome at both the ceremony and reception. A kids corner with activities will be set up at the reception.",
     },
     {
       question: "What is the dress code?",
-      answer:
-        "Garden Formal. Think elegant florals, soft earth tones, sage greens, dusty roses, and champagne golds. Please avoid white and black out of respect for the couple.",
+      answer: "Garden Formal. Think elegant florals, soft earth tones, sage greens, dusty roses, and champagne golds. Please avoid white and black out of respect for the couple.",
     },
     {
       question: "Will there be transportation between venues?",
-      answer:
-        "A complimentary shuttle will run between the ceremony and reception venues. The schedule will be shared closer to the date.",
+      answer: "A complimentary shuttle will run between the ceremony and reception venues. The schedule will be shared closer to the date.",
     },
     {
       question: "Can I take photos during the ceremony?",
-      answer:
-        "We are having an unplugged ceremony. Please keep phones and cameras away during the ceremony so everyone can be fully present. Our photographer will capture every moment!",
+      answer: "We are having an unplugged ceremony. Please keep phones and cameras away during the ceremony so everyone can be fully present. Our photographer will capture every moment!",
     },
     {
       question: "What time should I arrive?",
-      answer:
-        "We recommend arriving at least 20 to 30 minutes before the ceremony start time to get seated comfortably. The doors will open 45 minutes prior.",
+      answer: "We recommend arriving at least 20 to 30 minutes before the ceremony start time to get seated comfortably. The doors will open 45 minutes prior.",
     },
     {
       question: "Is there a gift registry?",
-      answer:
-        "Your presence is our greatest gift! However if you wish to give, a cash gift or contribution to our honeymoon fund would be deeply appreciated.",
+      answer: "Your presence is our greatest gift! However if you wish to give, a cash gift or contribution to our honeymoon fund would be deeply appreciated.",
     },
     {
       question: "Who do I contact for questions?",
-      answer:
-        "Please reach out to us at " +
-        WEDDING.contact.email +
-        " or call " +
-        WEDDING.contact.phone +
-        ". We are happy to help with anything!",
+      answer: "Please reach out to us at " + WEDDING.contact.email + " or call " + WEDDING.contact.phone + ". We are happy to help with anything!",
     },
   ];
 
   const ceremonyMapUrl =
-    "https://maps.google.com/?q=" +
-    encodeURIComponent(WEDDING.ceremony.address);
+    "https://maps.google.com/?q=" + encodeURIComponent(WEDDING.ceremony.address);
 
   const receptionMapUrl =
-    "https://maps.google.com/?q=" +
-    encodeURIComponent(WEDDING.reception.address);
+    "https://maps.google.com/?q=" + encodeURIComponent(WEDDING.reception.address);
 
   const embedUrl =
     "https://maps.google.com/maps?q=" +
@@ -206,6 +159,7 @@ export default function Details() {
   return (
     <div className="min-h-screen bg-cream">
 
+      {/* Back button */}
       <motion.button
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -272,10 +226,10 @@ export default function Details() {
             <FloralCornerBR className="absolute bottom-0 right-0" size={60} />
             <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-6">
               {[
-                { label: "Venue", value: WEDDING.ceremony.venue },
+                { label: "Venue",   value: WEDDING.ceremony.venue },
                 { label: "Address", value: WEDDING.ceremony.address },
-                { label: "Time", value: WEDDING.ceremony.time },
-                { label: "Attire", value: WEDDING.dresscode },
+                { label: "Time",    value: WEDDING.ceremony.time },
+                { label: "Attire",  value: WEDDING.dresscode },
               ].map((item, i) => (
                 <div key={i}>
                   <p className="font-sans text-champagne text-xs tracking-widest uppercase mb-1">
@@ -292,19 +246,16 @@ export default function Details() {
 
         {/* RECEPTION */}
         <Section delay={0.1}>
-          <SectionHeading
-            eyebrow="Where We Celebrate"
-            title="The Reception"
-          />
+          <SectionHeading eyebrow="Where We Celebrate" title="The Reception" />
           <DetailCard style={{ background: "#eceee3" }}>
             <FloralCornerTR className="absolute top-0 right-0" size={60} />
             <FloralCornerBL className="absolute bottom-0 left-0" size={60} />
             <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-6">
               {[
-                { label: "Venue", value: WEDDING.reception.venue },
+                { label: "Venue",   value: WEDDING.reception.venue },
                 { label: "Address", value: WEDDING.reception.address },
-                { label: "Time", value: WEDDING.reception.time },
-                { label: "Note", value: "Dinner, dancing and celebration!" },
+                { label: "Time",    value: WEDDING.reception.time },
+                { label: "Note",    value: "Dinner, dancing and celebration!" },
               ].map((item, i) => (
                 <div key={i}>
                   <p className="font-sans text-champagne text-xs tracking-widest uppercase mb-1">
@@ -319,59 +270,6 @@ export default function Details() {
           </DetailCard>
         </Section>
 
-        {/* TIMELINE */}
-        <Section delay={0.1}>
-          <SectionHeading eyebrow="The Day" title="Timeline of Events" />
-          <DetailCard>
-            <TimelineItem
-              time="3:00 PM"
-              title="Doors Open"
-              description="Guests arrive and are seated. Light string music plays."
-            />
-            <TimelineItem
-              time="3:30 PM"
-              title="Guest Seating"
-              description="Ushers guide guests to their seats. Welcome drinks are served."
-            />
-            <TimelineItem
-              time={WEDDING.ceremony.time}
-              title="Ceremony Begins"
-              description="The processional begins. Please be fully seated by this time."
-            />
-            <TimelineItem
-              time="5:00 PM"
-              title="Cocktail Hour"
-              description="Mingle and enjoy canapes while the couple takes photos."
-            />
-            <TimelineItem
-              time={WEDDING.reception.time}
-              title="Reception Doors Open"
-              description="Guests proceed to the reception venue for dinner."
-            />
-            <TimelineItem
-              time="6:30 PM"
-              title="Grand Entrance and Dinner"
-              description="The newlyweds make their entrance followed by a seated dinner."
-            />
-            <TimelineItem
-              time="8:00 PM"
-              title="Speeches and Toasts"
-              description="Heartfelt words from family and the wedding party."
-            />
-            <TimelineItem
-              time="8:45 PM"
-              title="First Dance and Dancing"
-              description="The couple shares their first dance followed by open dancing."
-            />
-            <TimelineItem
-              time="11:00 PM"
-              title="Send Off"
-              description="Guests line up for the sparkler send-off as the night concludes."
-              last
-            />
-          </DetailCard>
-        </Section>
-
         {/* DRESS CODE */}
         <Section delay={0.1}>
           <SectionHeading eyebrow="What to Wear" title="Dress Code" />
@@ -383,13 +281,15 @@ export default function Details() {
               >
                 Garden Formal
               </p>
-                <p className="font-sans text-espresso/50 text-xs leading-relaxed max-w-sm mx-auto">
-                We look forward to celebrating in quiet style. To complement the natural beauty of our outdoor venue, 
-                we kindly request Garden Formal attire.
+              <p className="font-sans text-espresso/50 text-xs leading-relaxed max-w-sm mx-auto mb-3">
+                We look forward to celebrating in quiet style. To complement
+                the natural beauty of our outdoor venue, we kindly request
+                Garden Formal attire.
               </p>
               <p className="font-sans text-espresso/50 text-xs leading-relaxed max-w-sm mx-auto">
-                As this a formal garden occasion, we kindly requesst
-                that guests opt for polished attire, avoiding jean/denim, tshirt, or athletic footwear.
+                As this is a formal garden occasion, we kindly request that
+                guests opt for polished attire, avoiding jeans, t-shirts, or
+                athletic footwear.
               </p>
             </div>
             <div className="mt-6">
@@ -397,18 +297,18 @@ export default function Details() {
                 Suggested Color Palette
               </p>
               <div className="flex justify-center gap-5 flex-wrap">
-                <ColorSwatch name="Ivory" hex="#f2d9d9" />
-                <ColorSwatch name="Champagne" hex="#d0e6cc" />
+                <ColorSwatch name="Ivory"      hex="#f2d9d9" />
+                <ColorSwatch name="Champagne"  hex="#d0e6cc" />
                 <ColorSwatch name="Dusty Rose" hex="#f8e1a1" />
-                <ColorSwatch name="Sage" hex="#a89a84" />
-                <ColorSwatch name="Parchment" hex="#74b0e3" />
-                <ColorSwatch name="Espresso" hex="#cbd2cf" />
+                <ColorSwatch name="Sage"       hex="#a89a84" />
+                <ColorSwatch name="Parchment"  hex="#74b0e3" />
+                <ColorSwatch name="Espresso"   hex="#cbd2cf" />
               </div>
             </div>
             <div
               className="mt-6 p-4 rounded text-center"
               style={{
-                background: "rgba(201,169,110,0.08)",
+                background: "rgba(68,92,63,0.06)",
                 border: "1px solid rgba(68,92,63,0.2)",
               }}
             >
@@ -434,36 +334,33 @@ export default function Details() {
               referrerPolicy="no-referrer-when-downgrade"
             />
             <div className="px-6 py-4 flex flex-col sm:flex-row gap-3">
-
-  <a
-    href={ceremonyMapUrl}
-    target="_blank"
-    rel="noreferrer"
-    className="flex-1 text-center py-2.5 rounded font-sans text-xs tracking-[0.3em] uppercase transition-all"
-    style={{
-      background: "linear-gradient(135deg, #445c3f, #7d936c)",
-      color: "#f4f6ee",
-      textDecoration: "none",
-    }}
-  >
-    Ceremony Directions
-  </a>
-
-  <a
-    href={receptionMapUrl}
-    target="_blank"
-    rel="noreferrer"
-    className="flex-1 text-center py-2.5 rounded font-sans text-xs tracking-[0.3em] uppercase transition-all"
-    style={{
-      border: "1px solid rgba(68,92,63,0.4)",
-      color: "#445c3f",
-      textDecoration: "none",
-    }}
-  >
-    Reception Directions
-  </a>
-
-</div>
+              <a
+                href={ceremonyMapUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="flex-1 text-center py-2.5 rounded font-sans text-xs tracking-[0.3em] uppercase transition-all"
+                style={{
+                  background: "linear-gradient(135deg, #445c3f, #7d936c)",
+                  color: "#f4f6ee",
+                  textDecoration: "none",
+                }}
+              >
+                Ceremony Directions
+              </a>
+              <a
+                href={receptionMapUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="flex-1 text-center py-2.5 rounded font-sans text-xs tracking-[0.3em] uppercase transition-all"
+                style={{
+                  border: "1px solid rgba(68,92,63,0.4)",
+                  color: "#445c3f",
+                  textDecoration: "none",
+                }}
+              >
+                Reception Directions
+              </a>
+            </div>
           </DetailCard>
         </Section>
 
@@ -494,33 +391,31 @@ export default function Details() {
                 We are happy to help with anything
               </p>
               <div className="flex flex-col sm:flex-row gap-3 justify-center">
-
-  <a
-    href={"mailto:" + WEDDING.contact.email}
-    className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded font-sans text-xs tracking-[0.3em] uppercase transition-all"
-    style={{
-      background: "linear-gradient(135deg, #445c3f, #7d936c)",
-      color: "#f4f6ee",
-      boxShadow: "0 4px 16px rgba(68,92,63,0.25)",
-      textDecoration: "none",
-    }}
-  >
-    Email Us
-  </a>
-
-  <a
-    href={"tel:" + WEDDING.contact.phone}
-    className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded font-sans text-xs tracking-[0.3em] uppercase transition-all"
-    style={{
-      border: "1px solid rgba(68,92,63,0.4)",
-      color: "#445c3f",
-      textDecoration: "none",
-    }}
-  >
-    Call Us
-  </a>
-
-</div>
+                <a
+                  href={"mailto:" + WEDDING.contact.email}
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded font-sans text-xs tracking-[0.3em] uppercase transition-all"
+                  style={{
+                    background: "linear-gradient(135deg, #445c3f, #7d936c)",
+                    color: "#f4f6ee",
+                    boxShadow: "0 4px 16px rgba(68,92,63,0.25)",
+                    textDecoration: "none",
+                  }}
+                >
+                  Email Us
+                </a>
+                
+                <a
+                  href={"tel:" + WEDDING.contact.phone}
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded font-sans text-xs tracking-[0.3em] uppercase transition-all"
+                  style={{
+                    border: "1px solid rgba(68,92,63,0.4)",
+                    color: "#445c3f",
+                    textDecoration: "none",
+                  }}
+                >
+                  Call Us
+                </a>
+              </div>
               <p className="font-sans text-espresso/35 text-xs mt-4">
                 {WEDDING.contact.email} · {WEDDING.contact.phone}
               </p>
