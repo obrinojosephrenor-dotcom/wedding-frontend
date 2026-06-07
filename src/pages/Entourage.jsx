@@ -14,7 +14,7 @@ const BRIDE_PARENTS = [
 ];
 
 const GROOM_PARENTS = [
-  { role: "Father of the Groom", name: "Mr. Noel E. Jackson" },
+  { role: "Father of the Groom", name: "Mr. Noel F. Jackson" },
   { role: "Mother of the Groom", name: "Ms. Rowena D. Obrino" },
 ];
 
@@ -24,7 +24,7 @@ const PRINCIPAL_SPONSORS = [
   { role: "Principal Sponsor", name: "Atty. Joseph G. Dinoy" },
   { role: "Principal Sponsor", name: "Mrs. Adela L. Conejos" },
   { role: "Principal Sponsor", name: "Mr. Renato A. Loberiano" },
-  { role: "Principal Sponsor", name: "Mrs. Ma. Merlie J. Loberanio" },
+  { role: "Principal Sponsor", name: "Mrs. Ma. Merlie J. Loberiano" },
   { role: "Principal Sponsor", name: "Atty. Calick D. Arrieta"},
   { role: "Principal Sponsor", name: "Mrs. Ellen C. Obrino"},
   { role: "Principal Sponsor", name: "Mr. Ruel F. Jackson"},
@@ -39,9 +39,9 @@ const HONOR_PARTY = [
 ];
 
 const LITTLE_ONES = [
-  { role: "Candle",  name: "Kenneth L. Bote & Jeanelou S. Agura"},
-  { role: "Cord",  name: "Joemar Gabriel A. Rallestan & Cianne B. Allequir"},
-  { role: "Veil",  name: "Jherome Rosales & April O. Allequir"},
+  { role: "Candle",  name: "Kenneth L. Bote", name: "Jeanelou S. Agura"},
+  { role: "Cord",  name: "Joemar Gabriel A. Rallestan", name: "Cianne B. Allequir"},
+  { role: "Veil",  name: "Jherome Rosales", name: "April O. Allequir"},
   { role: "Coin Bearer",  name: "Franco Emannuel Toquero"},
   { role: "Ring Bearer",  name: "Avery Allison S. Obrino"},
   { role: "Bible Bearer",  name: "Sam Thomas Aliman"},
