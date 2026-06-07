@@ -48,14 +48,7 @@ function MainCard() {
       <FloralCornerTR className="absolute top-0 right-0"    size={80} />
       <FloralCornerBL className="absolute bottom-0 left-0"  size={80} />
       <FloralCornerBR className="absolute bottom-0 right-0" size={80} />
-
-      {/* Top label */}
-      <p
-        className="text-center text-champagne tracking-[0.45em] text-xs uppercase font-sans mb-6 mt-2"
-      >
-        Together With Their Families
-      </p>
-
+        
       {/* Bride & Groom names */}
       <div className="text-center mb-2">
         <h1
