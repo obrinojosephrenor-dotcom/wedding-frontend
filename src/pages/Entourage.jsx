@@ -249,42 +249,6 @@ export default function Entourage() {
         </div>
       </EntourageSection>
 
-      {/* GROOMSMEN & BRIDESMAIDS */}
-      <EntourageSection
-        eyebrow="The Wedding Party"
-        title="Groomsmen & Bridesmaids"
-        bg="#eceee3"
-      >
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div>
-            <p
-              className="font-sans text-xs tracking-[0.4em] uppercase text-center mb-4"
-              style={{ color: "#7d936c" }}
-            >
-              Groomsmen
-            </p>
-            <div className="space-y-3">
-              {GROOMSMEN.map((p, i) => (
-                <PersonCard key={i} role={p.role} name={p.name} delay={i * 0.08} />
-              ))}
-            </div>
-          </div>
-          <div>
-            <p
-              className="font-sans text-xs tracking-[0.4em] uppercase text-center mb-4"
-              style={{ color: "#7d936c" }}
-            >
-              Bridesmaids
-            </p>
-            <div className="space-y-3">
-              {BRIDESMAIDS.map((p, i) => (
-                <PersonCard key={i} role={p.role} name={p.name} delay={i * 0.08} />
-              ))}
-            </div>
-          </div>
-        </div>
-      </EntourageSection>
-
       {/* BEARERS & FLOWER GIRLS */}
       <EntourageSection
         eyebrow="The Little Ones"
