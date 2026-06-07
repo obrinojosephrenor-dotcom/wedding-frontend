@@ -133,12 +133,12 @@ function EntouragePreview() {
   const navigate = useNavigate();
 
   const roles = [
-    { role: "Best Man",      name: "Miguel Santos" },
-    { role: "Maid of Honor", name: "Sofia Reyes" },
-    { role: "Groomsman",     name: "Andrei Villanueva" },
-    { role: "Bridesmaid",    name: "Isabella Cruz" },
-    { role: "Ring Bearer",   name: "Liam Santos" },
-    { role: "Flower Girl",   name: "Mia Villanueva" },
+    { role: "Groomsman",      name: "Michael Noel D. Obrino" },
+    { role: "Bridesmaid", name: "Nikki Jean D. Singzon" },
+    { role: "Best man",     name: "Claude P. Kirke" },
+    { role: "Maid of Honor",    name: "Mary Nessa Red Lee" },
+    { role: "Ring Bearer",   name: "Avery Allison S. Obrino" },
+    { role: "Flower Girl",   name: "Alessia Vrielle O. Jabonite" },
   ];
 
   return (

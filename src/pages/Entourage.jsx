@@ -11,43 +11,44 @@ import { WEDDING } from "../weddingConfig";
 const ENTOURAGE = {
   parents: {
     bride: [
-      { role: "Father of the Bride", name: "Juan dela Cruz" },
-      { role: "Mother of the Bride", name: "Maria dela Cruz" },
+      { role: "Father of the Bride", name: "Mr. Jeanelito D. Singzon" },
+      { role: "Mother of the Bride", name: "Dolores D. Singzon" },
     ],
     groom: [
-      { role: "Father of the Groom", name: "Pedro Santos" },
-      { role: "Mother of the Groom", name: "Rosa Santos" },
+      { role: "Father of the Groom", name: "Mr. Noel F. Jackson" },
+      { role: "Mother of the Groom", name: "Ms. Rowena D. Obrino" },
     ],
   },
   principal: {
     sponsors: [
-      { role: "Principal Sponsor", name: "Mr. & Mrs. Alfonso Reyes" },
-      { role: "Principal Sponsor", name: "Mr. & Mrs. Benjamin Cruz" },
-      { role: "Principal Sponsor", name: "Mr. & Mrs. Carlos Lim" },
-      { role: "Principal Sponsor", name: "Mr. & Mrs. David Tan" },
+      { role: "Principal Sponsor", name: "Dr. Gil Leovigildo A. Ancheta, CPA" },
+      { role: "Principal Sponsor", name: "Mrs. Thelma N. Mawo" },
+      { role: "Principal Sponsor", name: "Atty. Jospeh G. Dinoy" },
+      { role: "Principal Sponsor", name: "Mrs. Adela L. Conejos" },
+      { role: "Principal Sponsor", name: "Mr. Renato A. Loberiano" },
+      { role: "Principal Sponsor", name: "Mrs. Ma. Merlie J. Loberiano" },
+      { role: "Principal Sponsor", name: "Atty. Calick D. Arrieta" },
+      { role: "Principal Sponsor", name: "Mrs. Ellen C. Obrino" },
+      { role: "Principal Sponsor", name: "Mr. Ruel F. Jackson" },
+      { role: "Principal Sponsor", name: "Mrs. Lohea E. Jackson" },
+      { role: "Principal Sponsor", name: "Mr. Edgardo J. Mascarinas" },
+      { role: "Principal Sponsor", name: "Mrs. Rosita I. Mascarinas" },
     ],
   },
   secondary: {
     bearers: [
-      { role: "Best Man",        name: "Miguel Santos" },
-      { role: "Maid of Honor",   name: "Sofia Reyes" },
+      { role: "Best Man",        name: "Claude P. Kirke" },
+      { role: "Maid of Honor",   name: "Mary Bessa Red Lee" },
     ],
-    groomsmen: [
-      { role: "Groomsman", name: "Andrei Villanueva" },
-      { role: "Groomsman", name: "Rafael Gomez" },
-      { role: "Groomsman", name: "Marco Dela Torre" },
-    ],
-    bridesmaids: [
-      { role: "Bridesmaid", name: "Isabella Cruz" },
-      { role: "Bridesmaid", name: "Camille Reyes" },
-      { role: "Bridesmaid", name: "Angela Santos" },
-    ],
+
     bearers2: [
-      { role: "Ring Bearer",    name: "Liam Santos" },
-      { role: "Coin Bearer",    name: "Noah Reyes" },
-      { role: "Bible Bearer",   name: "Ethan Cruz" },
-      { role: "Flower Girl",    name: "Mia Villanueva" },
-      { role: "Flower Girl",    name: "Ella Gomez" },
+      { role: "CANDLE",     name: "Kenneth L. Bote", name: "Jeanelou S. Agura"},
+      { role: "CORD",    name: "Joemar Gabriel A. Rallestan", name: "Cianne B. Allequir"},
+      {role: "VEIL",    name: "Jherome Rosales", name: "April O. Allequir"},
+      {role: "COIN BEARER",     name: "Franco Emmanuel Toquero"},
+      {role: "RING BEARER",     name: "Avery Allison S. Obrino"},
+      {role: "BIBLE BEARER",    name: "Sam Thomas Aliman"},
+      {role: "FLOWER GIRL",     name: "Alessia Vrielle O. Jabonite"}
     ],
   },
 };
