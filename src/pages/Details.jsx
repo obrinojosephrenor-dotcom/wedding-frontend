@@ -383,10 +383,13 @@ export default function Details() {
               >
                 Garden Formal
               </p>
+                <p className="font-sans text-espresso/50 text-xs leading-relaxed max-w-sm mx-auto">
+                We look forward to celebrating in quiet style. To complement the natural beauty of our outdoor venue, 
+                we kindly request Garden Formal attire.
+              </p>
               <p className="font-sans text-espresso/50 text-xs leading-relaxed max-w-sm mx-auto">
-                Elegant garden attire in soft florals and earth tones. Ladies:
-                floral dresses, chic jumpsuits, elegant midi dresses.
-                Gentlemen: suits or slacks with a dress shirt.
+                As this a formal garden occasion, we kindly requesst
+                that guests opt for polished attire, avoiding jean/denim, tshirt, or athletic footwear.
               </p>
             </div>
             <div className="mt-6">
@@ -394,12 +397,12 @@ export default function Details() {
                 Suggested Color Palette
               </p>
               <div className="flex justify-center gap-5 flex-wrap">
-                <ColorSwatch name="Ivory" hex="#f4f6ee" />
-                <ColorSwatch name="Champagne" hex="#445c3f" />
-                <ColorSwatch name="Dusty Rose" hex="#aab992" />
-                <ColorSwatch name="Sage" hex="#7d936c" />
-                <ColorSwatch name="Parchment" hex="#ccd5b5" />
-                <ColorSwatch name="Espresso" hex="#2c3b28" />
+                <ColorSwatch name="Ivory" hex="#f2d9d9" />
+                <ColorSwatch name="Champagne" hex="#d0e6cc" />
+                <ColorSwatch name="Dusty Rose" hex="#f8e1a1" />
+                <ColorSwatch name="Sage" hex="#a89a84" />
+                <ColorSwatch name="Parchment" hex="#74b0e3" />
+                <ColorSwatch name="Espresso" hex="#cbd2cf" />
               </div>
             </div>
             <div
@@ -410,139 +413,10 @@ export default function Details() {
               }}
             >
               <p className="font-sans text-espresso/50 text-xs">
-                Please avoid wearing white, ivory, or black out of respect for
-                the couple
+                Please strictly avoid wearing black or white.
               </p>
             </div>
           </DetailCard>
-        </Section>
-
-        {/* PARKING */}
-        <Section delay={0.1}>
-          <SectionHeading
-            eyebrow="Getting Here"
-            title="Parking and Transport"
-          />
-          <DetailCard>
-            <div className="space-y-5">
-              {[
-                {
-                  title: "Ceremony Parking",
-                  description:
-                    "Free on-site parking is available at the ceremony venue. Enter via the main gate on Bloom Street. Overflow parking on the adjacent lot.",
-                  icon: "P",
-                },
-                {
-                  title: "Reception Parking",
-                  description:
-                    "Complimentary valet parking is provided at the reception venue. Self-parking also available in the building basement.",
-                  icon: "C",
-                },
-                {
-                  title: "Shuttle Service",
-                  description:
-                    "A complimentary shuttle runs between the ceremony and reception every 20 minutes from 4:30 PM to 7:00 PM.",
-                  icon: "S",
-                },
-                {
-                  title: "Ride Share",
-                  description:
-                    "Grab and Angkas drop-off points are marked at the main entrance of both venues.",
-                  icon: "R",
-                },
-              ].map((item, i) => (
-                <div
-                  key={i}
-                  className="flex gap-4 pb-5 last:pb-0 border-b last:border-b-0"
-                  style={{ borderColor: "rgba(68,92,63,0.12)" }}
-                >
-                  <div
-                    className="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 font-sans text-xs font-bold"
-                    style={{
-                      background: "rgba(68,92,63,0.15)",
-                      color: "#445c3f",
-                    }}
-                  >
-                    {item.icon}
-                  </div>
-                  <div>
-                    <p className="font-serif text-espresso/85 text-sm mb-1">
-                      {item.title}
-                    </p>
-                    <p className="font-sans text-espresso/50 text-xs leading-relaxed">
-                      {item.description}
-                    </p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </DetailCard>
-        </Section>
-
-        {/* ACCOMMODATION */}
-        <Section delay={0.1}>
-          <SectionHeading eyebrow="Staying Over" title="Accommodation" />
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {[
-              {
-                name: "The Garden Suites",
-                distance: "5 min walk from venue",
-                note: "Use code WEDDING2025 for 15% off",
-                stars: "5 stars",
-              },
-              {
-                name: "Bloom Boutique Hotel",
-                distance: "10 min drive",
-                note: "Complimentary breakfast included",
-                stars: "4 stars",
-              },
-              {
-                name: "Casa Rosario",
-                distance: "8 min walk",
-                note: "Charming heritage property",
-                stars: "4 stars",
-              },
-              {
-                name: "The Grand Residences",
-                distance: "2 min walk from reception",
-                note: "Special rate for wedding guests",
-                stars: "5 stars",
-              },
-            ].map((hotel, i) => (
-              <motion.div
-                key={i}
-                whileHover={{ y: -3 }}
-                transition={{ duration: 0.2 }}
-              >
-                <DetailCard
-                  className="h-full"
-                  style={{
-                    background: i % 2 === 0 ? "#f4f6ee" : "#eceee3",
-                  }}
-                >
-                  <p className="font-sans text-champagne/70 text-xs mb-1">
-                    {hotel.stars}
-                  </p>
-                  <p className="font-serif text-espresso/85 text-sm mb-1">
-                    {hotel.name}
-                  </p>
-                  <p className="font-sans text-espresso/45 text-xs mb-2">
-                    {hotel.distance}
-                  </p>
-                  <p
-                    className="font-sans text-xs px-3 py-1.5 rounded inline-block"
-                    style={{
-                      background: "rgba(68,92,63,0.1)",
-                      color: "#445c3f",
-                      border: "1px solid rgba(68,92,63,0.2)",
-                    }}
-                  >
-                    {hotel.note}
-                  </p>
-                </DetailCard>
-              </motion.div>
-            ))}
-          </div>
         </Section>
 
         {/* MAP */}
