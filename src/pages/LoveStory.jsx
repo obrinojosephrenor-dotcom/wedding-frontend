@@ -64,9 +64,9 @@ function Lightbox({ photo, onClose, onPrev, onNext, hasPrev, hasNext }) {
             onClick={(e) => { e.stopPropagation(); onPrev(); }}
             className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-14 w-10 h-10 rounded-full flex items-center justify-center font-sans"
             style={{
-              background: "rgba(68,92,63,0.4)",
-              color: "#eceee3",
-              border: "1px solid rgba(68,92,63,0.5)",
+              background: "rgba(201,169,110,0.4)",
+              color: "#FAF9F6",
+              border: "1px solid rgba(201,169,110,0.5)",
             }}
           >
             ←
@@ -79,9 +79,9 @@ function Lightbox({ photo, onClose, onPrev, onNext, hasPrev, hasNext }) {
             onClick={(e) => { e.stopPropagation(); onNext(); }}
             className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-14 w-10 h-10 rounded-full flex items-center justify-center font-sans"
             style={{
-              background: "rgba(68,92,63,0.4)",
-              color: "#eceee3",
-              border: "1px solid rgba(68,92,63,0.5)",
+              background: "rgba(201,169,110,0.4)",
+              color: "#FAF9F6",
+              border: "1px solid rgba(201,169,110,0.5)",
             }}
           >
             →
@@ -111,7 +111,7 @@ function PhotoTile({ url, index, onClick }) {
       <div
         className="bg-white p-2 shadow-md overflow-hidden"
         style={{
-          boxShadow: "0 6px 24px rgba(44,59,40,0.14), 0 2px 6px rgba(44,59,40,0.08)",
+          boxShadow: "0 6px 24px rgba(74,74,74,0.14), 0 2px 6px rgba(74,74,74,0.08)",
         }}
       >
         <img
@@ -148,7 +148,7 @@ export default function LoveStory() {
   }
 
   return (
-    <div className="min-h-screen" style={{ background: "#eceee3" }}>
+    <div className="min-h-screen" style={{ background: "#FAF9F6" }}>
 
       {/* Back button */}
       <motion.button
@@ -157,9 +157,9 @@ export default function LoveStory() {
         onClick={() => navigate("/")}
         className="fixed top-5 left-5 z-50 font-sans text-xs tracking-widest px-4 py-2 rounded-full transition-opacity hover:opacity-80"
         style={{
-          color: "#445c3f",
+          color: "#C9A96E",
           background: "rgba(244,246,238,0.85)",
-          border: "1px solid rgba(68,92,63,0.25)",
+          border: "1px solid rgba(201,169,110,0.25)",
           backdropFilter: "blur(8px)",
         }}
       >
@@ -170,8 +170,8 @@ export default function LoveStory() {
       <div
         className="relative text-center py-20 px-6 overflow-hidden"
         style={{
-          background: "linear-gradient(180deg, #d6dfc6 0%, #eceee3 100%)",
-          borderBottom: "1px solid rgba(68,92,63,0.12)",
+          background: "linear-gradient(180deg, #FDF0F5 0%, #FAF9F6 100%)",
+          borderBottom: "1px solid rgba(201,169,110,0.12)",
         }}
       >
         <FloralCornerTL className="absolute top-0 left-0" size={120} />
@@ -187,7 +187,7 @@ export default function LoveStory() {
         >
           <p
             className="font-sans tracking-[0.6em] text-xs uppercase mb-5"
-            style={{ color: "#445c3f" }}
+            style={{ color: "#C9A96E" }}
           >
             Prenuptial Photos
           </p>
@@ -197,14 +197,14 @@ export default function LoveStory() {
               fontSize: "clamp(2.5rem, 8vw, 5rem)",
               fontWeight: 300,
               lineHeight: 1.1,
-              color: "#2c3b28",
+              color: "#4A4A4A",
             }}
           >
             {WEDDING.bride}
           </h1>
           <p
             className="font-sans text-lg mb-2 tracking-widest"
-            style={{ color: "#445c3f" }}
+            style={{ color: "#C9A96E" }}
           >
             &
           </p>
@@ -214,7 +214,7 @@ export default function LoveStory() {
               fontSize: "clamp(2.5rem, 8vw, 5rem)",
               fontWeight: 300,
               lineHeight: 1.1,
-              color: "#2c3b28",
+              color: "#4A4A4A",
             }}
           >
             {WEDDING.groom}
@@ -235,7 +235,7 @@ export default function LoveStory() {
         >
           <p
             className="font-sans text-xs tracking-[0.4em] uppercase"
-            style={{ color: "rgba(68,92,63,0.4)" }}
+            style={{ color: "rgba(201,169,110,0.4)" }}
           >
             scroll to view
           </p>
@@ -260,8 +260,8 @@ export default function LoveStory() {
       <div
         className="relative text-center py-14 px-6 overflow-hidden"
         style={{
-          background: "linear-gradient(180deg, #eceee3 0%, #d6dfc6 100%)",
-          borderTop: "1px solid rgba(68,92,63,0.1)",
+          background: "linear-gradient(180deg, #FAF9F6 0%, #FDF0F5 100%)",
+          borderTop: "1px solid rgba(201,169,110,0.1)",
         }}
       >
         <FloralCornerBL className="absolute bottom-0 left-0" size={100} />
@@ -282,7 +282,7 @@ export default function LoveStory() {
             style={{
               fontSize: "clamp(1.4rem, 4vw, 2rem)",
               fontWeight: 300,
-              color: "#445c3f",
+              color: "#C9A96E",
             }}
           >
             See You on Our Special Day
@@ -295,9 +295,9 @@ export default function LoveStory() {
               onClick={() => navigate("/rsvp")}
               className="px-7 py-3 rounded font-sans text-xs tracking-[0.35em] uppercase"
               style={{
-                background: "linear-gradient(135deg, #445c3f, #7d936c)",
-                color: "#eceee3",
-                boxShadow: "0 4px 16px rgba(68,92,63,0.3)",
+                background: "linear-gradient(135deg, #C9A96E, #E8B4C8)",
+                color: "#FAF9F6",
+                boxShadow: "0 4px 16px rgba(201,169,110,0.3)",
               }}
             >
               RSVP Now
@@ -306,8 +306,8 @@ export default function LoveStory() {
               onClick={() => navigate("/")}
               className="px-7 py-3 rounded font-sans text-xs tracking-[0.35em] uppercase"
               style={{
-                border: "1px solid rgba(68,92,63,0.35)",
-                color: "#445c3f",
+                border: "1px solid rgba(201,169,110,0.35)",
+                color: "#C9A96E",
               }}
             >
               Back to Invitation

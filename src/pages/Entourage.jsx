@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+﻿import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import {
   FloralCornerTL, FloralCornerTR,
@@ -59,19 +59,19 @@ function PersonCard({ role, name, delay = 0 }) {
       transition={{ duration: 0.5, delay }}
       className="text-center px-3 py-4 rounded-lg"
       style={{
-        background: "rgba(68,92,63,0.05)",
-        border: "1px solid rgba(68,92,63,0.12)",
+        background: "rgba(201,169,110,0.05)",
+        border: "1px solid rgba(201,169,110,0.12)",
       }}
     >
       <p
         className="font-sans tracking-widest uppercase mb-1"
-        style={{ color: "#7d936c", fontSize: "9px" }}
+        style={{ color: "#E8B4C8", fontSize: "9px" }}
       >
         {role}
       </p>
       <p
         className="font-script italic"
-        style={{ fontSize: "1.05rem", fontWeight: 300, color: "#2c3b28" }}
+        style={{ fontSize: "1.05rem", fontWeight: 300, color: "#4A4A4A" }}
       >
         {name}
       </p>
@@ -84,8 +84,8 @@ function EntourageSection({ eyebrow, title, bg, children }) {
     <section
       className="py-12 px-4"
       style={{
-        background: bg || "#f4f6ee",
-        borderBottom: "1px solid rgba(68,92,63,0.08)",
+        background: bg || "#FFFFFF",
+        borderBottom: "1px solid rgba(201,169,110,0.08)",
       }}
     >
       <div className="max-w-2xl mx-auto">
@@ -98,7 +98,7 @@ function EntourageSection({ eyebrow, title, bg, children }) {
         >
           <p
             className="font-sans tracking-[0.45em] text-xs uppercase mb-2"
-            style={{ color: "#445c3f" }}
+            style={{ color: "#C9A96E" }}
           >
             {eyebrow}
           </p>
@@ -107,7 +107,7 @@ function EntourageSection({ eyebrow, title, bg, children }) {
             style={{
               fontSize: "clamp(1.6rem, 5vw, 2.2rem)",
               fontWeight: 300,
-              color: "#2c3b28",
+              color: "#4A4A4A",
             }}
           >
             {title}
@@ -127,7 +127,7 @@ export default function Entourage() {
   const navigate = useNavigate();
 
   return (
-    <div className="min-h-screen" style={{ background: "#eceee3" }}>
+    <div className="min-h-screen" style={{ background: "#FAF9F6" }}>
 
       {/* Back button */}
       <motion.button
@@ -136,9 +136,9 @@ export default function Entourage() {
         onClick={() => navigate("/")}
         className="fixed top-5 left-5 z-50 font-sans text-xs tracking-widest px-4 py-2 rounded-full transition-opacity hover:opacity-80"
         style={{
-          color: "#445c3f",
+          color: "#C9A96E",
           background: "rgba(244,246,238,0.85)",
-          border: "1px solid rgba(68,92,63,0.25)",
+          border: "1px solid rgba(201,169,110,0.25)",
           backdropFilter: "blur(8px)",
         }}
       >
@@ -149,8 +149,8 @@ export default function Entourage() {
       <div
         className="relative text-center py-20 px-6 overflow-hidden"
         style={{
-          background: "linear-gradient(180deg, #d6dfc6 0%, #eceee3 100%)",
-          borderBottom: "1px solid rgba(68,92,63,0.12)",
+          background: "linear-gradient(180deg, #FDF0F5 0%, #FAF9F6 100%)",
+          borderBottom: "1px solid rgba(201,169,110,0.12)",
         }}
       >
         <FloralCornerTL className="absolute top-0 left-0" size={110} />
@@ -162,13 +162,13 @@ export default function Entourage() {
         >
           <p
             className="font-sans tracking-[0.5em] text-xs uppercase mb-4"
-            style={{ color: "#445c3f" }}
+            style={{ color: "#C9A96E" }}
           >
             Wedding Entourage
           </p>
           <h1
             className="font-script italic mb-3"
-            style={{ fontSize: "clamp(2.5rem, 8vw, 4rem)", fontWeight: 300, color: "#2c3b28" }}
+            style={{ fontSize: "clamp(2.5rem, 8vw, 4rem)", fontWeight: 300, color: "#4A4A4A" }}
           >
             {WEDDING.bride} & {WEDDING.groom}
           </h1>
@@ -177,7 +177,7 @@ export default function Entourage() {
           </div>
           <p
             className="font-serif text-sm tracking-wide"
-            style={{ color: "rgba(44,59,40,0.6)" }}
+            style={{ color: "rgba(74,74,74,0.6)" }}
           >
             {new Date(WEDDING.date).toLocaleDateString("en-US", {
               weekday: "long", year: "numeric",
@@ -191,13 +191,13 @@ export default function Entourage() {
       <EntourageSection
         eyebrow="The Families"
         title="Parents of the Couple"
-        bg="#f4f6ee"
+        bg="#FFFFFF"
       >
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div>
             <p
               className="font-sans text-xs tracking-[0.4em] uppercase text-center mb-4"
-              style={{ color: "#7d936c" }}
+              style={{ color: "#E8B4C8" }}
             >
               Bride's Parents
             </p>
@@ -210,7 +210,7 @@ export default function Entourage() {
           <div>
             <p
               className="font-sans text-xs tracking-[0.4em] uppercase text-center mb-4"
-              style={{ color: "#7d936c" }}
+              style={{ color: "#E8B4C8" }}
             >
               Groom's Parents
             </p>
@@ -227,7 +227,7 @@ export default function Entourage() {
       <EntourageSection
         eyebrow="Principal Sponsors"
         title="Our Ninongs & Ninangs"
-        bg="#eceee3"
+        bg="#FAF9F6"
       >
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
           {PRINCIPAL_SPONSORS.map((p, i) => (
@@ -240,7 +240,7 @@ export default function Entourage() {
       <EntourageSection
         eyebrow="The Honor Party"
         title="Best Man & Maid of Honor"
-        bg="#f4f6ee"
+        bg="#FFFFFF"
       >
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-md mx-auto">
           {HONOR_PARTY.map((p, i) => (
@@ -253,7 +253,7 @@ export default function Entourage() {
       <EntourageSection
         eyebrow="The Little Ones"
         title="Bearers & Flower Girls"
-        bg="#f4f6ee"
+        bg="#FFFFFF"
       >
         <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
           {LITTLE_ONES.map((p, i) => (
@@ -266,8 +266,8 @@ export default function Entourage() {
       <div
         className="relative text-center py-14 px-6 overflow-hidden"
         style={{
-          background: "linear-gradient(180deg, #eceee3 0%, #d6dfc6 100%)",
-          borderTop: "1px solid rgba(68,92,63,0.1)",
+          background: "linear-gradient(180deg, #FAF9F6 0%, #FDF0F5 100%)",
+          borderTop: "1px solid rgba(201,169,110,0.1)",
         }}
       >
         <FloralCornerBL className="absolute bottom-0 left-0" size={100} />
@@ -285,7 +285,7 @@ export default function Entourage() {
           </div>
           <p
             className="font-script italic mb-3"
-            style={{ fontSize: "clamp(1.4rem, 4vw, 2rem)", fontWeight: 300, color: "#445c3f" }}
+            style={{ fontSize: "clamp(1.4rem, 4vw, 2rem)", fontWeight: 300, color: "#C9A96E" }}
           >
             With Love & Gratitude
           </p>
@@ -294,7 +294,7 @@ export default function Entourage() {
           </div>
           <p
             className="font-sans text-xs leading-relaxed max-w-sm mx-auto mb-8"
-            style={{ color: "rgba(44,59,40,0.5)" }}
+            style={{ color: "rgba(74,74,74,0.5)" }}
           >
             We are forever grateful to each and every one of you for being
             part of our most special day ✦
@@ -304,9 +304,9 @@ export default function Entourage() {
               onClick={() => navigate("/rsvp")}
               className="px-7 py-3 rounded font-sans text-xs tracking-[0.35em] uppercase"
               style={{
-                background: "linear-gradient(135deg, #445c3f, #7d936c)",
-                color: "#eceee3",
-                boxShadow: "0 4px 16px rgba(68,92,63,0.3)",
+                background: "linear-gradient(135deg, #C9A96E, #E8B4C8)",
+                color: "#FAF9F6",
+                boxShadow: "0 4px 16px rgba(201,169,110,0.3)",
               }}
             >
               RSVP Now
@@ -315,8 +315,8 @@ export default function Entourage() {
               onClick={() => navigate("/")}
               className="px-7 py-3 rounded font-sans text-xs tracking-[0.35em] uppercase"
               style={{
-                border: "1px solid rgba(68,92,63,0.35)",
-                color: "#445c3f",
+                border: "1px solid rgba(201,169,110,0.35)",
+                color: "#C9A96E",
               }}
             >
               Back to Invitation

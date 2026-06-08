@@ -105,8 +105,8 @@ const [form, setForm] = useState({
           transition={{ duration: 0.8 }}
           className="relative text-center max-w-sm mx-auto px-8 py-12 bg-ivory rounded-lg"
           style={{
-            boxShadow: "0 20px 60px rgba(44,59,40,0.12)",
-            border: "1px solid rgba(68,92,63,0.25)",
+            boxShadow: "0 20px 60px rgba(74,74,74,0.12)",
+            border: "1px solid rgba(201,169,110,0.25)",
           }}
         >
           <FloralCornerTL className="absolute top-0 left-0" size={70} />
@@ -148,9 +148,9 @@ const [form, setForm] = useState({
             onClick={() => navigate("/")}
             className="font-sans text-xs tracking-[0.3em] uppercase px-7 py-3 rounded transition-all"
             style={{
-              background: "linear-gradient(135deg, #445c3f, #7d936c)",
-              color: "#f4f6ee",
-              boxShadow: "0 4px 16px rgba(68,92,63,0.3)",
+              background: "linear-gradient(135deg, #C9A96E, #E8B4C8)",
+              color: "#FFFFFF",
+              boxShadow: "0 4px 16px rgba(201,169,110,0.3)",
             }}
           >
             Back to Invitation
@@ -168,7 +168,7 @@ const [form, setForm] = useState({
         animate={{ opacity: 1 }}
         onClick={() => navigate("/")}
         className="fixed top-5 left-5 z-50 flex items-center gap-2 font-sans text-xs text-champagne/70 tracking-widest hover:text-champagne transition-colors bg-ivory/80 backdrop-blur-sm px-4 py-2 rounded-full"
-        style={{ border: "1px solid rgba(68,92,63,0.3)" }}
+        style={{ border: "1px solid rgba(201,169,110,0.3)" }}
       >
         Back
       </motion.button>
@@ -179,8 +179,8 @@ const [form, setForm] = useState({
         transition={{ duration: 0.8 }}
         className="relative max-w-md mx-auto bg-ivory rounded-lg px-8 py-10"
         style={{
-          boxShadow: "0 20px 60px rgba(44,59,40,0.1)",
-          border: "1px solid rgba(68,92,63,0.2)",
+          boxShadow: "0 20px 60px rgba(74,74,74,0.1)",
+          border: "1px solid rgba(201,169,110,0.2)",
         }}
       >
         <FloralCornerTL className="absolute top-0 left-0" size={80} />
@@ -266,16 +266,16 @@ const [form, setForm] = useState({
                   style={{
                     border:
                       form.attending === opt.value
-                        ? "1px solid #445c3f"
-                        : "1px solid rgba(68,92,63,0.25)",
+                        ? "1px solid #C9A96E"
+                        : "1px solid rgba(201,169,110,0.25)",
                     background:
                       form.attending === opt.value
-                        ? "linear-gradient(135deg, #445c3f, #7d936c)"
+                        ? "linear-gradient(135deg, #C9A96E, #E8B4C8)"
                         : "transparent",
                     color:
                       form.attending === opt.value
-                        ? "#f4f6ee"
-                        : "rgba(44,59,40,0.6)",
+                        ? "#FFFFFF"
+                        : "rgba(74,74,74,0.6)",
                   }}
                 >
                   {opt.label}
@@ -297,7 +297,7 @@ const [form, setForm] = useState({
           <motion.button
             whileHover={{
               scale: 1.02,
-              boxShadow: "0 8px 30px rgba(68,92,63,0.35)",
+              boxShadow: "0 8px 30px rgba(201,169,110,0.35)",
             }}
             whileTap={{ scale: 0.97 }}
             type="submit"
@@ -305,10 +305,10 @@ const [form, setForm] = useState({
             className="w-full py-4 rounded font-sans text-xs tracking-[0.4em] uppercase transition-all"
             style={{
               background: loading
-                ? "rgba(68,92,63,0.4)"
-                : "linear-gradient(135deg, #445c3f, #7d936c)",
-              color: "#f4f6ee",
-              boxShadow: "0 4px 20px rgba(68,92,63,0.25)",
+                ? "rgba(201,169,110,0.4)"
+                : "linear-gradient(135deg, #C9A96E, #E8B4C8)",
+              color: "#FFFFFF",
+              boxShadow: "0 4px 20px rgba(201,169,110,0.25)",
             }}
           >
             {loading ? "Sending..." : "Send My RSVP"}
@@ -323,3 +323,4 @@ const [form, setForm] = useState({
     </div>
   );
 }
+

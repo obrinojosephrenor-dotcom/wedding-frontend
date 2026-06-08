@@ -27,9 +27,9 @@ function LoveStoryPreview() {
     <section
       className="py-16 px-4 relative overflow-hidden"
       style={{
-        background: "linear-gradient(180deg, #f4f6ee 0%, #eceee3 100%)",
-        borderTop: "1px solid rgba(68,92,63,0.1)",
-        borderBottom: "1px solid rgba(68,92,63,0.1)",
+        background: "linear-gradient(180deg, #FFFFFF 0%, #FAF9F6 100%)",
+        borderTop: "1px solid rgba(201,169,110,0.1)",
+        borderBottom: "1px solid rgba(201,169,110,0.1)",
       }}
     >
       <FloralCornerTL className="absolute top-0 left-0" size={90} />
@@ -38,7 +38,7 @@ function LoveStoryPreview() {
       <div className="text-center mb-10">
         <p
           className="font-sans tracking-[0.5em] text-xs uppercase mb-3"
-          style={{ color: "#445c3f" }}
+          style={{ color: "#C9A96E" }}
         >
             An endless adventure
         </p>
@@ -47,7 +47,7 @@ function LoveStoryPreview() {
           style={{
             fontSize: "clamp(2rem, 6vw, 3rem)",
             fontWeight: 300,
-            color: "#2c3b28",
+            color: "#4A4A4A",
           }}
         >
           Two souls, one journey.
@@ -57,7 +57,7 @@ function LoveStoryPreview() {
         </div>
         <p
           className="font-sans text-xs max-w-xs mx-auto leading-relaxed"
-          style={{ color: "rgba(44,59,40,0.5)" }}
+          style={{ color: "rgba(74,74,74,0.5)" }}
         >
           Love sealed with a vow
         </p>
@@ -78,7 +78,7 @@ function LoveStoryPreview() {
               className="bg-white p-2.5 pb-10 relative"
               style={{
                 transform: "rotate(" + [-1.5, 1, -0.8, 1.8, -1.2][i] + "deg)",
-                boxShadow: "0 6px 20px rgba(44,59,40,0.12)",
+                boxShadow: "0 6px 20px rgba(74,74,74,0.12)",
               }}
             >
               <div style={{ aspectRatio: "4/3", overflow: "hidden" }}>
@@ -93,13 +93,13 @@ function LoveStoryPreview() {
               <div className="absolute bottom-0 left-0 right-0 p-2 text-center">
                 <p
                   className="font-sans"
-                  style={{ fontSize: "9px", color: "rgba(44,59,40,0.4)" }}
+                  style={{ fontSize: "9px", color: "rgba(74,74,74,0.4)" }}
                 >
                   {ch.label}
                 </p>
                 <p
                   className="font-script italic"
-                  style={{ fontSize: "0.8rem", fontWeight: 300, color: "rgba(44,59,40,0.65)" }}
+                  style={{ fontSize: "0.8rem", fontWeight: 300, color: "rgba(74,74,74,0.65)" }}
                 >
                   {ch.title}
                 </p>
@@ -114,9 +114,9 @@ function LoveStoryPreview() {
           onClick={() => navigate("/love-story")}
           className="px-8 py-3.5 rounded font-sans text-xs tracking-[0.35em] uppercase"
           style={{
-            background: "linear-gradient(135deg, #445c3f, #7d936c)",
-            color: "#eceee3",
-            boxShadow: "0 4px 20px rgba(68,92,63,0.3)",
+            background: "linear-gradient(135deg, #C9A96E, #E8B4C8)",
+            color: "#FAF9F6",
+            boxShadow: "0 4px 20px rgba(201,169,110,0.3)",
           }}
         >
           Click to witness a promise of a lifetime
@@ -142,7 +142,7 @@ function EntouragePreview() {
   return (
     <section
       className="py-16 px-4 relative overflow-hidden"
-      style={{ background: "#f4f6ee" }}
+      style={{ background: "#FFFFFF" }}
     >
       <FloralCornerBL className="absolute bottom-0 left-0" size={90} />
       <FloralCornerBR className="absolute bottom-0 right-0" size={90} />
@@ -150,7 +150,7 @@ function EntouragePreview() {
       <div className="text-center mb-10">
         <p
           className="font-sans tracking-[0.5em] text-xs uppercase mb-3"
-          style={{ color: "#445c3f" }}
+          style={{ color: "#C9A96E" }}
         >
           The Wedding Party
         </p>
@@ -159,7 +159,7 @@ function EntouragePreview() {
           style={{
             fontSize: "clamp(2rem, 6vw, 3rem)",
             fontWeight: 300,
-            color: "#2c3b28",
+            color: "#4A4A4A",
           }}
         >
           Our Entourage
@@ -169,7 +169,7 @@ function EntouragePreview() {
         </div>
         <p
           className="font-sans text-xs max-w-xs mx-auto leading-relaxed"
-          style={{ color: "rgba(44,59,40,0.5)" }}
+          style={{ color: "rgba(74,74,74,0.5)" }}
         >
           The people who walk beside us on our most beautiful day
         </p>
@@ -185,19 +185,19 @@ function EntouragePreview() {
             transition={{ duration: 0.4, delay: i * 0.07 }}
             className="text-center py-4 px-2 rounded-lg"
             style={{
-              background: "rgba(68,92,63,0.05)",
-              border: "1px solid rgba(68,92,63,0.1)",
+              background: "rgba(201,169,110,0.05)",
+              border: "1px solid rgba(201,169,110,0.1)",
             }}
           >
             <p
               className="font-sans tracking-wider uppercase mb-1"
-              style={{ color: "#7d936c", fontSize: "9px" }}
+              style={{ color: "#E8B4C8", fontSize: "9px" }}
             >
               {p.role}
             </p>
             <p
               className="font-script italic"
-              style={{ fontSize: "0.9rem", fontWeight: 300, color: "#2c3b28" }}
+              style={{ fontSize: "0.9rem", fontWeight: 300, color: "#4A4A4A" }}
             >
               {p.name}
             </p>
@@ -210,8 +210,8 @@ function EntouragePreview() {
           onClick={() => navigate("/entourage")}
           className="px-8 py-3.5 rounded font-sans text-xs tracking-[0.35em] uppercase"
           style={{
-            border: "1px solid rgba(68,92,63,0.4)",
-            color: "#445c3f",
+            border: "1px solid rgba(201,169,110,0.4)",
+            color: "#C9A96E",
           }}
         >
           View Full Entourage
@@ -231,35 +231,35 @@ function QuickLinks() {
       label: "RSVP",
       sub:   "Confirm attendance",
       path:  "/rsvp",
-      bg:    "linear-gradient(135deg, #445c3f, #7d936c)",
-      color: "#eceee3",
+      bg:    "linear-gradient(135deg, #C9A96E, #E8B4C8)",
+      color: "#FAF9F6",
     },
     {
       icon:  "📋",
       label: "Details",
       sub:   "Venue and timeline",
       path:  "/details",
-      bg:    "rgba(68,92,63,0.08)",
-      color: "#2c3b28",
-      border: "1px solid rgba(68,92,63,0.25)",
+      bg:    "rgba(201,169,110,0.08)",
+      color: "#4A4A4A",
+      border: "1px solid rgba(201,169,110,0.25)",
     },
     {
       icon:  "📖",
       label: "Our Story",
       sub:   "Five chapters of love",
       path:  "/love-story",
-      bg:    "rgba(125,147,108,0.12)",
-      color: "#2c3b28",
-      border: "1px solid rgba(125,147,108,0.3)",
+      bg:    "rgba(232,180,200,0.12)",
+      color: "#4A4A4A",
+      border: "1px solid rgba(232,180,200,0.3)",
     },
     {
       icon:  "💐",
       label: "Entourage",
       sub:   "Meet the wedding party",
       path:  "/entourage",
-      bg:    "rgba(170,185,146,0.15)",
-      color: "#2c3b28",
-      border: "1px solid rgba(170,185,146,0.35)",
+      bg:    "rgba(168,184,159,0.15)",
+      color: "#4A4A4A",
+      border: "1px solid rgba(168,184,159,0.35)",
     },
   ];
 }
@@ -267,7 +267,7 @@ function QuickLinks() {
 // ─── Full invitation content after envelope opens ──────────────────
 function InvitationHome() {
   return (
-    <div className="min-h-screen" style={{ background: "#eceee3" }}>
+    <div className="min-h-screen" style={{ background: "#FAF9F6" }}>
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -280,9 +280,9 @@ function InvitationHome() {
         <section
           className="py-12 px-4"
           style={{
-            background: "linear-gradient(180deg, #d6dfc6 0%, #eceee3 100%)",
-            borderTop:    "1px solid rgba(68,92,63,0.1)",
-            borderBottom: "1px solid rgba(68,92,63,0.1)",
+            background: "linear-gradient(180deg, #FDF0F5 0%, #FAF9F6 100%)",
+            borderTop:    "1px solid rgba(201,169,110,0.1)",
+            borderBottom: "1px solid rgba(201,169,110,0.1)",
           }}
         >
           <CountdownTimer variant="full" />

@@ -19,9 +19,9 @@ function TimeBlock({ value, label }) {
         style={{
           width:      "72px",
           height:     "80px",
-          background: "rgba(68,92,63,0.08)",
-          border:     "1px solid rgba(68,92,63,0.25)",
-          boxShadow:  "0 4px 20px rgba(68,92,63,0.1), inset 0 1px 0 rgba(255,255,255,0.6)",
+          background: "rgba(201,169,110,0.08)",
+          border:     "1px solid rgba(201,169,110,0.25)",
+          boxShadow:  "0 4px 20px rgba(201,169,110,0.1), inset 0 1px 0 rgba(255,255,255,0.6)",
         }}
       >
         {/* Flip line */}
@@ -30,7 +30,7 @@ function TimeBlock({ value, label }) {
           style={{
             top:        "50%",
             height:     "1px",
-            background: "rgba(68,92,63,0.2)",
+            background: "rgba(201,169,110,0.2)",
           }}
         />
 
@@ -230,3 +230,4 @@ export default function CountdownTimer({ variant = "full" }) {
     </motion.div>
   );
 }
+

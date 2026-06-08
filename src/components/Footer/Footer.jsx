@@ -42,8 +42,8 @@ export default function Footer() {
     <footer
       className="relative overflow-hidden"
       style={{
-        background: "linear-gradient(180deg, #1e2d1a 0%, #131e10 100%)",
-        borderTop:  "1px solid rgba(68,92,63,0.15)",
+        background: "linear-gradient(180deg, #3A3A3A 0%, #2A2A2A 100%)",
+        borderTop:  "1px solid rgba(201,169,110,0.15)",
       }}
     >
       {/* Floral corners */}
@@ -60,7 +60,7 @@ export default function Footer() {
       <div
         className="w-full h-px"
         style={{
-          background: "linear-gradient(to right, transparent, rgba(68,92,63,0.4), transparent)",
+          background: "linear-gradient(to right, transparent, rgba(201,169,110,0.4), transparent)",
         }}
       />
 
@@ -83,7 +83,7 @@ export default function Footer() {
             style={{
               fontSize:  "clamp(1.6rem, 5vw, 2.4rem)",
               fontWeight: 300,
-              background: "linear-gradient(135deg, #445c3f, #aab992, #445c3f)",
+              background: "linear-gradient(135deg, #C9A96E, #A8B89F, #C9A96E)",
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent",
               backgroundClip: "text",
@@ -202,7 +202,7 @@ export default function Footer() {
         <div
           className="w-full h-px mb-6"
           style={{
-            background: "linear-gradient(to right, transparent, rgba(68,92,63,0.2), transparent)",
+            background: "linear-gradient(to right, transparent, rgba(201,169,110,0.2), transparent)",
           }}
         />
 
@@ -230,9 +230,10 @@ export default function Footer() {
       <div
         className="absolute bottom-0 left-0 right-0 h-24 pointer-events-none"
         style={{
-          background: "radial-gradient(ellipse 60% 100% at 50% 100%, rgba(68,92,63,0.06) 0%, transparent 70%)",
+          background: "radial-gradient(ellipse 60% 100% at 50% 100%, rgba(201,169,110,0.06) 0%, transparent 70%)",
         }}
       />
     </footer>
   );
 }
+

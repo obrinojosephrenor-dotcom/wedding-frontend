@@ -27,8 +27,8 @@ function DetailCard({ children, className = "", style = {} }) {
     <div
       className={`relative bg-ivory rounded-lg px-7 py-7 ${className}`}
       style={{
-        boxShadow: "0 8px 40px rgba(44,59,40,0.08)",
-        border: "1px solid rgba(68,92,63,0.2)",
+        boxShadow: "0 8px 40px rgba(74,74,74,0.08)",
+        border: "1px solid rgba(201,169,110,0.2)",
         ...style,
       }}
     >
@@ -61,7 +61,7 @@ function FAQItem({ question, answer }) {
   return (
     <div
       className="border-b last:border-b-0 cursor-pointer"
-      style={{ borderColor: "rgba(68,92,63,0.15)" }}
+      style={{ borderColor: "rgba(201,169,110,0.15)" }}
       onClick={() => setOpen((p) => !p)}
     >
       <div className="flex items-center justify-between py-4 gap-4">
@@ -98,7 +98,7 @@ function ColorSwatch({ name, hex }) {
     <div className="flex flex-col items-center gap-2">
       <div
         className="w-12 h-12 rounded-full shadow-sm"
-        style={{ background: hex, border: "1px solid rgba(44,59,40,0.08)" }}
+        style={{ background: hex, border: "1px solid rgba(74,74,74,0.08)" }}
       />
       <p className="font-sans text-espresso/60 text-xs text-center leading-tight">
         {name}
@@ -165,7 +165,7 @@ export default function Details() {
         animate={{ opacity: 1 }}
         onClick={() => navigate("/")}
         className="fixed top-5 left-5 z-50 flex items-center gap-2 font-sans text-xs text-champagne/70 tracking-widest hover:text-champagne transition-colors bg-ivory/80 backdrop-blur-sm px-4 py-2 rounded-full"
-        style={{ border: "1px solid rgba(68,92,63,0.3)" }}
+        style={{ border: "1px solid rgba(201,169,110,0.3)" }}
       >
         Back
       </motion.button>
@@ -174,8 +174,8 @@ export default function Details() {
       <div
         className="relative text-center py-20 px-6 overflow-hidden"
         style={{
-          background: "linear-gradient(180deg, #d6dfc6 0%, #eceee3 100%)",
-          borderBottom: "1px solid rgba(68,92,63,0.15)",
+          background: "linear-gradient(180deg, #FDF0F5 0%, #FAF9F6 100%)",
+          borderBottom: "1px solid rgba(201,169,110,0.15)",
         }}
       >
         <FloralCornerTL className="absolute top-0 left-0" size={110} />
@@ -211,7 +211,7 @@ export default function Details() {
       {/* COUNTDOWN */}
       <div
         className="py-4 px-6"
-        style={{ borderBottom: "1px solid rgba(68,92,63,0.12)" }}
+        style={{ borderBottom: "1px solid rgba(201,169,110,0.12)" }}
       >
         <CountdownTimer variant="full" />
       </div>
@@ -247,7 +247,7 @@ export default function Details() {
         {/* RECEPTION */}
         <Section delay={0.1}>
           <SectionHeading eyebrow="Where We Celebrate" title="The Reception" />
-          <DetailCard style={{ background: "#eceee3" }}>
+          <DetailCard style={{ background: "#FAF9F6" }}>
             <FloralCornerTR className="absolute top-0 right-0" size={60} />
             <FloralCornerBL className="absolute bottom-0 left-0" size={60} />
             <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -271,7 +271,7 @@ export default function Details() {
         {/* DRESS CODE */}
         <Section delay={0.1}>
           <SectionHeading eyebrow="What to Wear" title="Dress Code" />
-          <DetailCard style={{ background: "#eceee3" }}>
+          <DetailCard style={{ background: "#FAF9F6" }}>
             <div className="text-center mb-6">
               <p
                 className="font-script italic text-espresso/70 text-xl mb-2"
@@ -306,8 +306,8 @@ export default function Details() {
             <div
               className="mt-6 p-4 rounded text-center"
               style={{
-                background: "rgba(68,92,63,0.06)",
-                border: "1px solid rgba(68,92,63,0.2)",
+                background: "rgba(201,169,110,0.06)",
+                border: "1px solid rgba(201,169,110,0.2)",
               }}
             >
               <p className="font-sans text-espresso/50 text-xs">
@@ -338,8 +338,8 @@ export default function Details() {
                 rel="noreferrer"
                 className="flex-1 text-center py-2.5 rounded font-sans text-xs tracking-[0.3em] uppercase transition-all"
                 style={{
-                  background: "linear-gradient(135deg, #445c3f, #7d936c)",
-                  color: "#f4f6ee",
+                  background: "linear-gradient(135deg, #C9A96E, #E8B4C8)",
+                  color: "#FFFFFF",
                   textDecoration: "none",
                 }}
               >
@@ -351,8 +351,8 @@ export default function Details() {
                 rel="noreferrer"
                 className="flex-1 text-center py-2.5 rounded font-sans text-xs tracking-[0.3em] uppercase transition-all"
                 style={{
-                  border: "1px solid rgba(68,92,63,0.4)",
-                  color: "#445c3f",
+                  border: "1px solid rgba(201,169,110,0.4)",
+                  color: "#C9A96E",
                   textDecoration: "none",
                 }}
               >
@@ -383,9 +383,9 @@ export default function Details() {
                   href={"mailto:" + WEDDING.contact.email}
                   className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded font-sans text-xs tracking-[0.3em] uppercase transition-all"
                   style={{
-                    background: "linear-gradient(135deg, #445c3f, #7d936c)",
-                    color: "#f4f6ee",
-                    boxShadow: "0 4px 16px rgba(68,92,63,0.25)",
+                    background: "linear-gradient(135deg, #C9A96E, #E8B4C8)",
+                    color: "#FFFFFF",
+                    boxShadow: "0 4px 16px rgba(201,169,110,0.25)",
                     textDecoration: "none",
                   }}
                 >
@@ -396,8 +396,8 @@ export default function Details() {
                   href={"tel:" + WEDDING.contact.phone}
                   className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded font-sans text-xs tracking-[0.3em] uppercase transition-all"
                   style={{
-                    border: "1px solid rgba(68,92,63,0.4)",
-                    color: "#445c3f",
+                    border: "1px solid rgba(201,169,110,0.4)",
+                    color: "#C9A96E",
                     textDecoration: "none",
                   }}
                 >
