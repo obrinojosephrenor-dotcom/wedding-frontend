@@ -59,7 +59,7 @@ function LoveStoryPreview() {
           className="font-sans text-xs max-w-xs mx-auto leading-relaxed"
           style={{ color: "rgba(44,59,40,0.5)" }}
         >
-          Five chapters of a love that grew into forever
+          Love sealed with a vow
         </p>
       </div>
 
