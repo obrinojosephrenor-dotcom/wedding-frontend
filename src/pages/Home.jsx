@@ -40,7 +40,7 @@ function LoveStoryPreview() {
           className="font-sans tracking-[0.5em] text-xs uppercase mb-3"
           style={{ color: "#445c3f" }}
         >
-          Our Journey
+            An endless adventure
         </p>
         <h2
           className="font-script italic mb-3"x
@@ -50,7 +50,7 @@ function LoveStoryPreview() {
             color: "#2c3b28",
           }}
         >
-          A Love Story
+          Two souls, one journey.
         </h2>
         <div className="flex justify-center mb-3">
           <FloralDivider />
@@ -119,7 +119,7 @@ function LoveStoryPreview() {
             boxShadow: "0 4px 20px rgba(68,92,63,0.3)",
           }}
         >
-          Read Our Story
+          Click to witness a promise of a lifetime
         </button>
       </div>
     </section>
