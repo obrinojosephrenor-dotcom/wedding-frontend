@@ -264,40 +264,6 @@ function QuickLinks() {
       border: "1px solid rgba(170,185,146,0.35)",
     },
   ];
-
-  return (
-    <section className="py-12 px-4" style={{ background: "#eceee3" }}>
-      <p
-        className="font-sans tracking-[0.5em] text-xs uppercase text-center mb-8"
-        style={{ color: "#445c3f" }}
-      >
-        Everything You Need
-      </p>
-      <div className="grid grid-cols-2 gap-3 max-w-sm mx-auto">
-        {links.map((link, i) => (
-          <button
-            key={i}
-            onClick={() => navigate(link.path)}
-            className="flex flex-col items-center gap-2 py-5 px-3 rounded-lg transition-all duration-200 hover:opacity-90"
-            style={{
-              background: link.bg,
-              border:     link.border || "none",
-              color:      link.color,
-              boxShadow:  "0 4px 16px rgba(44,59,40,0.06)",
-            }}
-          >
-            <span className="text-2xl">{link.icon}</span>
-            <p className="font-serif text-sm">{link.label}</p>
-            <p
-              className="font-sans text-xs opacity-60 text-center leading-tight"
-            >
-              {link.sub}
-            </p>
-          </button>
-        ))}
-      </div>
-    </section>
-  );
 }
 
 // ─── Full invitation content after envelope opens ──────────────────

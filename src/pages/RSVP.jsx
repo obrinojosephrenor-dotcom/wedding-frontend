@@ -70,9 +70,7 @@ export default function RSVP() {
     if (form.mobile && !/^[0-9+\s\-()]{7,15}$/.test(form.mobile)) {
       e.mobile = "Please enter a valid mobile number";
     }
-    if (form.guestCount < 1 || form.guestCount > 10) {
-      e.guestCount = "Between 1 and 10 guests";
-    }
+    
     return e;
   }
 
