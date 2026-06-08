@@ -136,8 +136,7 @@ function RSVPCard({ onClick }) {
         </p>
 
         <p className="font-serif text-champagne text-base tracking-wide mb-5">
-          {new Date(new Date(WEDDING.date).getTime() - 14 * 24 * 60 * 60 * 1000)
-            .toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" })}
+        June 10, 2026
         </p>
 
         <p className="font-sans text-espresso/45 text-xs tracking-widest mb-6">
