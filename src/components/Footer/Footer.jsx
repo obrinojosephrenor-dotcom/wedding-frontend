@@ -138,32 +138,6 @@ export default function Footer() {
           <FloralDivider />
         </div>
 
-        {/* ── Hashtag ───────────────────────────────────────── */}
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7, delay: 0.2 }}
-          className="text-center mb-8"
-        >
-          <p className="font-sans text-ivory/25 text-xs tracking-widest uppercase mb-2">
-            Wedding Hashtag
-          </p>
-          <p
-            className="font-script italic"
-            style={{
-              fontSize:  "clamp(1.3rem, 4vw, 1.8rem)",
-              fontWeight: 300,
-              background: "linear-gradient(135deg, #445c3f, #aab992)",
-              WebkitBackgroundClip: "text",
-              WebkitTextFillColor:  "transparent",
-              backgroundClip: "text",
-            }}
-          >
-            {WEDDING.hashtag}
-          </p>
-        </motion.div>
-
         {/* ── Nav links ─────────────────────────────────────── */}
         <motion.div
           initial={{ opacity: 0 }}
@@ -172,11 +146,9 @@ export default function Footer() {
           transition={{ duration: 0.7, delay: 0.25 }}
           className="flex flex-wrap justify-center gap-x-6 gap-y-3 mb-8"
         >
-          <FooterLink label="Invitation"  onClick={() => navigate("/")}           />
           <FooterLink label="RSVP"        onClick={() => navigate("/rsvp")}        />
           <FooterLink label="Details"     onClick={() => navigate("/details")}     />
           <FooterLink label="Love Story"  onClick={() => navigate("/love-story")}  />
-          <FooterLink label="Gallery"     onClick={() => navigate("/gallery")}     />
         </motion.div>
 
         {/* ── Contact ───────────────────────────────────────── */}
@@ -222,17 +194,17 @@ export default function Footer() {
           <SocialLink
             href="https://instagram.com"
             label="Instagram"
-            icon="📸"
+            
           />
           <SocialLink
             href="https://facebook.com"
             label="Facebook"
-            icon="💙"
+            
           />
           <SocialLink
             href={`https://twitter.com/search?q=${encodeURIComponent(WEDDING.hashtag)}`}
             label="Twitter"
-            icon="🐦"
+            
           />
         </motion.div>
 
