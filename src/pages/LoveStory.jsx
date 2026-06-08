@@ -231,7 +231,7 @@ export default function LoveStory() {
         <motion.div
           animate={{ y: [0, 8, 0] }}
           transition={{ duration: 2, repeat: Infinity }}
-          className="absolute bottom-8 w-full flex justify-center"
+          className="absolute bottom-8 left-1/2 -translate-x-[45%]"
         >
           <p
             className="font-sans text-xs tracking-[0.4em] uppercase"
