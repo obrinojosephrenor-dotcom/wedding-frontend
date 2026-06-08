@@ -43,7 +43,7 @@ function LoveStoryPreview() {
           Our Journey
         </p>
         <h2
-          className="font-script italic mb-3"
+          className="font-script italic mb-3"x
           style={{
             fontSize: "clamp(2rem, 6vw, 3rem)",
             fontWeight: 300,
@@ -64,7 +64,7 @@ function LoveStoryPreview() {
       </div>
 
       <div
-        className="flex gap-5 overflow-x-auto pb-4 px-2 max-w-4xl mx-auto"
+        className="flex justify-center items-center gap-5 pb-4 px-2 max-w-4xl mx-auto"
         style={{ scrollbarWidth: "none" }}
       >
         {previews.map((ch, i) => (
@@ -86,6 +86,7 @@ function LoveStoryPreview() {
                   src={ch.url}
                   alt={ch.title}
                   className="w-full h-full object-cover"
+                  style={{ objectPosition: "center top" }}
                   loading="lazy"
                 />
               </div>
