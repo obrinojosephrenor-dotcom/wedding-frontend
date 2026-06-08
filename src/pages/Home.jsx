@@ -19,11 +19,8 @@ function LoveStoryPreview() {
   const navigate = useNavigate();
 
   const previews = [
-    { label: "Chapter I",   title: "First Meeting",  url: "https://images.unsplash.com/photo-1529634597503-139d3726fed5?w=400" },
-    { label: "Chapter II",  title: "Falling in Love", url: "https://images.unsplash.com/photo-1494774157365-9e04c6720e47?w=400" },
-    { label: "Chapter III", title: "Adventures",      url: "https://images.unsplash.com/photo-1527515637462-cff94edd08fe?w=400" },
-    { label: "Chapter IV",  title: "The Proposal",    url: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=400" },
-    { label: "Chapter V",   title: "Forever",         url: "https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=400" },
+    { label: "Chapter I",   title: "First Meeting",  url: "https://res.cloudinary.com/drhkmwcsg/image/upload/v1780828555/YET08069_vvhfdn.jpg" },
+    { label: "Chapter II",  title: "Falling in Love", url: "https://res.cloudinary.com/drhkmwcsg/image/upload/v1780828555/YET07880_rrj2ni.jpg" },
   ];
 
   return (
