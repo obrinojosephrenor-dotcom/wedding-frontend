@@ -187,12 +187,12 @@ export default function Footer() {
           className="flex justify-center gap-3 mb-10"
         >
           <SocialLink
-            href="https://instagram.com"
+            href="https://instagram.com/macchiattoesss"
             label="Instagram"
             
           />
           <SocialLink
-            href="https://facebook.com"
+            href="https://www.facebook.com/renor.obrino"
             label="Facebook"
             
           />
