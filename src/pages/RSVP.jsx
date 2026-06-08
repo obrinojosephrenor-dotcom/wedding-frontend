@@ -1,5 +1,5 @@
 ﻿import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import {
   FloralCornerTL,
@@ -30,21 +30,15 @@ function Field({ label, error, children }) {
 const inputClass =
   "w-full bg-transparent border-b border-champagne/40 font-sans text-espresso text-sm py-2 px-0 focus:outline-none focus:border-champagne placeholder:text-espresso/25 transition-colors duration-200";
 
-const selectClass =
-  "w-full bg-ivory border border-champagne/30 rounded font-sans text-espresso text-sm py-2 px-3 focus:outline-none focus:border-champagne transition-colors duration-200";
-
 export default function RSVP() {
   const navigate = useNavigate();
 
-  const [form, setForm] = useState({
-    guestName: "",
-    email: "",
-    mobile: "",
-    attending: "yes",
-    guestCount: 1,
-    dietary: "",
-    message: "",
-  });
+const [form, setForm] = useState({
+  guestName: "",
+  email:     "",
+  mobile:    "",
+  attending: "yes",
+});
 
   const [errors, setErrors] = useState({});
   const [loading, setLoading] = useState(false);
@@ -70,7 +64,9 @@ export default function RSVP() {
     if (form.mobile && !/^[0-9+\s\-()]{7,15}$/.test(form.mobile)) {
       e.mobile = "Please enter a valid mobile number";
     }
-    
+    if (form.guestCount < 1 || form.guestCount > 10) {
+      e.guestCount = "Between 1 and 10 guests";
+    }
     return e;
   }
 
@@ -286,88 +282,6 @@ export default function RSVP() {
                 </button>
               ))}
             </div>
-          </Field>
-
-          <AnimatePresence>
-            {form.attending === "yes" && (
-              <motion.div
-                initial={{ opacity: 0, height: 0 }}
-                animate={{ opacity: 1, height: "auto" }}
-                exit={{ opacity: 0, height: 0 }}
-                transition={{ duration: 0.3 }}
-              >
-                <Field label="Number of Guests" error={errors.guestCount}>
-                  <div className="flex items-center gap-4 mt-1">
-                    <button
-                      type="button"
-                      onClick={() =>
-                        setForm(function (p) {
-                          return {
-                            ...p,
-                            guestCount: Math.max(1, p.guestCount - 1),
-                          };
-                        })
-                      }
-                      className="w-8 h-8 rounded-full flex items-center justify-center font-sans text-champagne transition-all"
-                      style={{ border: "1px solid rgba(68,92,63,0.4)" }}
-                    >
-                      -
-                    </button>
-                    <span
-                      className="font-script text-champagne text-2xl w-8 text-center"
-                    >
-                      {form.guestCount}
-                    </span>
-                    <button
-                      type="button"
-                      onClick={() =>
-                        setForm(function (p) {
-                          return {
-                            ...p,
-                            guestCount: Math.min(10, p.guestCount + 1),
-                          };
-                        })
-                      }
-                      className="w-8 h-8 rounded-full flex items-center justify-center font-sans text-champagne transition-all"
-                      style={{ border: "1px solid rgba(68,92,63,0.4)" }}
-                    >
-                      +
-                    </button>
-                    <span className="font-sans text-espresso/35 text-xs">
-                      {form.guestCount === 1 ? "guest" : "guests"} attending
-                    </span>
-                  </div>
-                </Field>
-              </motion.div>
-            )}
-          </AnimatePresence>
-
-          <Field label="Dietary Restrictions" error={errors.dietary}>
-            <select
-              value={form.dietary}
-              onChange={set("dietary")}
-              className={selectClass}
-            >
-              <option value="">No restrictions</option>
-              <option value="vegetarian">Vegetarian</option>
-              <option value="vegan">Vegan</option>
-              <option value="gluten-free">Gluten Free</option>
-              <option value="halal">Halal</option>
-              <option value="kosher">Kosher</option>
-              <option value="nut-allergy">Nut Allergy</option>
-              <option value="other">Other</option>
-            </select>
-          </Field>
-
-          <Field label="Personal Message" error={errors.message}>
-            <textarea
-              placeholder="Leave the couple a heartfelt message..."
-              value={form.message}
-              onChange={set("message")}
-              rows={4}
-              className="w-full bg-transparent font-sans text-espresso text-sm py-2 px-3 focus:outline-none placeholder:text-espresso/25 transition-colors duration-200 resize-none rounded"
-              style={{ border: "1px solid rgba(68,92,63,0.3)" }}
-            />
           </Field>
 
           {apiError && (
