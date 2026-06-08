@@ -1,6 +1,7 @@
 ﻿import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import CountdownTimer from "../CountdownTimer/CountdownTimer";
+import { FaInstagram, FaFacebookF,} from "react-icons/fa6";
 import {
   FloralCornerTL, FloralCornerTR,
   FloralDivider, WaxSeal,
@@ -9,23 +10,17 @@ import { WEDDING } from "../../weddingConfig";
 
 // ─── Social link button ────────────────────────────────────────────
 function SocialLink({ href, label, icon }) {
-return (
-  <a
-    href={href}
-    target="_blank"
-    rel="noreferrer"
-    aria-label={label}
-    className="w-9 h-9 rounded-full flex items-center justify-center font-sans text-sm transition-all duration-200"
-    style={{
-      background: "rgba(68,92,63,0.1)",
-      border: "1px solid rgba(68,92,63,0.25)",
-      color: "#445c3f",
-      textDecoration: "none",
-    }}
-  >
-    {icon}
-  </a>
-);
+  return (
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="flex items-center gap-2"
+    >
+      <span className="text-lg">{icon}</span>
+      <span>{label}</span>
+    </a>
+  );
 }
 
 // ─── Footer nav link ───────────────────────────────────────────────
@@ -199,11 +194,6 @@ export default function Footer() {
           <SocialLink
             href="https://facebook.com"
             label="Facebook"
-            
-          />
-          <SocialLink
-            href={`https://twitter.com/search?q=${encodeURIComponent(WEDDING.hashtag)}`}
-            label="Twitter"
             
           />
         </motion.div>
