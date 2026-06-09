@@ -27,7 +27,7 @@ function LoveStoryPreview() {
     <section
       className="py-16 px-4 relative overflow-hidden"
       style={{
-        background: "linear-gradient(180deg, #FFFFFF 0%, #FAF9F6 100%)",
+        background: "linear-gradient(180deg, #FFFFFF 0%, #FFFFFF 100%)",
         borderTop: "1px solid rgba(201,169,110,0.1)",
         borderBottom: "1px solid rgba(201,169,110,0.1)",
       }}
@@ -114,8 +114,8 @@ function LoveStoryPreview() {
           onClick={() => navigate("/love-story")}
           className="px-8 py-3.5 rounded font-sans text-xs tracking-[0.35em] uppercase"
           style={{
-            background: "linear-gradient(135deg, #C9A96E, #E8B4C8)",
-            color: "#FAF9F6",
+            background: "linear-gradient(135deg, #F4B8CC, #DDEAF7)",
+            color: "#FFFFFF",
             boxShadow: "0 4px 20px rgba(201,169,110,0.3)",
           }}
         >
@@ -131,8 +131,6 @@ function EntouragePreview() {
   const navigate = useNavigate();
 
   const roles = [
-    { role: "Groomsman",      name: "Michael Noel D. Obrino" },
-    { role: "Bridesmaid", name: "Nikki Jean D. Singzon" },
     { role: "Best man",     name: "Claude P. Kirke" },
     { role: "Maid of Honor",    name: "Mary Nessa Red Lee" },
     { role: "Ring Bearer",   name: "Avery Allison S. Obrino" },
@@ -231,8 +229,8 @@ function QuickLinks() {
       label: "RSVP",
       sub:   "Confirm attendance",
       path:  "/rsvp",
-      bg:    "linear-gradient(135deg, #C9A96E, #E8B4C8)",
-      color: "#FAF9F6",
+      bg:    "linear-gradient(135deg, #F4B8CC, #DDEAF7)",
+      color: "#FFFFFF",
     },
     {
       icon:  "📋",
@@ -267,7 +265,7 @@ function QuickLinks() {
 // ─── Full invitation content after envelope opens ──────────────────
 function InvitationHome() {
   return (
-    <div className="min-h-screen" style={{ background: "#FAF9F6" }}>
+    <div className="min-h-screen" style={{ background: "#FFFFFF" }}>
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -280,7 +278,7 @@ function InvitationHome() {
         <section
           className="py-12 px-4"
           style={{
-            background: "linear-gradient(180deg, #FDF0F5 0%, #FAF9F6 100%)",
+            background: "linear-gradient(180deg, #FDF0F5 0%, #FFFFFF 100%)",
             borderTop:    "1px solid rgba(201,169,110,0.1)",
             borderBottom: "1px solid rgba(201,169,110,0.1)",
           }}
@@ -346,3 +344,4 @@ export default function Home() {
 
   return <InvitationHome />;
 }
+

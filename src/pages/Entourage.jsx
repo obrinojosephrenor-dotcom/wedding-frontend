@@ -138,7 +138,7 @@ export default function Entourage() {
   const navigate = useNavigate();
 
   return (
-    <div className="min-h-screen" style={{ background: "#FAF9F6" }}>
+    <div className="min-h-screen" style={{ background: "#FFFFFF" }}>
 
       {/* Back button */}
       <motion.button
@@ -160,7 +160,7 @@ export default function Entourage() {
       <div
         className="relative text-center py-20 px-6 overflow-hidden"
         style={{
-          background: "linear-gradient(180deg, #FDF0F5 0%, #FAF9F6 100%)",
+          background: "linear-gradient(180deg, #FDF0F5 0%, #FFFFFF 100%)",
           borderBottom: "1px solid rgba(201,169,110,0.12)",
         }}
       >
@@ -238,7 +238,7 @@ export default function Entourage() {
       <EntourageSection
         eyebrow="Principal Sponsors"
         title="Our Ninongs & Ninangs"
-        bg="#FAF9F6"
+        bg="#FFFFFF"
       >
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
           {PRINCIPAL_SPONSORS.map((p, i) => (
@@ -264,7 +264,7 @@ export default function Entourage() {
           <EntourageSection
             eyebrow="Secondary Sponsors"
             title="Candle, Cord & Veil"
-            bg="#FAF9F6"
+            bg="#FFFFFF"
           >
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               {BEARS.map((p, i) => (
@@ -327,7 +327,7 @@ export default function Entourage() {
       <div
         className="relative text-center py-14 px-6 overflow-hidden"
         style={{
-          background: "linear-gradient(180deg, #FAF9F6 0%, #FDF0F5 100%)",
+          background: "linear-gradient(180deg, #FFFFFF 0%, #FDF0F5 100%)",
           borderTop: "1px solid rgba(201,169,110,0.1)",
         }}
       >
@@ -365,8 +365,8 @@ export default function Entourage() {
               onClick={() => navigate("/rsvp")}
               className="px-7 py-3 rounded font-sans text-xs tracking-[0.35em] uppercase"
               style={{
-                background: "linear-gradient(135deg, #C9A96E, #E8B4C8)",
-                color: "#FAF9F6",
+                background: "linear-gradient(135deg, #F4B8CC, #DDEAF7)",
+                color: "#FFFFFF",
                 boxShadow: "0 4px 16px rgba(201,169,110,0.3)",
               }}
             >
@@ -389,3 +389,4 @@ export default function Entourage() {
     </div>
   );
 }
+

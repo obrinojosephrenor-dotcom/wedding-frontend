@@ -113,7 +113,7 @@ function RSVPCard({ onClick }) {
     <CardShell
       onClick={onClick}
       className="w-full max-w-sm mx-auto px-8 py-8 cursor-pointer group"
-      style={{ background: "#FAF9F6" }}
+      style={{ background: "#FFFFFF" }}
     >
       <FloralCornerTL className="absolute top-0 left-0"  size={60} />
       <FloralCornerBR className="absolute bottom-0 right-0" size={60} />
@@ -149,7 +149,7 @@ function RSVPCard({ onClick }) {
           whileTap={{ scale: 0.97 }}
           className="inline-block px-8 py-3 rounded font-sans text-xs tracking-[0.3em] uppercase"
           style={{
-            background: "linear-gradient(135deg, #C9A96E, #E8B4C8)",
+            background: "linear-gradient(135deg, #F4B8CC, #DDEAF7)",
             color: "#FFFFFF",
             boxShadow: "0 4px 16px rgba(201,169,110,0.3)",
           }}
@@ -171,7 +171,7 @@ function DetailsCard({ onClick }) {
     <CardShell
       onClick={onClick}
       className="w-full max-w-sm mx-auto px-8 py-8 cursor-pointer group"
-      style={{ background: "#FAF9F6" }}
+      style={{ background: "#FFFFFF" }}
     >
       <FloralCornerTR className="absolute top-0 right-0" size={60} />
       <FloralCornerBL className="absolute bottom-0 left-0" size={60} />
@@ -303,7 +303,7 @@ export default function InvitationCards() {
                 width:      i === activeCard ? "28px" : "8px",
                 height:     "8px",
                 background: i === activeCard
-                  ? "linear-gradient(135deg, #C9A96E, #E8B4C8)"
+                  ? "linear-gradient(135deg, #F4B8CC, #DDEAF7)"
                   : "rgba(201,169,110,0.3)",
               }}
             />
@@ -372,4 +372,5 @@ export default function InvitationCards() {
     </div>
   );
 }
+
 

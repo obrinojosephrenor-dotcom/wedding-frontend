@@ -30,7 +30,7 @@ function Lightbox({ photo, onClose, onPrev, onNext, hasPrev, hasNext }) {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       className="fixed inset-0 z-50 flex items-center justify-center"
-      style={{ background: "rgba(20,35,18,0.95)", backdropFilter: "blur(12px)" }}
+      style={{ background: "rgba(74,74,74,0.95)", backdropFilter: "blur(12px)" }}
       onClick={onClose}
     >
       <motion.div
@@ -65,7 +65,7 @@ function Lightbox({ photo, onClose, onPrev, onNext, hasPrev, hasNext }) {
             className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-14 w-10 h-10 rounded-full flex items-center justify-center font-sans"
             style={{
               background: "rgba(201,169,110,0.4)",
-              color: "#FAF9F6",
+              color: "#FFFFFF",
               border: "1px solid rgba(201,169,110,0.5)",
             }}
           >
@@ -80,7 +80,7 @@ function Lightbox({ photo, onClose, onPrev, onNext, hasPrev, hasNext }) {
             className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-14 w-10 h-10 rounded-full flex items-center justify-center font-sans"
             style={{
               background: "rgba(201,169,110,0.4)",
-              color: "#FAF9F6",
+              color: "#FFFFFF",
               border: "1px solid rgba(201,169,110,0.5)",
             }}
           >
@@ -148,7 +148,7 @@ export default function LoveStory() {
   }
 
   return (
-    <div className="min-h-screen" style={{ background: "#FAF9F6" }}>
+    <div className="min-h-screen" style={{ background: "#FFFFFF" }}>
 
       {/* Back button */}
       <motion.button
@@ -170,7 +170,7 @@ export default function LoveStory() {
       <div
         className="relative text-center py-20 px-6 overflow-hidden"
         style={{
-          background: "linear-gradient(180deg, #FDF0F5 0%, #FAF9F6 100%)",
+          background: "linear-gradient(180deg, #FDF0F5 0%, #FFFFFF 100%)",
           borderBottom: "1px solid rgba(201,169,110,0.12)",
         }}
       >
@@ -260,7 +260,7 @@ export default function LoveStory() {
       <div
         className="relative text-center py-14 px-6 overflow-hidden"
         style={{
-          background: "linear-gradient(180deg, #FAF9F6 0%, #FDF0F5 100%)",
+          background: "linear-gradient(180deg, #FFFFFF 0%, #FDF0F5 100%)",
           borderTop: "1px solid rgba(201,169,110,0.1)",
         }}
       >
@@ -295,8 +295,8 @@ export default function LoveStory() {
               onClick={() => navigate("/rsvp")}
               className="px-7 py-3 rounded font-sans text-xs tracking-[0.35em] uppercase"
               style={{
-                background: "linear-gradient(135deg, #C9A96E, #E8B4C8)",
-                color: "#FAF9F6",
+                background: "linear-gradient(135deg, #F4B8CC, #DDEAF7)",
+                color: "#FFFFFF",
                 boxShadow: "0 4px 16px rgba(201,169,110,0.3)",
               }}
             >
@@ -333,3 +333,4 @@ export default function LoveStory() {
     </div>
   );
 }
+

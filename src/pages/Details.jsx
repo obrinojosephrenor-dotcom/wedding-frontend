@@ -174,7 +174,7 @@ export default function Details() {
       <div
         className="relative text-center py-20 px-6 overflow-hidden"
         style={{
-          background: "linear-gradient(180deg, #FDF0F5 0%, #FAF9F6 100%)",
+          background: "linear-gradient(180deg, #FDF0F5 0%, #FFFFFF 100%)",
           borderBottom: "1px solid rgba(201,169,110,0.15)",
         }}
       >
@@ -247,7 +247,7 @@ export default function Details() {
         {/* RECEPTION */}
         <Section delay={0.1}>
           <SectionHeading eyebrow="Where We Celebrate" title="The Reception" />
-          <DetailCard style={{ background: "#FAF9F6" }}>
+          <DetailCard style={{ background: "#FFFFFF" }}>
             <FloralCornerTR className="absolute top-0 right-0" size={60} />
             <FloralCornerBL className="absolute bottom-0 left-0" size={60} />
             <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -271,7 +271,7 @@ export default function Details() {
         {/* DRESS CODE */}
         <Section delay={0.1}>
           <SectionHeading eyebrow="What to Wear" title="Dress Code" />
-          <DetailCard style={{ background: "#FAF9F6" }}>
+          <DetailCard style={{ background: "#FFFFFF" }}>
             <div className="text-center mb-6">
               <p
                 className="font-script italic text-espresso/70 text-xl mb-2"
@@ -338,7 +338,7 @@ export default function Details() {
                 rel="noreferrer"
                 className="flex-1 text-center py-2.5 rounded font-sans text-xs tracking-[0.3em] uppercase transition-all"
                 style={{
-                  background: "linear-gradient(135deg, #C9A96E, #E8B4C8)",
+                  background: "linear-gradient(135deg, #F4B8CC, #DDEAF7)",
                   color: "#FFFFFF",
                   textDecoration: "none",
                 }}
@@ -383,7 +383,7 @@ export default function Details() {
                   href={"mailto:" + WEDDING.contact.email}
                   className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded font-sans text-xs tracking-[0.3em] uppercase transition-all"
                   style={{
-                    background: "linear-gradient(135deg, #C9A96E, #E8B4C8)",
+                    background: "linear-gradient(135deg, #F4B8CC, #DDEAF7)",
                     color: "#FFFFFF",
                     boxShadow: "0 4px 16px rgba(201,169,110,0.25)",
                     textDecoration: "none",
@@ -422,3 +422,4 @@ export default function Details() {
     </div>
   );
 }
+

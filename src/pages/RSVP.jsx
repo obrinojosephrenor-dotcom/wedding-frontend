@@ -148,7 +148,7 @@ const [form, setForm] = useState({
             onClick={() => navigate("/")}
             className="font-sans text-xs tracking-[0.3em] uppercase px-7 py-3 rounded transition-all"
             style={{
-              background: "linear-gradient(135deg, #C9A96E, #E8B4C8)",
+              background: "linear-gradient(135deg, #F4B8CC, #DDEAF7)",
               color: "#FFFFFF",
               boxShadow: "0 4px 16px rgba(201,169,110,0.3)",
             }}
@@ -270,7 +270,7 @@ const [form, setForm] = useState({
                         : "1px solid rgba(201,169,110,0.25)",
                     background:
                       form.attending === opt.value
-                        ? "linear-gradient(135deg, #C9A96E, #E8B4C8)"
+                        ? "linear-gradient(135deg, #F4B8CC, #DDEAF7)"
                         : "transparent",
                     color:
                       form.attending === opt.value
@@ -306,7 +306,7 @@ const [form, setForm] = useState({
             style={{
               background: loading
                 ? "rgba(201,169,110,0.4)"
-                : "linear-gradient(135deg, #C9A96E, #E8B4C8)",
+                : "linear-gradient(135deg, #F4B8CC, #DDEAF7)",
               color: "#FFFFFF",
               boxShadow: "0 4px 20px rgba(201,169,110,0.25)",
             }}
@@ -323,4 +323,5 @@ const [form, setForm] = useState({
     </div>
   );
 }
+
 
