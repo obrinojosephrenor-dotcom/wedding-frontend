@@ -90,20 +90,23 @@ function LoveStoryPreview() {
                   loading="lazy"
                 />
               </div>
-              <div className="absolute bottom-0 left-0 right-0 p-2 text-center">
-                <p
-                  className="font-sans"
-                  style={{ fontSize: "9px", color: "rgba(74,74,74,0.4)" }}
-                >
-                  {ch.label}
-                </p>
-                <p
-                  className="font-script italic"
-                  style={{ fontSize: "0.8rem", fontWeight: 300, color: "rgba(74,74,74,0.65)" }}
-                >
-                  {ch.title}
-                </p>
-              </div>
+              <div
+                className="bg-white p-2.5 pb-2 relative"
+                style={{
+                  transform: "rotate(" + [-1.5, 1, -0.8, 1.8, -1.2][i] + "deg)",
+                  boxShadow: "0 6px 20px rgba(74,74,74,0.12)",
+                }}
+              >
+                <div style={{ aspectRatio: "4/3", overflow: "hidden" }}>
+                  <img
+                    src={ch.url}
+                    alt={ch.title}
+                    className="w-full h-full object-cover"
+                    style={{ objectPosition: "center top" }}
+                    loading="lazy"
+                  />
+                </div>
+            </div>
             </div>
           </div>
         ))}
