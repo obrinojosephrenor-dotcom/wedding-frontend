@@ -136,16 +136,11 @@ const dressCodePairs = [
 export default function Details() {
   const navigate = useNavigate();
 
-  const ceremonyMapUrl =
-    "https://maps.app.goo.gl/f8stfHquw5UcaB127?g_st=afm" + encodeURIComponent(WEDDING.ceremony.address);
+const ceremonyMapUrl =
+  `https://www.google.com/maps?q=${WEDDING.ceremony.lat},${WEDDING.ceremony.lng}`;
 
-  const receptionMapUrl =
-    "https://maps.app.goo.gl/yuXgymnEbFeXjgqSA?g_st=afm" + encodeURIComponent(WEDDING.reception.address);
-
-  const embedUrl =
-    "https://maps.google.com/maps?q=" +
-    encodeURIComponent(WEDDING.ceremony.address) +
-    "&output=embed";
+const receptionMapUrl =
+  `https://www.google.com/maps?q=${WEDDING.reception.lat},${WEDDING.reception.lng}`;
 
   return (
     <div className="min-h-screen bg-cream">
