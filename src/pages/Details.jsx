@@ -333,9 +333,13 @@ export default function Details() {
           borderRadius: "24px",
         }}
       >
-        <ColorSwatch name="Dusty Blue" hex="#AFC7DD" />
-        <ColorSwatch name="Sage Green" hex="#A8B59C" />
-        <ColorSwatch name="Champagne" hex="#DCC9A3" />
+        <ColorSwatch name="Blush Pink" hex="#f2d9d9" />
+        <ColorSwatch name="Siege Green" hex="#d0e6cc"/>
+        <ColorSwatch name="Butter Yellow" hex="#f8e1a1"/>
+        <ColorSwatch name="Taupe" hex="#a89a84"/>
+        <ColorSwatch name="Dust Blue" hex="#74b0e3"/>
+        <ColorSwatch name="Silver" hex="#cbd2cf"/>
+
       </div>
     </div>
 
