@@ -223,43 +223,35 @@ function EntouragePreview() {
 function QuickLinks() {
   const navigate = useNavigate();
 
-  const links = [
-    {
-      icon:  "✉",
-      label: "RSVP",
-      sub:   "Confirm attendance",
-      path:  "/rsvp",
-      bg:    "linear-gradient(135deg, #F4B8CC, #DDEAF7)",
-      color: "#FFFFFF",
-    },
-    {
-      icon:  "📋",
-      label: "Details",
-      sub:   "Venue and timeline",
-      path:  "/details",
-      bg:    "rgba(201,169,110,0.08)",
-      color: "#4A4A4A",
-      border: "1px solid rgba(201,169,110,0.25)",
-    },
-    {
-      icon:  "📖",
-      label: "Our Story",
-      sub:   "Five chapters of love",
-      path:  "/love-story",
-      bg:    "rgba(232,180,200,0.12)",
-      color: "#4A4A4A",
-      border: "1px solid rgba(232,180,200,0.3)",
-    },
-    {
-      icon:  "💐",
-      label: "Entourage",
-      sub:   "Meet the wedding party",
-      path:  "/entourage",
-      bg:    "rgba(168,184,159,0.15)",
-      color: "#4A4A4A",
-      border: "1px solid rgba(168,184,159,0.35)",
-    },
-  ];
+const links = [
+  {
+    icon:  "📋",
+    label: "Details",
+    sub:   "Venue and timeline",
+    path:  "/details",
+    bg:    "rgba(201,169,110,0.08)",
+    color: "#4A4A4A",
+    border: "1px solid rgba(201,169,110,0.25)",
+  },
+  {
+    icon:  "📖",
+    label: "Our Story",
+    sub:   "Five chapters of love",
+    path:  "/love-story",
+    bg:    "rgba(232,180,200,0.12)",
+    color: "#4A4A4A",
+    border: "1px solid rgba(232,180,200,0.3)",
+  },
+  {
+    icon:  "💐",
+    label: "Entourage",
+    sub:   "Meet the wedding party",
+    path:  "/entourage",
+    bg:    "rgba(168,184,159,0.12)",
+    color: "#4A4A4A",
+    border: "1px solid rgba(168,184,159,0.3)",
+  },
+];
 }
 
 // ─── Full invitation content after envelope opens ──────────────────

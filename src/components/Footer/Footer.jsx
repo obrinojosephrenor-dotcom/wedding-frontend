@@ -141,7 +141,6 @@ export default function Footer() {
           transition={{ duration: 0.7, delay: 0.25 }}
           className="flex flex-wrap justify-center gap-x-6 gap-y-3 mb-8"
         >
-          <FooterLink label="RSVP"        onClick={() => navigate("/rsvp")}        />
           <FooterLink label="Details"     onClick={() => navigate("/details")}     />
           <FooterLink label="Love Story"  onClick={() => navigate("/love-story")}  />
         </motion.div>

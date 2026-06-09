@@ -362,16 +362,17 @@ export default function Entourage() {
           </p>
           <div className="flex justify-center gap-3 flex-wrap">
             <button
-              onClick={() => navigate("/rsvp")}
+              onClick={() => navigate("/")}
               className="px-7 py-3 rounded font-sans text-xs tracking-[0.35em] uppercase"
               style={{
                 background: "linear-gradient(135deg, #F4B8CC, #DDEAF7)",
-                color: "#FFFFFF",
-                boxShadow: "0 4px 16px rgba(201,169,110,0.3)",
+                color: "#4A4A4A",
+                boxShadow: "0 4px 16px rgba(247,214,224,0.4)",
               }}
             >
-              RSVP Now
+              Back to Invitation
             </button>
+          </div>
             <button
               onClick={() => navigate("/")}
               className="px-7 py-3 rounded font-sans text-xs tracking-[0.35em] uppercase"

@@ -226,7 +226,7 @@ function DetailsCard({ onClick }) {
 export default function InvitationCards() {
   const navigate    = useNavigate();
   const [activeCard, setActiveCard] = useState(0);
-  const cards = ["invitation", "rsvp", "details"];
+  const cards = ["invitation", "details"];
 
   return (
     <div className="min-h-screen bg-cream py-12 px-4">
@@ -277,13 +277,9 @@ export default function InvitationCards() {
             transition={{ duration: 0.45, ease: "easeOut" }}
             style={{ position: "relative", zIndex: 20 }}
           >
-            {activeCard === 0 && <MainCard />}
             {activeCard === 1 && (
-              <RSVPCard onClick={() => navigate("/rsvp")} />
-            )}
-            {activeCard === 2 && (
-              <DetailsCard onClick={() => navigate("/details")} />
-            )}
+            <DetailsCard onClick={() => navigate("/details")} />
+          )}
           </motion.div>
         </AnimatePresence>
       </div>
@@ -314,7 +310,7 @@ export default function InvitationCards() {
       {/* Card labels */}
       <div className="flex justify-center mt-3">
         <p className="font-sans text-espresso/35 text-xs tracking-widest uppercase">
-          {["Invitation", "R·S·V·P", "Details"][activeCard]}
+          {["Invitation", "Details"][activeCard]}
         </p>
       </div>
 
