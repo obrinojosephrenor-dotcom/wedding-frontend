@@ -363,7 +363,6 @@ export default function Details() {
 
       <p className="font-sans text-espresso/55 text-sm leading-relaxed max-w-md mx-auto mb-4">
         The biggest gift to us is your support and presence at our wedding
-        However, should you honor and bless us with gifts, a monatary gift would be warmly appreciated to help build our future.
       </p>
 
       <p className="font-sans text-espresso/55 text-sm leading-relaxed max-w-md mx-auto">
