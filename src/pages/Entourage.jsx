@@ -38,15 +38,26 @@ const HONOR_PARTY = [
   { role: "Maid of Honor", name: "Mary Nessa Red Lee" },
 ];
 
-const LITTLE_ONES = [
-  { role: "Candle",  name: "Kenneth L. Bote", name: "Jeanelou S. Agura"},
-  { role: "Cord",  name: "Joemar Gabriel A. Rallestan", name: "Cianne B. Allequir"},
-  { role: "Veil",  name: "Jherome Rosales", name: "April O. Allequir"},
-  { role: "Coin Bearer",  name: "Franco Emannuel Toquero"},
-  { role: "Ring Bearer",  name: "Avery Allison S. Obrino"},
-  { role: "Bible Bearer",  name: "Sam Thomas Aliman"},
-  { role: "Flower Girl",  name: "Alessia Vrielle O. Jabonite"},
+const BEARS = [
+  {
+    role: "Candle",
+    names: ["Kenneth L. Bote", "Jeanelou S. Agura"],
+  },
+  {
+    role: "Cord",
+    names: ["Joemar Gabriel A. Rallestan", "Cianne B. Allequir"],
+  },
+  {
+    role: "Veil",
+    names: ["Jherome Rosales", "April O. Allequir"],
+  },
+];
 
+const LITTLE_ONES = [
+  { role: "Coin Bearer", name: "Franco Emannuel Toquero" },
+  { role: "Ring Bearer", name: "Avery Allison S. Obrino" },
+  { role: "Bible Bearer", name: "Sam Thomas Aliman" },
+  { role: "Flower Girl", name: "Alessia Vrielle O. Jabonite" },
 ];
 
 // ─── Reusable components ───────────────────────────────────────────
@@ -249,18 +260,68 @@ export default function Entourage() {
         </div>
       </EntourageSection>
 
-      {/* BEARERS & FLOWER GIRLS */}
-      <EntourageSection
-        eyebrow="The Little Ones"
-        title="Bearers & Flower Girls"
-        bg="#FFFFFF"
-      >
-        <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-          {LITTLE_ONES.map((p, i) => (
-            <PersonCard key={i} role={p.role} name={p.name} delay={i * 0.08} />
-          ))}
-        </div>
-      </EntourageSection>
+                {/* CANDLE, CORD & VEIL */}
+          <EntourageSection
+            eyebrow="Secondary Sponsors"
+            title="Candle, Cord & Veil"
+            bg="#FAF9F6"
+          >
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              {BEARS.map((p, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: i * 0.1 }}
+                  className="text-center px-3 py-4 rounded-lg"
+                  style={{
+                    background: "rgba(201,169,110,0.05)",
+                    border: "1px solid rgba(201,169,110,0.12)",
+                  }}
+                >
+                  <p
+                    className="font-sans tracking-widest uppercase mb-2"
+                    style={{ color: "#E8B4C8", fontSize: "9px" }}
+                  >
+                    {p.role}
+                  </p>
+
+                  {p.names.map((name, idx) => (
+                    <p
+                      key={idx}
+                      className="font-script italic"
+                      style={{
+                        fontSize: "1.05rem",
+                        fontWeight: 300,
+                        color: "#4A4A4A",
+                      }}
+                    >
+                      {name}
+                    </p>
+                  ))}
+                </motion.div>
+              ))}
+            </div>
+          </EntourageSection>
+
+        {/* THE LITTLE ONES */}
+        <EntourageSection
+          eyebrow="The Little Ones"
+          title="Bearers & Flower Girl"
+          bg="#FFFFFF"
+        >
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+            {LITTLE_ONES.map((p, i) => (
+              <PersonCard
+                key={i}
+                role={p.role}
+                name={p.name}
+                delay={i * 0.08}
+              />
+            ))}
+          </div>
+        </EntourageSection>
 
       {/* CLOSING */}
       <div
