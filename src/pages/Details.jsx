@@ -95,38 +95,73 @@ function FAQItem({ question, answer }) {
 
 function WatercolorSwatch({ name, hex }) {
   return (
-    <div className="flex flex-col items-center gap-2">
-      <div
-        className="relative w-20 h-14"
-        style={{
-          background: `
-            radial-gradient(circle at 25% 25%, rgba(255,255,255,0.55), transparent 45%),
-            radial-gradient(circle at 75% 60%, rgba(255,255,255,0.25), transparent 40%),
-            ${hex}
-          `,
-          borderRadius: "45% 55% 60% 40% / 50% 35% 65% 50%",
-          filter: "blur(0.4px)",
-          opacity: 0.95,
-          transform: "rotate(-4deg)",
-          boxShadow: "0 4px 12px rgba(0,0,0,0.06)",
-        }}
-      >
-        {/* watercolor texture */}
+    <div className="flex flex-col items-center gap-3 group">
+      <div className="relative w-24 h-24">
+        {/* Main watercolor wash */}
+        <div
+          className="absolute inset-0"
+          style={{
+            background: `
+              radial-gradient(circle at 35% 30%, rgba(255,255,255,.65) 0%, transparent 40%),
+              radial-gradient(circle at 70% 65%, rgba(255,255,255,.25) 0%, transparent 35%),
+              ${hex}
+            `,
+            borderRadius:
+              "42% 58% 70% 30% / 45% 35% 65% 55%",
+            opacity: 0.9,
+            filter: "blur(1px)",
+          }}
+        />
+
+        {/* Secondary wash */}
+        <div
+          className="absolute"
+          style={{
+            width: "75%",
+            height: "75%",
+            left: "12%",
+            top: "12%",
+            background: hex,
+            opacity: 0.35,
+            borderRadius:
+              "65% 35% 50% 50% / 40% 60% 40% 60%",
+            filter: "blur(8px)",
+          }}
+        />
+
+        {/* Watercolor bloom */}
+        <div
+          className="absolute"
+          style={{
+            width: "45%",
+            height: "45%",
+            right: "10%",
+            bottom: "10%",
+            background: "#ffffff",
+            opacity: 0.15,
+            borderRadius: "50%",
+            filter: "blur(12px)",
+          }}
+        />
+
+        {/* Paper grain */}
         <div
           className="absolute inset-0"
           style={{
             background:
-              "radial-gradient(circle, rgba(255,255,255,0.25) 1px, transparent 1px)",
-            backgroundSize: "8px 8px",
+              "radial-gradient(rgba(255,255,255,.18) 1px, transparent 1px)",
+            backgroundSize: "6px 6px",
             mixBlendMode: "soft-light",
-            opacity: 0.4,
+            opacity: 0.5,
           }}
         />
       </div>
 
-      <span className="font-sans text-[10px] uppercase tracking-wider text-espresso/60">
-        {name}
-      </span>
+      <div className="text-center">
+        <p className="font-sans text-[10px] uppercase tracking-[0.2em] text-espresso/70">
+          {name}
+        </p>
+      </div>
     </div>
   );
 }
@@ -318,7 +353,14 @@ export default function Details() {
               <p className="font-sans text-champagne text-xs tracking-widest uppercase text-center mb-5">
                 Suggested Color Palette
               </p>
-              <div className="flex justify-center gap-4 flex-wrap">
+              <div
+                className="flex justify-center gap-8 flex-wrap py-4"
+                style={{
+                  background:
+                    "linear-gradient(180deg, rgba(255,255,255,0.5), rgba(250,249,246,0.9))",
+                  borderRadius: "24px",
+                }}
+              >
                 <WatercolorSwatch name="Ivory" hex="#f2d9d9" />
                 <WatercolorSwatch name="Champagne" hex="#d0e6cc" />
                 <WatercolorSwatch name="Dusty Rose" hex="#f8e1a1" />
