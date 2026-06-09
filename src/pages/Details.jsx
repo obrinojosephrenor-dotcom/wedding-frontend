@@ -371,14 +371,6 @@ export default function Details() {
         appreciated to help build our future.
       </p>
 
-      <div
-        className="mt-6 p-4 rounded-lg"
-        style={{
-          background: "rgba(201,169,110,0.06)",
-          border: "1px solid rgba(201,169,110,0.18)",
-        }}
-      >
-      </div>
     </div>
   </DetailCard>
 </Section>
