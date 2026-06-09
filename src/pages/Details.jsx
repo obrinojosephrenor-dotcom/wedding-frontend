@@ -93,11 +93,11 @@ function FAQItem({ question, answer }) {
   );
 }
 
-function WatercolorSwatch({ name, hex }) {
+function ColorSwatch({ name, hex }) {
   return (
     <div className="flex flex-col items-center gap-2">
       <div
-        className="w-16 h-16 rounded-full shadow-sm border border-white/60"
+        className="w-16 h-16 rounded-full border border-white/60 shadow-sm"
         style={{
           backgroundColor: hex,
         }}
