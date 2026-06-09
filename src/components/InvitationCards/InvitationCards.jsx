@@ -299,11 +299,10 @@ export default function InvitationCards() {
             <div
               className="rounded-full transition-all duration-300"
               style={{
-                width:      i === activeCard ? "28px" : "8px",
-                height:     "8px",
-                background: i === activeCard
-                  ? "linear-gradient(135deg, #F4B8CC, #DDEAF7)"
-                  : "rgba(201,169,110,0.3)",
+                border: "1px solid rgba(201,169,110,0.35)",
+                color: "#C9A96E",
+                background: "rgba(255,255,255,0.85)",
+                backdropFilter: "blur(8px)",
               }}
             />
           </button>
