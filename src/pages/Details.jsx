@@ -362,14 +362,13 @@ export default function Details() {
       </p>
 
       <p className="font-sans text-espresso/55 text-sm leading-relaxed max-w-md mx-auto mb-4">
-        The greatest gift we could receive is the joy of celebrating
-        this special day with the people we love most.
+        The biggest gift to us is your support and presence at our wedding
+        However, should you honor and bless us with gifts, a monatary gift would be warmly appreciated to help build our future.
       </p>
 
       <p className="font-sans text-espresso/55 text-sm leading-relaxed max-w-md mx-auto">
-        Should you wish to honor us with a gift, a contribution toward
-        our future together or honeymoon fund would be sincerely
-        appreciated.
+        However, should you honor and bless us with gifts, a monatary gift would be warmly 
+        appreciated to help build our future.
       </p>
 
       <div
@@ -379,9 +378,6 @@ export default function Details() {
           border: "1px solid rgba(201,169,110,0.18)",
         }}
       >
-        <p className="font-serif italic text-espresso/70 text-sm">
-          "Your love, laughter, and presence are all we truly ask for."
-        </p>
       </div>
     </div>
   </DetailCard>
