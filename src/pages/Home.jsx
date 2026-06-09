@@ -43,7 +43,7 @@ function LoveStoryPreview() {
             An endless adventure
         </p>
         <h2
-          className="font-script italic mb-3"x
+          className="font-script italic mb-3"
           style={{
             fontSize: "clamp(2rem, 6vw, 3rem)",
             fontWeight: 300,
@@ -67,33 +67,17 @@ function LoveStoryPreview() {
         className="flex justify-center items-center gap-5 pb-4 px-2 max-w-4xl mx-auto"
         style={{ scrollbarWidth: "none" }}
       >
-        {previews.map((ch, i) => (
-          <div
-            key={i}
-            onClick={() => navigate("/love-story")}
-            className="cursor-pointer flex-shrink-0"
-            style={{ width: "170px" }}
-          >
+                  {previews.map((ch, i) => (
             <div
-              className="bg-white p-2.5 pb-10 relative"
-              style={{
-                transform: "rotate(" + [-1.5, 1, -0.8, 1.8, -1.2][i] + "deg)",
-                boxShadow: "0 6px 20px rgba(74,74,74,0.12)",
-              }}
+              key={i}
+              onClick={() => navigate("/love-story")}
+              className="cursor-pointer flex-shrink-0"
+              style={{ width: "170px" }}
             >
-              <div style={{ aspectRatio: "4/3", overflow: "hidden" }}>
-                <img
-                  src={ch.url}
-                  alt={ch.title}
-                  className="w-full h-full object-cover"
-                  style={{ objectPosition: "center top" }}
-                  loading="lazy"
-                />
-              </div>
               <div
-                className="bg-white p-2.5 pb-2 relative"
+                className="bg-white p-2.5 relative"
                 style={{
-                  transform: "rotate(" + [-1.5, 1, -0.8, 1.8, -1.2][i] + "deg)",
+                  transform: `rotate(${[-1.5, 1, -0.8, 1.8, -1.2][i % 5]}deg)`,
                   boxShadow: "0 6px 20px rgba(74,74,74,0.12)",
                 }}
               >
@@ -106,10 +90,9 @@ function LoveStoryPreview() {
                     loading="lazy"
                   />
                 </div>
+              </div>
             </div>
-            </div>
-          </div>
-        ))}
+          ))}
       </div>
 
       <div className="text-center mt-10">
@@ -183,7 +166,7 @@ function EntouragePreview() {
             key={i}
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true }} 
             transition={{ duration: 0.4, delay: i * 0.07 }}
             className="text-center py-4 px-2 rounded-lg"
             style={{

@@ -107,64 +107,6 @@ function MainCard() {
   );
 }
 
-// ─── Card 2 — RSVP ────────────────────────────────────────────────
-function RSVPCard({ onClick }) {
-  return (
-    <CardShell
-      onClick={onClick}
-      className="w-full max-w-sm mx-auto px-8 py-8 cursor-pointer group"
-      style={{ background: "#FFFFFF" }}
-    >
-      <FloralCornerTL className="absolute top-0 left-0"  size={60} />
-      <FloralCornerBR className="absolute bottom-0 right-0" size={60} />
-
-      <div className="text-center">
-        {/* Label */}
-        <p className="text-champagne tracking-[0.5em] text-xs uppercase font-sans mb-4">
-          R·S·V·P
-        </p>
-
-        <div className="flex justify-center mb-4">
-          <FloralDivider />
-        </div>
-
-        <p
-          className="font-script italic text-espresso/70 text-xl mb-3"
-          style={{ fontWeight: 300 }}
-        >
-          Kindly reply by
-        </p>
-
-        <p className="font-serif text-champagne text-base tracking-wide mb-5">
-        June 10, 2026
-        </p>
-
-        <p className="font-sans text-espresso/45 text-xs tracking-widest mb-6">
-          We joyfully await your response
-        </p>
-
-        {/* CTA */}
-        <motion.div
-          whileHover={{ scale: 1.03 }}
-          whileTap={{ scale: 0.97 }}
-          className="inline-block px-8 py-3 rounded font-sans text-xs tracking-[0.3em] uppercase"
-          style={{
-            background: "linear-gradient(135deg, #F4B8CC, #DDEAF7)",
-            color: "#FFFFFF",
-            boxShadow: "0 4px 16px rgba(201,169,110,0.3)",
-          }}
-        >
-          Tap to RSVP
-        </motion.div>
-
-        <p className="font-sans text-espresso/30 text-xs mt-4 tracking-wider">
-          ✦ tap anywhere on this card ✦
-        </p>
-      </div>
-    </CardShell>
-  );
-}
-
 // ─── Card 3 — Details ─────────────────────────────────────────────
 function DetailsCard({ onClick }) {
   return (
@@ -188,7 +130,7 @@ function DetailsCard({ onClick }) {
         {/* Info rows */}
         {[
           { label: "Ceremony",  value: WEDDING.ceremony.venue,   sub: WEDDING.ceremony.time },
-          { label: "Reception", value: WEDDING.reception.venue,  sub: WEDDING.reception.time },
+          { label: "Reception", value: WEDDING.reception.venue, },
           { label: "Dress Code", value: "Garden Formal",         sub: "Soft florals & earth tones" },
         ].map((item, i) => (
           <div key={i} className="mb-4 last:mb-0">
@@ -196,7 +138,11 @@ function DetailsCard({ onClick }) {
               {item.label}
             </p>
             <p className="font-serif text-espresso/80 text-sm">{item.value}</p>
-            <p className="font-sans text-espresso/40 text-xs mt-0.5">{item.sub}</p>
+            {item.sub && (
+            <p className="font-sans text-espresso/40 text-xs mt-0.5">
+              {item.sub}
+            </p>
+          )}
             {i < 2 && <div className="h-px bg-champagne/15 mt-3" />}
           </div>
         ))}
