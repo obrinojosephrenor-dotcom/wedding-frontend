@@ -210,10 +210,11 @@ function DetailsCard({ onClick }) {
           whileTap={{ scale: 0.97 }}
           className="inline-block px-8 py-3 rounded font-sans text-xs tracking-[0.3em] uppercase"
           style={{
-            background: "linear-gradient(135deg, #E8B4C8, #A8B89F)",
-            color: "#FFFFFF",
-            boxShadow: "0 4px 16px rgba(232,180,200,0.3)",
-          }}
+                border: "1px solid rgba(201,169,110,0.35)",
+                color: "#C9A96E",
+                background: "rgba(255,255,255,0.85)",
+                backdropFilter: "blur(8px)",
+              }}
         >
           Tap for All Details
         </motion.div>
