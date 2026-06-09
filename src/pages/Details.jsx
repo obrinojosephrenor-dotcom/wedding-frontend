@@ -95,73 +95,16 @@ function FAQItem({ question, answer }) {
 
 function WatercolorSwatch({ name, hex }) {
   return (
-    <div className="flex flex-col items-center gap-3 group">
-      <div className="relative w-24 h-24">
-        {/* Main watercolor wash */}
-        <div
-          className="absolute inset-0"
-          style={{
-            background: `
-              radial-gradient(circle at 35% 30%, rgba(255,255,255,.65) 0%, transparent 40%),
-              radial-gradient(circle at 70% 65%, rgba(255,255,255,.25) 0%, transparent 35%),
-              ${hex}
-            `,
-            borderRadius:
-              "42% 58% 70% 30% / 45% 35% 65% 55%",
-            opacity: 0.9,
-            filter: "blur(1px)",
-          }}
-        />
-
-        {/* Secondary wash */}
-        <div
-          className="absolute"
-          style={{
-            width: "75%",
-            height: "75%",
-            left: "12%",
-            top: "12%",
-            background: hex,
-            opacity: 0.35,
-            borderRadius:
-              "65% 35% 50% 50% / 40% 60% 40% 60%",
-            filter: "blur(8px)",
-          }}
-        />
-
-        {/* Watercolor bloom */}
-        <div
-          className="absolute"
-          style={{
-            width: "45%",
-            height: "45%",
-            right: "10%",
-            bottom: "10%",
-            background: "#ffffff",
-            opacity: 0.15,
-            borderRadius: "50%",
-            filter: "blur(12px)",
-          }}
-        />
-
-        {/* Paper grain */}
-        <div
-          className="absolute inset-0"
-          style={{
-            background:
-              "radial-gradient(rgba(255,255,255,.18) 1px, transparent 1px)",
-            backgroundSize: "6px 6px",
-            mixBlendMode: "soft-light",
-            opacity: 0.5,
-          }}
-        />
-      </div>
-
-      <div className="text-center">
-        <p className="font-sans text-[10px] uppercase tracking-[0.2em] text-espresso/70">
-          {name}
-        </p>
-      </div>
+    <div className="flex flex-col items-center gap-2">
+      <div
+        className="w-16 h-16 rounded-full shadow-sm border border-white/60"
+        style={{
+          backgroundColor: hex,
+        }}
+      />
+      <span className="font-sans text-[10px] uppercase tracking-wider text-espresso/60">
+        {name}
+      </span>
     </div>
   );
 }
