@@ -338,10 +338,11 @@ export default function Details() {
                 rel="noreferrer"
                 className="flex-1 text-center py-2.5 rounded font-sans text-xs tracking-[0.3em] uppercase transition-all"
                 style={{
-                  background: "linear-gradient(135deg, #F4B8CC, #DDEAF7)",
-                  color: "#FFFFFF",
-                  textDecoration: "none",
-                }}
+                border: "1px solid rgba(201,169,110,0.35)",
+                color: "#C9A96E",
+                background: "rgba(255,255,255,0.85)",
+                backdropFilter: "blur(8px)",
+              }}
               >
                 Ceremony Directions
               </a>
@@ -383,11 +384,11 @@ export default function Details() {
                   href={"mailto:" + WEDDING.contact.email}
                   className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded font-sans text-xs tracking-[0.3em] uppercase transition-all"
                   style={{
-                    background: "linear-gradient(135deg, #F4B8CC, #DDEAF7)",
-                    color: "#FFFFFF",
-                    boxShadow: "0 4px 16px rgba(201,169,110,0.25)",
-                    textDecoration: "none",
-                  }}
+                border: "1px solid rgba(201,169,110,0.35)",
+                color: "#C9A96E",
+                background: "rgba(255,255,255,0.85)",
+                backdropFilter: "blur(8px)",
+              }}
                 >
                   Email Us
                 </a>
