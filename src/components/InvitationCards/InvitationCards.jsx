@@ -228,6 +228,7 @@ export default function InvitationCards() {
   const [activeCard, setActiveCard] = useState(0);
   const cards = ["invitation", "details"];
 
+
   return (
     <div className="min-h-screen bg-cream py-12 px-4">
 
@@ -268,20 +269,22 @@ export default function InvitationCards() {
         })}
 
         {/* Active card */}
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={activeCard}
-            initial={{ opacity: 0, y: 30, scale: 0.95 }}
-            animate={{ opacity: 1, y: 0,  scale: 1 }}
-            exit={{    opacity: 0, y: -20, scale: 0.97 }}
-            transition={{ duration: 0.45, ease: "easeOut" }}
-            style={{ position: "relative", zIndex: 20 }}
-          >
-            {activeCard === 1 && (
-            <DetailsCard onClick={() => navigate("/details")} />
-          )}
-          </motion.div>
-        </AnimatePresence>
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={activeCard}
+              initial={{ opacity: 0, y: 30, scale: 0.95 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              exit={{ opacity: 0, y: -20, scale: 0.97 }}
+              transition={{ duration: 0.45, ease: "easeOut" }}
+              style={{ position: "relative", zIndex: 20 }}
+            >
+              {activeCard === 0 && <MainCard />}
+
+              {activeCard === 1 && (
+                <DetailsCard onClick={() => navigate("/details")} />
+              )}
+            </motion.div>
+          </AnimatePresence>
       </div>
 
       {/* Dot navigation */}
