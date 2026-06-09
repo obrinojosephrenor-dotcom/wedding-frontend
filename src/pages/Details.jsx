@@ -112,18 +112,24 @@ function ColorSwatch({ name, hex }) {
 const dressCodePairs = [
   {
     color: "Dusty Blue",
-    male: "https://res.cloudinary.com/drhkmwcsg/image/upload/v1781008667/ChatGPT_Image_Jun_9_2026_07_32_00_PM_kgbirl.png",
-    female: "https://res.cloudinary.com/drhkmwcsg/image/upload/v1781008667/ChatGPT_Image_Jun_9_2026_07_41_56_PM_fzqzli.png",
+    male:
+      "https://res.cloudinary.com/drhkmwcsg/image/upload/upload/w_720,h_1280,c_fill,q_auto,f_auto/v1781009884/4_playih.png",
+    female:
+      "https://res.cloudinary.com/drhkmwcsg/image/upload/w_720,h_1280,c_fill,q_auto,f_auto/v1781009883/ChatGPT_Image_Jun_9_2026_07_41_56_PM_laqkdh.png",
   },
   {
     color: "Sage Green",
-    male: "https://res.cloudinary.com/drhkmwcsg/image/upload/v1781008667/ChatGPT_Image_Jun_9_2026_07_48_12_PM_cqcykd.png",
-    female: "https://res.cloudinary.com/drhkmwcsg/image/upload/v1781008673/ChatGPT_Image_Jun_9_2026_07_33_54_PM_mv20ec.pngL",
+    male:
+      "https://res.cloudinary.com/drhkmwcsg/image/upload/w_720,h_1280,c_fill,q_auto,f_auto/v1781009886/3_vodfxo.png",
+    female:
+      "https://res.cloudinary.com/drhkmwcsg/image/upload/w_720,h_1280,c_fill,q_auto,f_auto/v1781009883/ChatGPT_Image_Jun_9_2026_07_48_12_PM_lrsb8q.png",
   },
   {
     color: "Champagne Beige",
-    male: "https://res.cloudinary.com/drhkmwcsg/image/upload/v1781008672/ChatGPT_Image_Jun_9_2026_07_35_43_PM_jmdy2b.png",
-    female: "https://res.cloudinary.com/drhkmwcsg/image/upload/v1781008668/ChatGPT_Image_Jun_9_2026_07_41_08_PM_j2soqy.png",
+    male:
+      "https://res.cloudinary.com/drhkmwcsg/image/upload/w_720,h_1280,c_fill,q_auto,f_auto/v1781009884/2_z4luws.png",
+    female:
+      "https://res.cloudinary.com/drhkmwcsg/image/w_720,h_1280,c_fill,q_auto,f_auto/upload/v1781009885/1_vausaa.png",
   },
 ];
 
