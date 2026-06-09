@@ -93,16 +93,40 @@ function FAQItem({ question, answer }) {
   );
 }
 
-function ColorSwatch({ name, hex }) {
+function WatercolorSwatch({ name, hex }) {
   return (
     <div className="flex flex-col items-center gap-2">
       <div
-        className="w-12 h-12 rounded-full shadow-sm"
-        style={{ background: hex, border: "1px solid rgba(74,74,74,0.08)" }}
-      />
-      <p className="font-sans text-espresso/60 text-xs text-center leading-tight">
+        className="relative w-20 h-14"
+        style={{
+          background: `
+            radial-gradient(circle at 25% 25%, rgba(255,255,255,0.55), transparent 45%),
+            radial-gradient(circle at 75% 60%, rgba(255,255,255,0.25), transparent 40%),
+            ${hex}
+          `,
+          borderRadius: "45% 55% 60% 40% / 50% 35% 65% 50%",
+          filter: "blur(0.4px)",
+          opacity: 0.95,
+          transform: "rotate(-4deg)",
+          boxShadow: "0 4px 12px rgba(0,0,0,0.06)",
+        }}
+      >
+        {/* watercolor texture */}
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "radial-gradient(circle, rgba(255,255,255,0.25) 1px, transparent 1px)",
+            backgroundSize: "8px 8px",
+            mixBlendMode: "soft-light",
+            opacity: 0.4,
+          }}
+        />
+      </div>
+
+      <span className="font-sans text-[10px] uppercase tracking-wider text-espresso/60">
         {name}
-      </p>
+      </span>
     </div>
   );
 }
@@ -294,13 +318,13 @@ export default function Details() {
               <p className="font-sans text-champagne text-xs tracking-widest uppercase text-center mb-5">
                 Suggested Color Palette
               </p>
-              <div className="flex justify-center gap-5 flex-wrap">
-                <ColorSwatch name="Ivory"      hex="#f2d9d9" />
-                <ColorSwatch name="Champagne"  hex="#d0e6cc" />
-                <ColorSwatch name="Dusty Rose" hex="#f8e1a1" />
-                <ColorSwatch name="Sage"       hex="#a89a84" />
-                <ColorSwatch name="Parchment"  hex="#74b0e3" />
-                <ColorSwatch name="Espresso"   hex="#cbd2cf" />
+              <div className="flex justify-center gap-4 flex-wrap">
+                <WatercolorSwatch name="Ivory" hex="#f2d9d9" />
+                <WatercolorSwatch name="Champagne" hex="#d0e6cc" />
+                <WatercolorSwatch name="Dusty Rose" hex="#f8e1a1" />
+                <WatercolorSwatch name="Sage" hex="#a89a84" />
+                <WatercolorSwatch name="Parchment" hex="#74b0e3" />
+                <WatercolorSwatch name="Espresso" hex="#cbd2cf" />
               </div>
             </div>
             <div
