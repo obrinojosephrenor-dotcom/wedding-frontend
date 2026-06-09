@@ -398,23 +398,34 @@ export default function Details() {
     </div>
 
     {/* NOTICE */}
-    <div
-      className="mt-8 p-4 rounded text-center"
-      style={{
-        background: "rgba(201,169,110,0.06)",
-        border: "1px solid rgba(201,169,110,0.2)",
-      }}
-    >
-      <p className="font-sans text-espresso/50 text-xs">
-        Please strictly avoid wearing black or white.
-      </p>
-    </div>
+    {/* NOTICE */}
+<div
+  className="mt-8 p-4 rounded text-center"
+  style={{
+    background: "rgba(201,169,110,0.06)",
+    border: "1px solid rgba(201,169,110,0.2)",
+  }}
+>
+  <p
+    className="font-sans text-espresso/60"
+    style={{
+      fontSize: "0.95rem",
+      fontWeight: 700,
+      letterSpacing: "0.02em",
+    }}
+  >
+    Please strictly avoid wearing black or white.
+  </p>
+</div>
   </DetailCard>
 </Section>
 
         {/* GIFTS */}
 <Section delay={0.1}>
-  <SectionHeading eyebrow="With Love" title="Gifts" />
+  <SectionHeading
+  eyebrow="With Love"
+  title={<span style={{ fontWeight: 700 }}>Gifts</span>}
+/>
 
   <DetailCard style={{ background: "#FFFFFF" }}>
     <FloralCornerTL className="absolute top-0 left-0" size={60} />
@@ -437,7 +448,7 @@ export default function Details() {
       </p>
 
       <p className="font-sans text-espresso/55 text-sm leading-relaxed max-w-md mx-auto">
-        However, should you honor and bless us with gifts, a monatary gift would be warmly 
+        However, should you honor and bless us with gifts, a monetary gift would be warmly 
         appreciated to help build our future.
       </p>
 
