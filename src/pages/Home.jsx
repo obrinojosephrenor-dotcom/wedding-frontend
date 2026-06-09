@@ -114,9 +114,10 @@ function LoveStoryPreview() {
           onClick={() => navigate("/love-story")}
           className="px-8 py-3.5 rounded font-sans text-xs tracking-[0.35em] uppercase"
           style={{
-            background: "linear-gradient(135deg, #F4B8CC, #DDEAF7)",
-            color: "#FFFFFF",
-            boxShadow: "0 4px 20px rgba(201,169,110,0.3)",
+            border: "1px solid rgba(201,169,110,0.35)",
+            color: "#C9A96E",
+            background: "rgba(255,255,255,0.85)",
+            backdropFilter: "blur(8px)",
           }}
         >
           Click to witness a promise of a lifetime
