@@ -136,46 +136,11 @@ const dressCodePairs = [
 export default function Details() {
   const navigate = useNavigate();
 
-  const faqs = [
-    {
-      question: "Is there parking available at the venue?",
-      answer: "Yes, complimentary parking is available at both the ceremony and reception venues. Valet service will also be provided at the reception.",
-    },
-    {
-      question: "Are children welcome at the wedding?",
-      answer: "We love your little ones! Children are welcome at both the ceremony and reception. A kids corner with activities will be set up at the reception.",
-    },
-    {
-      question: "What is the dress code?",
-      answer: "Garden Formal. Think elegant florals, soft earth tones, sage greens, dusty roses, and champagne golds. Please avoid white and black out of respect for the couple.",
-    },
-    {
-      question: "Will there be transportation between venues?",
-      answer: "A complimentary shuttle will run between the ceremony and reception venues. The schedule will be shared closer to the date.",
-    },
-    {
-      question: "Can I take photos during the ceremony?",
-      answer: "We are having an unplugged ceremony. Please keep phones and cameras away during the ceremony so everyone can be fully present. Our photographer will capture every moment!",
-    },
-    {
-      question: "What time should I arrive?",
-      answer: "We recommend arriving at least 20 to 30 minutes before the ceremony start time to get seated comfortably. The doors will open 45 minutes prior.",
-    },
-    {
-      question: "Is there a gift registry?",
-      answer: "Your presence is our greatest gift! However if you wish to give, a cash gift or contribution to our honeymoon fund would be deeply appreciated.",
-    },
-    {
-      question: "Who do I contact for questions?",
-      answer: "Please reach out to us at " + WEDDING.contact.email + " or call " + WEDDING.contact.phone + ". We are happy to help with anything!",
-    },
-  ];
-
   const ceremonyMapUrl =
-    "https://maps.google.com/?q=" + encodeURIComponent(WEDDING.ceremony.address);
+    "https://maps.app.goo.gl/f8stfHquw5UcaB127?g_st=afm" + encodeURIComponent(WEDDING.ceremony.address);
 
   const receptionMapUrl =
-    "https://maps.google.com/?q=" + encodeURIComponent(WEDDING.reception.address);
+    "https://maps.app.goo.gl/yuXgymnEbFeXjgqSA?g_st=afm" + encodeURIComponent(WEDDING.reception.address);
 
   const embedUrl =
     "https://maps.google.com/maps?q=" +

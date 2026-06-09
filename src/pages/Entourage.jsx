@@ -31,6 +31,7 @@ const PRINCIPAL_SPONSORS = [
   { role: "Principal Sponsor", name: "Mrs. Lohea E. Jackson"},
   { role: "Principal Sponsor", name: "Mr. Edgardo J. Mascarinas"},
   { role: "Principal Sponsor", name: "Mrs. Rosita I. Mascarinas"},
+  { role: "Principal Sponsor", name: "Mrs. Ma. Teresa F. Jackson"}
 ];
 
 const HONOR_PARTY = [
