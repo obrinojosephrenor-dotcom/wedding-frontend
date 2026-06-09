@@ -113,7 +113,7 @@ const dressCodePairs = [
   {
     color: "Dusty Blue",
     male:
-      "https://res.cloudinary.com/drhkmwcsg/image/upload/upload/w_720,h_1280,c_fill,q_auto,f_auto/v1781009884/4_playih.png",
+      "https://res.cloudinary.com/drhkmwcsg/image/upload/w_720,h_1280,c_fill,q_auto,f_auto/v1781009884/4_playih.png",
     female:
       "https://res.cloudinary.com/drhkmwcsg/image/upload/w_720,h_1280,c_fill,q_auto,f_auto/v1781009883/ChatGPT_Image_Jun_9_2026_07_41_56_PM_laqkdh.png",
   },
@@ -129,7 +129,7 @@ const dressCodePairs = [
     male:
       "https://res.cloudinary.com/drhkmwcsg/image/upload/w_720,h_1280,c_fill,q_auto,f_auto/v1781009884/2_z4luws.png",
     female:
-      "https://res.cloudinary.com/drhkmwcsg/image/w_720,h_1280,c_fill,q_auto,f_auto/upload/v1781009885/1_vausaa.png",
+      "https://res.cloudinary.com/drhkmwcsg/image/upload/w_720,h_1280,c_fill,q_auto,f_auto/v1781009885/1_vausaa.png",
   },
 ];
 
