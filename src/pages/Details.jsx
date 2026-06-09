@@ -341,6 +341,52 @@ export default function Details() {
           </DetailCard>
         </Section>
 
+        {/* GIFTS */}
+<Section delay={0.1}>
+  <SectionHeading eyebrow="With Love" title="Gifts" />
+
+  <DetailCard style={{ background: "#FFFFFF" }}>
+    <FloralCornerTL className="absolute top-0 left-0" size={60} />
+    <FloralCornerBR className="absolute bottom-0 right-0" size={60} />
+
+    <div className="relative z-10 text-center">
+      <div className="flex justify-center mb-4">
+        <WaxSeal size={48} />
+      </div>
+
+      <p
+        className="font-script italic text-espresso/70 text-xl mb-4"
+        style={{ fontWeight: 300 }}
+      >
+        Your Presence Is Our Present
+      </p>
+
+      <p className="font-sans text-espresso/55 text-sm leading-relaxed max-w-md mx-auto mb-4">
+        The greatest gift we could receive is the joy of celebrating
+        this special day with the people we love most.
+      </p>
+
+      <p className="font-sans text-espresso/55 text-sm leading-relaxed max-w-md mx-auto">
+        Should you wish to honor us with a gift, a contribution toward
+        our future together or honeymoon fund would be sincerely
+        appreciated.
+      </p>
+
+      <div
+        className="mt-6 p-4 rounded-lg"
+        style={{
+          background: "rgba(201,169,110,0.06)",
+          border: "1px solid rgba(201,169,110,0.18)",
+        }}
+      >
+        <p className="font-serif italic text-espresso/70 text-sm">
+          "Your love, laughter, and presence are all we truly ask for."
+        </p>
+      </div>
+    </div>
+  </DetailCard>
+</Section>
+
         {/* MAP */}
         <Section delay={0.1}>
           <SectionHeading eyebrow="Find Us" title="Location Map" />
