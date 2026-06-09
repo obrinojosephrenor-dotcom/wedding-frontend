@@ -109,6 +109,24 @@ function ColorSwatch({ name, hex }) {
   );
 }
 
+const dressCodePairs = [
+  {
+    color: "Dusty Blue",
+    male: "https://res.cloudinary.com/drhkmwcsg/image/upload/v1781008667/ChatGPT_Image_Jun_9_2026_07_32_00_PM_kgbirl.png",
+    female: "https://res.cloudinary.com/drhkmwcsg/image/upload/v1781008667/ChatGPT_Image_Jun_9_2026_07_41_56_PM_fzqzli.png",
+  },
+  {
+    color: "Sage Green",
+    male: "https://res.cloudinary.com/drhkmwcsg/image/upload/v1781008667/ChatGPT_Image_Jun_9_2026_07_48_12_PM_cqcykd.png",
+    female: "https://res.cloudinary.com/drhkmwcsg/image/upload/v1781008673/ChatGPT_Image_Jun_9_2026_07_33_54_PM_mv20ec.pngL",
+  },
+  {
+    color: "Champagne Beige",
+    male: "https://res.cloudinary.com/drhkmwcsg/image/upload/v1781008672/ChatGPT_Image_Jun_9_2026_07_35_43_PM_jmdy2b.png",
+    female: "https://res.cloudinary.com/drhkmwcsg/image/upload/v1781008668/ChatGPT_Image_Jun_9_2026_07_41_08_PM_j2soqy.png",
+  },
+];
+
 export default function Details() {
   const navigate = useNavigate();
 
@@ -271,60 +289,118 @@ export default function Details() {
         </Section>
 
         {/* DRESS CODE */}
-        <Section delay={0.1}>
-          <SectionHeading eyebrow="What to Wear" title="Dress Code" />
-          <DetailCard style={{ background: "#FFFFFF" }}>
-            <div className="text-center mb-6">
-              <p
-                className="font-script italic text-espresso/70 text-xl mb-2"
-                style={{ fontWeight: 300 }}
-              >
-                Garden Formal
-              </p>
-              <p className="font-sans text-espresso/50 text-xs leading-relaxed max-w-sm mx-auto mb-3">
-                We look forward to celebrating in quiet style. To complement
-                the natural beauty of our outdoor venue, we kindly request
-                Garden Formal attire.
-              </p>
-              <p className="font-sans text-espresso/50 text-xs leading-relaxed max-w-sm mx-auto">
-                As this is a formal garden occasion, we kindly request that
-                guests opt for polished attire, avoiding jeans, t-shirts, or
-                athletic footwear.
-              </p>
-            </div>
-            <div className="mt-6">
-              <p className="font-sans text-champagne text-xs tracking-widest uppercase text-center mb-5">
-                Suggested Color Palette
-              </p>
-              <div
-                className="flex justify-center gap-8 flex-wrap py-4"
-                style={{
-                  background:
-                    "linear-gradient(180deg, rgba(255,255,255,0.5), rgba(250,249,246,0.9))",
-                  borderRadius: "24px",
-                }}
-              >
-                <WatercolorSwatch name="Ivory" hex="#f2d9d9" />
-                <WatercolorSwatch name="Champagne" hex="#d0e6cc" />
-                <WatercolorSwatch name="Dusty Rose" hex="#f8e1a1" />
-                <WatercolorSwatch name="Sage" hex="#a89a84" />
-                <WatercolorSwatch name="Parchment" hex="#74b0e3" />
-                <WatercolorSwatch name="Espresso" hex="#cbd2cf" />
+<Section delay={0.1}>
+  <SectionHeading eyebrow="What to Wear" title="Dress Code" />
+
+  <DetailCard style={{ background: "#FFFFFF" }}>
+    <div className="text-center mb-6">
+      <p
+        className="font-script italic text-espresso/70 text-xl mb-2"
+        style={{ fontWeight: 300 }}
+      >
+        Garden Formal
+      </p>
+
+      <p className="font-sans text-espresso/50 text-xs leading-relaxed max-w-sm mx-auto mb-3">
+        We look forward to celebrating in quiet style. To complement the
+        natural beauty of our outdoor venue, we kindly request Garden Formal
+        attire.
+      </p>
+
+      <p className="font-sans text-espresso/50 text-xs leading-relaxed max-w-sm mx-auto">
+        As this is a formal garden occasion, we kindly request that guests opt
+        for polished attire, avoiding jeans, t-shirts, or athletic footwear.
+      </p>
+    </div>
+
+    {/* COLOR PALETTE */}
+    <div className="mt-6">
+      <p className="font-sans text-champagne text-xs tracking-widest uppercase text-center mb-5">
+        Suggested Color Palette
+      </p>
+
+      <div
+        className="flex justify-center gap-8 flex-wrap py-4"
+        style={{
+          background:
+            "linear-gradient(180deg, rgba(255,255,255,0.5), rgba(250,249,246,0.9))",
+          borderRadius: "24px",
+        }}
+      >
+        <WatercolorSwatch name="Dusty Blue" hex="#AFC7DD" />
+        <WatercolorSwatch name="Sage Green" hex="#A8B59C" />
+        <WatercolorSwatch name="Champagne" hex="#DCC9A3" />
+      </div>
+    </div>
+
+    {/* ATTIRE INSPIRATION */}
+    <div className="mt-10">
+      <p className="font-sans text-champagne text-xs tracking-widest uppercase text-center mb-6">
+        Attire Inspiration
+      </p>
+
+      <div className="space-y-8">
+        {dressCodePairs.map((pair, index) => (
+          <div
+            key={index}
+            className="rounded-3xl p-5"
+            style={{
+              background:
+                "linear-gradient(180deg, rgba(255,255,255,0.8), rgba(250,249,246,0.9))",
+              border: "1px solid rgba(201,169,110,0.15)",
+            }}
+          >
+            <h4
+              className="font-script italic text-center text-xl text-espresso/70 mb-5"
+              style={{ fontWeight: 300 }}
+            >
+              {pair.color}
+            </h4>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 items-center">
+              <div className="text-center">
+                <img
+                  src={pair.male}
+                  alt={`${pair.color} Gentlemen`}
+                  className="w-full max-w-[220px] mx-auto object-contain"
+                />
+
+                <p className="mt-3 font-sans text-[10px] uppercase tracking-[0.25em] text-espresso/50">
+                  Gentlemen
+                </p>
+              </div>
+
+              <div className="text-center">
+                <img
+                  src={pair.female}
+                  alt={`${pair.color} Ladies`}
+                  className="w-full max-w-[220px] mx-auto object-contain"
+                />
+
+                <p className="mt-3 font-sans text-[10px] uppercase tracking-[0.25em] text-espresso/50">
+                  Ladies
+                </p>
               </div>
             </div>
-            <div
-              className="mt-6 p-4 rounded text-center"
-              style={{
-                background: "rgba(201,169,110,0.06)",
-                border: "1px solid rgba(201,169,110,0.2)",
-              }}
-            >
-              <p className="font-sans text-espresso/50 text-xs">
-                Please strictly avoid wearing black or white.
-              </p>
-            </div>
-          </DetailCard>
-        </Section>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    {/* NOTICE */}
+    <div
+      className="mt-8 p-4 rounded text-center"
+      style={{
+        background: "rgba(201,169,110,0.06)",
+        border: "1px solid rgba(201,169,110,0.2)",
+      }}
+    >
+      <p className="font-sans text-espresso/50 text-xs">
+        Please strictly avoid wearing black or white.
+      </p>
+    </div>
+  </DetailCard>
+</Section>
 
         {/* GIFTS */}
 <Section delay={0.1}>
