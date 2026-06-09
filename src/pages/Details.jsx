@@ -327,9 +327,9 @@ export default function Details() {
           borderRadius: "24px",
         }}
       >
-        <WatercolorSwatch name="Dusty Blue" hex="#AFC7DD" />
-        <WatercolorSwatch name="Sage Green" hex="#A8B59C" />
-        <WatercolorSwatch name="Champagne" hex="#DCC9A3" />
+        <ColorSwatch name="Dusty Blue" hex="#AFC7DD" />
+        <ColorSwatch name="Sage Green" hex="#A8B59C" />
+        <ColorSwatch name="Champagne" hex="#DCC9A3" />
       </div>
     </div>
 
