@@ -290,19 +290,19 @@ export default function LoveStory() {
           <div className="flex justify-center mb-6">
             <FloralDivider />
           </div>
-          <div className="flex justify-center gap-3 flex-wrap">
-            <button
-              onClick={() => navigate("/")}
-              className="px-7 py-3 rounded font-sans text-xs tracking-[0.35em] uppercase"
-              style={{
-                background: "linear-gradient(135deg, #F4B8CC, #DDEAF7)",
-                color: "#4A4A4A",
-                boxShadow: "0 4px 16px rgba(247,214,224,0.4)",
-              }}
-            >
-              Back to Invitation
-            </button>
-          </div>
+<div className="flex justify-center gap-3 flex-wrap">
+  <button
+    onClick={() => navigate("/")}
+    className="px-7 py-3 rounded font-sans text-xs tracking-[0.35em] uppercase"
+    style={{
+      background: "linear-gradient(135deg, #F4B8CC, #DDEAF7)",
+      color: "#4A4A4A",
+      boxShadow: "0 4px 16px rgba(247,214,224,0.4)",
+    }}
+  >
+    Back to Invitation
+  </button>
+</div>
             <button
               onClick={() => navigate("/")}
               className="px-7 py-3 rounded font-sans text-xs tracking-[0.35em] uppercase"
@@ -313,7 +313,6 @@ export default function LoveStory() {
             >
               Back to Invitation
             </button>
-          </div>
         </motion.div>
       </div>
 
