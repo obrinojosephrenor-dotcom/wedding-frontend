@@ -15,7 +15,8 @@ function SocialLink({ href, label, icon }) {
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className="flex items-center gap-2"
+      className="flex items-center gap-2 transition-colors"
+      style={{ color: "#5A5A5A" }}
     >
       <span className="text-lg">{icon}</span>
       <span>{label}</span>
@@ -28,7 +29,12 @@ function FooterLink({ label, onClick }) {
   return (
     <button
       onClick={onClick}
-      className="font-sans text-ivory/40 text-xs tracking-widest uppercase hover:text-champagne transition-colors duration-200"
+      className="font-sans text-xs tracking-widest uppercase transition-colors duration-200"
+      style={{
+        color: "#5A5A5A",
+      }}
+      onMouseEnter={(e) => e.target.style.color = "#4A4A4A"}
+      onMouseLeave={(e) => e.target.style.color = "#5A5A5A"}
     >
       {label}
     </button>
@@ -42,8 +48,8 @@ export default function Footer() {
     <footer
       className="relative overflow-hidden"
       style={{
-        background: "linear-gradient(180deg, #3A3A3A 0%, #2A2A2A 100%)",
-        borderTop:  "1px solid rgba(201,169,110,0.15)",
+        background: "#DCDCDC",
+        borderTop: "1px solid rgba(74,74,74,0.12)",
       }}
     >
       {/* Floral corners */}
@@ -83,17 +89,18 @@ export default function Footer() {
             style={{
               fontSize:  "clamp(1.6rem, 5vw, 2.4rem)",
               fontWeight: 300,
-              background: "linear-gradient(135deg, #C9A96E, #A8B89F, #C9A96E)",
+              background: "#4A4A4A",
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent",
               backgroundClip: "text",
-            }}
+            }}  
           >
             {WEDDING.bride} & {WEDDING.groom}
           </h2>
 
           <p
-            className="font-sans text-ivory/35 text-xs tracking-[0.4em] uppercase mt-2"
+            className="font-sans text-xs tracking-[0.4em] uppercase mt-2"
+            style={{ color: "#6B6B6B" }}
           >
             {new Date(WEDDING.date).toLocaleDateString("en-US", {
               month: "long",
@@ -117,13 +124,18 @@ export default function Footer() {
           className="text-center mb-8 px-4"
         >
           <p
-            className="font-script italic text-ivory/50 leading-relaxed"
-            style={{ fontSize: "clamp(1rem, 2.5vw, 1.15rem)", fontWeight: 300 }}
+            className="font-script italic leading-relaxed"
+            style={{
+              fontSize: "clamp(1rem, 2.5vw, 1.15rem)",
+              fontWeight: 300,
+              color: "#5A5A5A",
+            }}
           >
             "Thank you for being part of our story. Your presence on
             our wedding day is the greatest gift we could ever ask for."
           </p>
-          <p className="font-sans text-champagne/50 text-xs tracking-widest mt-3">
+          <p className="font-sans text-xs tracking-widest mt-3"
+              style={{ color: "#7A7A7A" }}>
             — {WEDDING.bride} & {WEDDING.groom}
           </p>
         </motion.div>
@@ -153,23 +165,26 @@ export default function Footer() {
           transition={{ duration: 0.7, delay: 0.3 }}
           className="text-center mb-8"
         >
-          <p className="font-sans text-ivory/25 text-xs tracking-widest uppercase mb-3">
+          <p className="font-sans text-xs tracking-widest uppercase mb-3"
+            style={{ color: "#6B6B6B" }}>
             Get in Touch
           </p>
 <div className="flex justify-center gap-4 flex-wrap">
 
   <a
     href={`mailto:${WEDDING.contact.email}`}
-    className="font-sans text-ivory/40 text-xs hover:text-champagne transition-colors tracking-wide"
+    className="font-sans text-xs transition-colors tracking-wide"
+      style={{ color: "#5A5A5A" }}
   >
     ✉ {WEDDING.contact.email}
   </a>
 
-  <span className="text-ivory/20 text-xs">·</span>
+  <span className="text-xs" style={{ color: "#8A8A8A" }}>·</span>
 
   <a
     href={`tel:${WEDDING.contact.phone}`}
-    className="font-sans text-ivory/40 text-xs hover:text-champagne transition-colors tracking-wide"
+    className="font-sans text-xs transition-colors tracking-wide"
+      style={{ color: "#5A5A5A" }}
   >
     ☎ {WEDDING.contact.phone}
   </a>
@@ -213,12 +228,13 @@ export default function Footer() {
           transition={{ duration: 0.7, delay: 0.4 }}
           className="text-center"
         >
-          <p className="font-sans text-ivory/20 text-xs tracking-widest">
+          <p className="font-sans text-xs tracking-widest"
+            style={{ color: "#6B6B6B" }}>
             © {new Date().getFullYear()} {WEDDING.bride} & {WEDDING.groom} ·
             All Rights Reserved
           </p>
           <p className="font-sans text-ivory/12 text-xs tracking-wider mt-1"
-            style={{ color: "rgba(255,255,255,0.1)" }}>
+            style={{ color: "#8A8A8A" }}>
             Made with ✦ for our special day
           </p>
         </motion.div>
