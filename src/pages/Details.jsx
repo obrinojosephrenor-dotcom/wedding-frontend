@@ -132,49 +132,12 @@ export default function Details() {
   const navigate = useNavigate();
 
   // Build map URLs safely from address strings
-  const ceremonyMapUrl =
-    "https://maps.google.com/?q=" +
-    encodeURIComponent(WEDDING.ceremony.address);
+const ceremonyMapUrl = `https://www.google.com/maps/search/?api=1&query=${WEDDING.ceremony.lat},${WEDDING.ceremony.lng}`;
 
-  const receptionMapUrl =
-    "https://maps.google.com/?q=" +
-    encodeURIComponent(WEDDING.reception.address);
+const receptionMapUrl = `https://www.google.com/maps/search/?api=1&query=${WEDDING.reception.lat},${WEDDING.reception.lng}`;
 
-  const embedUrl =
-    "https://maps.google.com/maps?q=" +
-    encodeURIComponent(WEDDING.ceremony.address) +
-    "&output=embed";
+const embedUrl = `https://maps.google.com/maps?q=${WEDDING.ceremony.lat},${WEDDING.ceremony.lng}&z=18&output=embed`;
 
-  const faqs = [
-    {
-      question: "Is there parking available at the venue?",
-      answer: "Yes, complimentary parking is available at both the ceremony and reception venues. Valet service will also be provided at the reception.",
-    },
-    {
-      question: "Are children welcome at the wedding?",
-      answer: "We love your little ones! Children are welcome at both the ceremony and reception. A kids corner with activities will be set up at the reception.",
-    },
-    {
-      question: "What is the dress code?",
-      answer: "Garden Formal. Think elegant florals, soft earth tones, sage greens, dusty blues, and champagne beige. Please avoid white and black out of respect for the couple.",
-    },
-    {
-      question: "Can I take photos during the ceremony?",
-      answer: "We are having an unplugged ceremony. Please keep phones and cameras away during the ceremony so everyone can be fully present. Our photographer will capture every moment!",
-    },
-    {
-      question: "What time should I arrive?",
-      answer: "We recommend arriving at least 20 to 30 minutes before the ceremony start time to get seated comfortably. The doors will open 45 minutes prior.",
-    },
-    {
-      question: "Is there a gift registry?",
-      answer: "Your presence is our greatest gift! However if you wish to give, a monetary gift would be warmly appreciated to help build our future.",
-    },
-    {
-      question: "Who do I contact for questions?",
-      answer: "Please reach out to us at " + WEDDING.contact.email + " or call " + WEDDING.contact.phone + ". We are happy to help with anything!",
-    },
-  ];
 
   return (
     <div className="min-h-screen" style={{ background: "#FFFFFF" }}>
@@ -295,8 +258,6 @@ export default function Details() {
               {[
                 { label: "Venue",   value: WEDDING.reception.venue },
                 { label: "Address", value: WEDDING.reception.address },
-                { label: "Time",    value: WEDDING.reception.time },
-                { label: "Note",    value: "Dinner, dancing and celebration!" },
               ].map((item, i) => (
                 <div key={i}>
                   <p
