@@ -494,9 +494,9 @@ export default function Details() {
                 rel="noreferrer"
                 className="flex-1 text-center py-2.5 rounded font-sans text-xs tracking-[0.3em] uppercase transition-all"
                 style={{
-                  background: "linear-gradient(135deg, #F4B8CC, #DDEAF7)",
-                  color: "#4A4A4A",
-                  textDecoration: "none",
+                    border: "1px solid rgba(247,214,224,0.6)",
+                    color: "#C9A96E",
+                    textDecoration: "none",
                 }}
               >
                 Ceremony Directions
@@ -519,15 +519,6 @@ export default function Details() {
           </DetailCard>
         </Section>
 
-        {/* FAQ */}
-        <Section delay={0.1}>
-          <SectionHeading eyebrow="Questions" title="Frequently Asked" />
-          <DetailCard>
-            {faqs.map((faq, i) => (
-              <FAQItem key={i} question={faq.question} answer={faq.answer} />
-            ))}
-          </DetailCard>
-        </Section>
 
         {/* CONTACT */}
         <Section delay={0.1}>
@@ -550,8 +541,8 @@ export default function Details() {
                   href={"mailto:" + WEDDING.contact.email}
                   className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded font-sans text-xs tracking-[0.3em] uppercase transition-all"
                   style={{
-                    background: "linear-gradient(135deg, #F4B8CC, #DDEAF7)",
-                    color: "#4A4A4A",
+                    border: "1px solid rgba(247,214,224,0.6)",
+                    color: "#C9A96E",
                     textDecoration: "none",
                   }}
                 >
