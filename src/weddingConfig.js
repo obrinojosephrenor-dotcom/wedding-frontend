@@ -6,8 +6,8 @@
   hashtag: "#NikkiAndMichael",
 
   ceremony: {
-    venue: "Centenial Pastoral Center",
-    address: "Brgy. West Awang, Calbayog City",
+    venue: "St. Anthony of Padua Parish Church",
+    address: "Brgy. Carayman, Calbayog City",
     time: "3:00 PM",
     lat: 12.053749,
     lng: 124.629308,
