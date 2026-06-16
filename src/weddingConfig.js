@@ -9,9 +9,9 @@
     venue: "Centenial Pastoral Center",
     address: "Brgy. West Awang, Calbayog City",
     time: "3:00 PM",
-    lat: 12.066165910498562,
-    lng: 124.59601319799276,
-    mapLink: "https://maps.app.goo.gl/8GUWZY8FTFCvd6Fk8",
+    lat: 12.053749,
+    lng: 124.629308,
+    mapLink: "https://maps.app.goo.gl/RtUryQRD8GqAdotcA",
   },
 
   reception: {
